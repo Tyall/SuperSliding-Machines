@@ -24,8 +24,7 @@ public class MainMenuCameraMovement : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(transform.rotation.y);
-        
+
 
         if (moveToGarage == true)
             {
