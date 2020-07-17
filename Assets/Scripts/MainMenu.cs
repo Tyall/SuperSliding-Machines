@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
 
     public void ShowLevelSelection()
     {      
-        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(0, 1f);
+        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 1f);
 
         //PLACEHOLDER - To be replaced with blur shader instead of white image
         Image ui = GameObject.Find("MenuBlur").GetComponent<Image>();
