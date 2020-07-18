@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class MainMenu : MonoBehaviour
 {
 
+    [SerializeField] private PostProcessVolume postProcessVolume;
     
 
     public void PlayGame()
@@ -30,13 +32,42 @@ public class MainMenu : MonoBehaviour
     }
 
     public void ShowLevelSelection()
-    {      
+    {
+        //OPTIMISE THE CODE | SHOW n HIDE
+
         GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 1f);
 
-        //PLACEHOLDER - To be replaced with blur shader instead of white image
-        Image ui = GameObject.Find("MenuBlur").GetComponent<Image>();
-        ui.CrossFadeAlpha(125f, 1, false);
-       
+        Camera cam = GameObject.Find("Camera").GetComponent<Camera>();
+
+        postProcessVolume = cam.GetComponent<PostProcessVolume>();
+
+        ChangeDepthOfField(0.1f);
+        
+
+       //dof aperture value has to come back to 4.1 when the menu closes or the main menu screen is no longer visible
+    }
+
+    public void ChangeDepthOfField(float value)
+    {
+        var volume = this.postProcessVolume;
+
+        var profile = volume.sharedProfile;
+
+        var depthOfField = profile.GetSetting<DepthOfField>();
+
+        depthOfField.aperture.value = value;
+    }
+
+    public void HideLevelSelection()
+    {
+        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(-100, 1f);
+
+        Camera cam = GameObject.Find("Camera").GetComponent<Camera>();
+
+        postProcessVolume = cam.GetComponent<PostProcessVolume>();
+
+        ChangeDepthOfField(4.1f);
+
     }
     
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a8e1787e4c688344b766f7c95a20251
+guid: 6b6a963f25e33304e80103856d4ffc01
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,11 +8,10 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: POLYA Regular
+  fontName: CGF Locust Resistance
   fontNames:
-  - POLYA Regular
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 5e656c9e9b4d8f84d8b78ed420648cd3, type: 3}
+  - CGF Locust Resistance
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
