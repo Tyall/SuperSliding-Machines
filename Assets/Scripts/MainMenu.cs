@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
     {
         //OPTIMISE THE CODE | SHOW n HIDE
 
-        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 1f);
+        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 0.7f);
 
         Camera cam = GameObject.Find("Camera").GetComponent<Camera>();
 
@@ -56,11 +56,12 @@ public class MainMenu : MonoBehaviour
         var depthOfField = profile.GetSetting<DepthOfField>();
 
         depthOfField.aperture.value = value;
+        //make it progressive?
     }
 
     public void HideLevelSelection()
     {
-        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(-100, 1f);
+        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(1000, 0.7f);
 
         Camera cam = GameObject.Find("Camera").GetComponent<Camera>();
 
