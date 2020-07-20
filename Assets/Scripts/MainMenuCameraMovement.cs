@@ -60,7 +60,7 @@ public class MainMenuCameraMovement : MonoBehaviour
 
         if (moveToMenuFromShop == true)
         {
-            if (transform.rotation.y < 0.525)
+            if (transform.rotation.y < 0.515)
             {
                 transform.Rotate(0, Time.deltaTime * movementSpeed, 0);
             }

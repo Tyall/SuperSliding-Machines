@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -17,14 +16,7 @@ public class MainMenu : MonoBehaviour
         ShowLevelSelection();
     }
 
-    public void SelectLevel()
-    {
-        //case level 1:
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-        //case level 2:
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-    }
+   
 
     public void AnimateLogo()
     {
@@ -61,6 +53,7 @@ public class MainMenu : MonoBehaviour
 
     public void HideLevelSelection()
     {
+        
         GameObject.Find("LevelSelectionBG").LeanMoveLocalY(1000, 0.7f);
 
         Camera cam = GameObject.Find("Camera").GetComponent<Camera>();

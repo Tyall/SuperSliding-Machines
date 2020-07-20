@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 9022946893763316573}
   - component: {fileID: 9022946893763316574}
   - component: {fileID: 9022946893763316575}
+  - component: {fileID: -5426137691537156786}
   m_Layer: 5
   m_Name: LevelButton
   m_TagString: Untagged
@@ -276,7 +277,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9022946893763316574}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -5426137691537156786}
+        m_MethodName: LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-5426137691537156786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022946893763316577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e638612f16e6334899bc4a6e2bc94cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNum: 0
+  buttonText: {fileID: 9022946892382689547}
 --- !u!1 &9022946893934694910
 GameObject:
   m_ObjectHideFlags: 0

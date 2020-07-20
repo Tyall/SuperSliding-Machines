@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
+  
     // Update is called once per frame
     void Update()
     {
