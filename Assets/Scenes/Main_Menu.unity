@@ -2534,7 +2534,7 @@ RectTransform:
   m_GameObject: {fileID: 724075284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.66049445, z: 1}
+  m_LocalScale: {x: 0.9125, y: 0.66049445, z: 1}
   m_Children: []
   m_Father: {fileID: 1725661971}
   m_RootOrder: 1
@@ -2557,7 +2557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3344,6 +3344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 898967431}
+  - component: {fileID: 898967432}
   m_Layer: 5
   m_Name: Level 3 Details
   m_TagString: Untagged
@@ -3374,6 +3375,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &898967432
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898967430}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &937692793
 GameObject:
   m_ObjectHideFlags: 0
@@ -3779,13 +3792,14 @@ GameObject:
   - component: {fileID: 993998952}
   - component: {fileID: 993998954}
   - component: {fileID: 993998953}
+  - component: {fileID: 993998955}
   m_Layer: 5
   m_Name: LevelDetails
-  m_TagString: Untagged
+  m_TagString: LevelDetails
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &993998952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3847,6 +3861,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993998951}
   m_CullTransparentMesh: 0
+--- !u!225 &993998955
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993998951}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1017308671
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,13 +5461,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1581849456}
+  - component: {fileID: 1581849457}
   m_Layer: 5
   m_Name: Level 1 Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1581849456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5465,6 +5492,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1581849457
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581849455}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1658719968
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,6 +5778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1724611026}
+  - component: {fileID: 1724611027}
   m_Layer: 5
   m_Name: Level 5 Details
   m_TagString: Untagged
@@ -5769,6 +5809,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1724611027
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724611025}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1725661970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5796,7 +5848,7 @@ RectTransform:
   m_GameObject: {fileID: 1725661970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.61251, y: 0.6234462, z: 1}
+  m_LocalScale: {x: 0.61251, y: 0.6234462, z: 1.4806}
   m_Children:
   - {fileID: 1911270360}
   - {fileID: 724075285}
@@ -6173,6 +6225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913191661}
+  - component: {fileID: 1913191662}
   m_Layer: 5
   m_Name: Level 2 Details
   m_TagString: Untagged
@@ -6203,6 +6256,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1913191662
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913191660}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1934384994
 GameObject:
   m_ObjectHideFlags: 0
@@ -6212,6 +6277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1934384995}
+  - component: {fileID: 1934384996}
   m_Layer: 5
   m_Name: Level 4 Details
   m_TagString: Untagged
@@ -6242,6 +6308,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1934384996
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934384994}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2017048545
 GameObject:
   m_ObjectHideFlags: 0
@@ -6899,7 +6977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelHolder: {fileID: 724075284}
-  levelIcon: {fileID: 9022946893763316577, guid: 1a677e4812efe5f44979d83f7db9ce80,
+  levelIcon: {fileID: 3584497414311912356, guid: 8fb1affa98d723b46a4c03cc1d03bfa1,
     type: 3}
   thisCanvas: {fileID: 1725661970}
   numberOfLevels: 15
@@ -11580,7 +11658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
