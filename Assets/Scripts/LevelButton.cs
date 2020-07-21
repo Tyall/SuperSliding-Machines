@@ -19,7 +19,11 @@ public class LevelButton : MonoBehaviour
     public void LoadLevel()
     {
         Debug.Log(levelNum);
-        SceneManager.LoadScene(levelNum);
+        // SceneManager.LoadScene(levelNum);
+        //GameObject.Find("Level Details").SetActive(true);
+        //GameObject.Find("Level 1 Details").SetActive(true);
+        
+
         //TODO
         //Instead of loading level right after clicking the button, open a pop-up explaining
         //logic of chosen level and showing minimap (?)

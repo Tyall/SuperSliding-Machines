@@ -52,6 +52,7 @@ public class LevelSelector : MonoBehaviour
     {
         GridLayoutGroup grid = panel.AddComponent<GridLayoutGroup>();
         grid.cellSize = new Vector2(iconDimensions.width, iconDimensions.height);
+        //grid.cellSize = new Vector2(0, 0);
         grid.childAlignment = TextAnchor.MiddleCenter;
         grid.spacing = iconSpacing;
     }
