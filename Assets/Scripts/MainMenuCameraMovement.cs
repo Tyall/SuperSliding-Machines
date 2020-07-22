@@ -23,9 +23,7 @@ public class MainMenuCameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
+               
         if (moveToGarage == true)
             {
                 if (transform.rotation.y < 0.89)
