@@ -72,5 +72,26 @@ public class SteeringScript : MonoBehaviour
 
     }
 
+    void OnTriggerEnter(Collider hit)
+    {
+        if (hit.gameObject.tag == "Checkpoint")
+        {
+            Checkpoint.CheckpointBehavior(hit.name);
+        }
+              
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Obstacle") 
+        {
+            Debug.Log("You hit the traffic cone!");
+            Time.timeScale = 0f;
+            CheckpointLevelLogic.ResetCheckpoints(); //Probably doing a method in CheckpointLevelLogic-
+            //-that determines what level are we on is the best way to solve the problem
+            //Find out a better way to determine which level do you currently play
+            //Maybe do something like cpCountL+getCurrentLevel
+        }
+    }
+    
 }

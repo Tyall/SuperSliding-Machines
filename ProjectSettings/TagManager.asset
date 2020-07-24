@@ -6,6 +6,8 @@ TagManager:
   tags:
   - 3DButton
   - LevelDetails
+  - Checkpoint
+  - Obstacle
   layers:
   - Default
   - TransparentFX
