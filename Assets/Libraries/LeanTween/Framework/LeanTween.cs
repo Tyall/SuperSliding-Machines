@@ -310,7 +310,7 @@ public class LeanTween : MonoBehaviour {
     * This line is optional. Here you can specify the maximum number of tweens you will use (the default is 400).  This must be called before any use of LeanTween is made for it to be effective. <summary>This line is optional. Here you can specify the maximum number of tweens you will use (the default is 400).  This must be called before any use of LeanTween is made for it to be effective. </summary>
     * 
     * @method LeanTween.init
-    * @param {integer} maxSimultaneousTweens:int The maximum number of tweens you will use, make sure you don't go over this limit, otherwise the code will throw an error
+    * @param {integer} maxSimultaneousTweens:int The maximum number of tweens you will use, make sure you t't go over this limit, otherwise the code will throw an error
     * @example
     *   LeanTween.init( 800 );
     */

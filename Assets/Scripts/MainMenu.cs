@@ -14,10 +14,22 @@ public class MainMenu : MonoBehaviour
     private GameObject[] levelPanels;
     public static int levelNum;
 
+    static GameObject placeholderCoins;
+    static GameObject placeholderExp;
+
+    //This should be in player profile class
+    static int coins = 0;
+    static int experience = 0;
+
     public void Start()
     {
        levelPanels = GameObject.FindGameObjectsWithTag("LevelDetails");
-       
+
+       placeholderCoins = GameObject.Find("CoinsText");
+       placeholderExp = GameObject.Find("ExpText");
+
+       placeholderCoins.GetComponent<TMPro.TextMeshProUGUI>().text = "" + coins;
+       placeholderExp.GetComponent<TMPro.TextMeshProUGUI>().text = "" + experience;
     }
 
     public void PlayGame()
@@ -93,4 +105,14 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Choose a level before clicking play!");
     }
 
+    //PLACEHOLDER - MOVE IT TO A PLAYER PROFILE CLASS 
+    //Testing if the code works
+    public static void UpdateProfile(int coin, int exp)
+    {
+        experience += exp;
+        coins += coin;
+        
+    }
+
+    
 }
