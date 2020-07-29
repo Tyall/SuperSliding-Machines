@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     //This should be in player profile class
     static int coins = 0;
     static int experience = 0;
+    public static int unlockedLevels = 4;
 
     public void Start()
     {

@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNum: 0
   buttonText: {fileID: 8082185474447265894}
+  buttonImage: {fileID: 992873810293572574}
 --- !u!1 &4718957877869154766
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.4156863, b: 0.73333335, a: 1}
+  m_Color: {r: 0.21960786, g: 0.4156863, b: 0.73333335, a: 0.2509804}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -294,8 +295,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278826750
-  m_fontColor: {r: 0.9960785, g: 0.7137255, b: 0.03529412, a: 1}
+    rgba: 1074378494
+  m_fontColor: {r: 0.9960785, g: 0.7137255, b: 0.03529412, a: 0.2509804}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
