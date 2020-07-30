@@ -14,24 +14,25 @@ public class LevelButton : MonoBehaviour
 
     private GameObject levelDetails;
     private GameObject currentLevel;
-    //private GameObject tapAnywhere;
     private GameObject levelLockedPanel;
     private GameObject levelLocked;
+    private GameObject levelStartButton;
 
 
     void Start()
     {
         levelNum = int.Parse(buttonText.text);
+
         levelDetails = GameObject.Find("LevelDetails");
         currentLevel = GameObject.Find("Level " + levelNum + " Details");
         levelLockedPanel = GameObject.Find("LevelLockedPanel");
         levelLocked = GameObject.Find("LevelLocked");
-        //tapAnywhere = GameObject.Find("TapAnywhereLevelDetails");
+        levelStartButton = GameObject.Find("StartLevelButton");
 
-        showUnlockedLevels();
+        ShowUnlockedLevels();
     }
 
-    void showUnlockedLevels()
+    void ShowUnlockedLevels()
     {
         if (levelNum <= MainMenu.unlockedLevels)
         {           
@@ -42,7 +43,6 @@ public class LevelButton : MonoBehaviour
 
     public void LoadLevel()
     {
-        //FORMAT CODE
         if (levelNum <= MainMenu.unlockedLevels)
         {
             ShowPanels();
@@ -51,49 +51,30 @@ public class LevelButton : MonoBehaviour
         {
             ShowLockedInfo();
         }
-
-            
-        //SceneManager.LoadScene(levelNum);
-
-        
-        //Rename or replace this method because it doesn't load any level
     }
 
     public void ShowPanels()
     {
         MainMenu.levelNum = int.Parse(buttonText.text);
 
-        levelDetails.GetComponent<CanvasGroup>().LeanAlpha(1, 0.2f);
-        levelDetails.GetComponent<CanvasGroup>().interactable = true;
-        levelDetails.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        EnableComponent(levelStartButton);
+        EnableComponent(currentLevel);
+        EnableComponent(levelDetails);
 
-        currentLevel.GetComponent<CanvasGroup>().LeanAlpha(1, 0.2f);
-        currentLevel.GetComponent<CanvasGroup>().interactable = true;
-        currentLevel.GetComponent<CanvasGroup>().blocksRaycasts = true;
-
-        //tapAnywhere.GetComponent<Button>;
     }
 
     public void ShowLockedInfo()
     {
-        levelDetails.GetComponent<CanvasGroup>().LeanAlpha(1, 0.2f);
-        levelDetails.GetComponent<CanvasGroup>().interactable = true;
-        levelDetails.GetComponent<CanvasGroup>().blocksRaycasts = true;
-
-        levelLockedPanel.GetComponent<CanvasGroup>().LeanAlpha(1, 0.2f); 
-        levelLockedPanel.GetComponent<CanvasGroup>().interactable = true;
-        levelLockedPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
-
-        levelLocked.GetComponent<CanvasGroup>().LeanAlpha(1, 0.2f);
-        levelLocked.GetComponent<CanvasGroup>().interactable = true;
-        levelLocked.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        EnableComponent(levelDetails);
+        EnableComponent(levelLockedPanel);
+        EnableComponent(levelLocked);
     }
 
-
-
-
-    void Update()
+    void EnableComponent(GameObject obj)
     {
-        
+        obj.GetComponent<CanvasGroup>().LeanAlpha(1, 0.2f);
+        obj.GetComponent<CanvasGroup>().interactable = true;
+        obj.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
+
 }

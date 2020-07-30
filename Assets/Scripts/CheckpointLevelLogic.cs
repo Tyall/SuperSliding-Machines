@@ -5,15 +5,23 @@ using System;
 
 public class CheckpointLevelLogic : MonoBehaviour
 {
+    
 
     public GameObject setFailMenu; 
     public static GameObject failMenu;
 
+    public int NumberOfCheckpoints;
+    public int MinAmountOfCoins;
+    public int MaxAmountOfCoins;
+    public int MinAmountOfExp;
+    public int MaxAmountOfExp;
+    public static int numOfCheckpointsLeft;
+    public static int totalCheckpointCount;
     public GameObject winMenu;
     public GameObject winCoins;
     public GameObject winExp;
 
-    public static int cpCountL1 = 3;
+    
     bool isFinished = false;
     
     int coins;
@@ -22,6 +30,8 @@ public class CheckpointLevelLogic : MonoBehaviour
     private void Awake()
     {
         failMenu = setFailMenu;
+        numOfCheckpointsLeft = NumberOfCheckpoints;
+        totalCheckpointCount = NumberOfCheckpoints;
     }
 
     private void Update()
@@ -35,13 +45,12 @@ public class CheckpointLevelLogic : MonoBehaviour
 
     public static void ResetCheckpoints()
     {
-        cpCountL1 = 3;
-        //Maybe pass level number there and modify only one variable
+        numOfCheckpointsLeft = totalCheckpointCount;
     }
 
     void LevelFinished()
     {
-        if (cpCountL1==0)
+        if (numOfCheckpointsLeft == 0)
         {
             Debug.Log("Level Finished!"); //Show screen with rewards and restart/menu
             Time.timeScale = 0f;
@@ -55,9 +64,9 @@ public class CheckpointLevelLogic : MonoBehaviour
     void GenerateRewards()
     {
         System.Random rnd = new System.Random();
-        coins = rnd.Next(80, 120);
+        coins = rnd.Next(MinAmountOfCoins, MaxAmountOfCoins);
 
-        experience = rnd.Next(20, 30);
+        experience = rnd.Next(MinAmountOfExp, MaxAmountOfExp);
 
         winCoins.GetComponent<TMPro.TextMeshProUGUI>().text = coins + "  COINS GAINED";
         winExp.GetComponent<TMPro.TextMeshProUGUI>().text = experience + "  EXPERIENCE GAINED";

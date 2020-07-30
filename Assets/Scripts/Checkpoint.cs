@@ -14,6 +14,6 @@ public class Checkpoint : MonoBehaviour
     {
         Debug.Log("Entered " +cpName);
         GameObject.Find(cpName).SetActive(false);
-        CheckpointLevelLogic.cpCountL1--;
+        CheckpointLevelLogic.numOfCheckpointsLeft--;
     }
 }

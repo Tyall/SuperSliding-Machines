@@ -9,8 +9,7 @@ public class MainMenu : MonoBehaviour
 {
 
     [SerializeField] private PostProcessVolume postProcessVolume;
-    
-    private GameObject levelDetails;
+        
     private GameObject[] levelPanels;
     public static int levelNum;
 
@@ -20,7 +19,7 @@ public class MainMenu : MonoBehaviour
     //This should be in player profile class
     static int coins = 0;
     static int experience = 0;
-    public static int unlockedLevels = 4;
+    public static int unlockedLevels = 2;
 
     public void Start()
     {
