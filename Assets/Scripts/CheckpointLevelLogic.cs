@@ -52,12 +52,13 @@ public class CheckpointLevelLogic : MonoBehaviour
     {
         if (numOfCheckpointsLeft == 0)
         {
-            Debug.Log("Level Finished!"); //Show screen with rewards and restart/menu
+            Debug.Log("Level Finished!"); 
             Time.timeScale = 0f;
             isFinished = true;
             GenerateRewards();
             winMenu.SetActive(true);
-            Debug.Log("Finished Finishing xd");
+
+            SaveSystem.SavePlayer();
         }
     }
 
@@ -71,7 +72,7 @@ public class CheckpointLevelLogic : MonoBehaviour
         winCoins.GetComponent<TMPro.TextMeshProUGUI>().text = coins + "  COINS GAINED";
         winExp.GetComponent<TMPro.TextMeshProUGUI>().text = experience + "  EXPERIENCE GAINED";
 
-        MainMenu.UpdateProfile(coins, experience);
+        PlayerProfile.UpdateProfile(coins, experience);
 
     }
 

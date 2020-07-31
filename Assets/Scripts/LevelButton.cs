@@ -34,7 +34,7 @@ public class LevelButton : MonoBehaviour
 
     void ShowUnlockedLevels()
     {
-        if (levelNum <= MainMenu.unlockedLevels)
+        if (levelNum <= PlayerProfile.unlockedLevels)
         {           
             buttonText.color = new Color(0.996f, 0.7137f, 0.0352f, 1f);
             buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
@@ -43,7 +43,7 @@ public class LevelButton : MonoBehaviour
 
     public void LoadLevel()
     {
-        if (levelNum <= MainMenu.unlockedLevels)
+        if (levelNum <= PlayerProfile.unlockedLevels)
         {
             ShowPanels();
         }

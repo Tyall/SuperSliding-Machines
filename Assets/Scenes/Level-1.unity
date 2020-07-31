@@ -15173,6 +15173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 75254193}
+  levelNum: 1
 --- !u!114 &1573413884
 MonoBehaviour:
   m_ObjectHideFlags: 0
