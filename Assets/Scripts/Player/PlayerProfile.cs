@@ -9,9 +9,9 @@ public class PlayerProfile : MonoBehaviour
     public static int playerCoins;
     public static int playerExp;
     public static int unlockedLevels = 2;
+    //public static int ownedVehicles[];
 
-
-    //public int ulockedVehicles; - working as unlockedLevels, vehicles will be in order
+    //public int unlockedVehicles; - working as unlockedLevels, vehicles will be in order
     //public string ownedVehicles[hatchbackSports, taxiVehicle]; - colors of the vehicles have to be saved also
     //to handle the color probably a new class called LoadPlayerProfile giving a car color dependent on cases will be needed
     //public string selectedVehicle; - currently selected vehicle

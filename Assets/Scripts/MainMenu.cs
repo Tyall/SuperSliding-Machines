@@ -26,6 +26,9 @@ public class MainMenu : MonoBehaviour
 
         
         UpdateUI();
+
+        //TESTING VEHICLE SPAWNING
+        Vehicle veh = new Vehicle(1, "red", 1);
     }
 
     public void PlayGame()
