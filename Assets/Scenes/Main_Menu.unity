@@ -5741,36 +5741,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357767355}
   m_CullTransparentMesh: 0
---- !u!1 &1420858146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1420858147}
-  m_Layer: 0
-  m_Name: vehicle1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1420858147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420858146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.47, y: 110.793, z: -282.64}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1440831006
 GameObject:
   m_ObjectHideFlags: 0
@@ -7372,6 +7342,63 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &1974065220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974065221}
+  - component: {fileID: 1974065222}
+  m_Layer: 0
+  m_Name: GarageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1974065221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974065220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.27501, y: 92.29554, z: -267.8044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1974065222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974065220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f865147121bdc4388cf16f5c47be67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sedan: {fileID: 919132149155446097, guid: 61630695a84dd494fb89273b8d66934c, type: 3}
+  sedanSport: {fileID: 919132149155446097, guid: 04dbd25517524a6479f1dec6a66d3610,
+    type: 3}
+  suv: {fileID: 919132149155446097, guid: c129b643f8dcf2646a9d05807873854b, type: 3}
+  hatchbackSport: {fileID: 919132149155446097, guid: 367eeab3772f64d49b33567c9a4b2ec0,
+    type: 3}
+  suvLuxury: {fileID: 919132149155446097, guid: fb87d27cfd591864791d3c2e565d6da8,
+    type: 3}
+  truck: {fileID: 919132149155446097, guid: 01ecd8e462e52634d89fba4e1d6d8c82, type: 3}
+  van: {fileID: 919132149155446097, guid: 3eb2525b33c4dc4499c596d1063194b0, type: 3}
+  police: {fileID: 919132149155446097, guid: 66433e90c64ec49498b4c277bc029325, type: 3}
+  race: {fileID: 919132149155446097, guid: 0d2d7657b82018a4289f92e3f82c9180, type: 3}
+  raceFuture: {fileID: 919132149155446097, guid: 66d1ff0f96613134d99269f2049a3e10,
+    type: 3}
 --- !u!1 &2017048545
 GameObject:
   m_ObjectHideFlags: 0

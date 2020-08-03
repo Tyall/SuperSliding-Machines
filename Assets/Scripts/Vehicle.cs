@@ -5,47 +5,22 @@ using UnityEngine;
 
 public class Vehicle 
 {
+   // public GameObject sedan;
+   // public GameObject sedanSport;
+   // public GameObject suv;
+   // public GameObject hatchbackSport;
+   // public GameObject suvLuxury;
+   // public GameObject truck;
+   // public GameObject van;
+   // public GameObject police;
+   // public GameObject race;
+   // public GameObject raceFuture;
+
+
     int vehicleID;
     string color;
     int garageParkingID;
-    GameObject vehModel = GameObject.Find("vehicle1");
-    string prefabPath = "Assets/Visuals/Vehicles";
-
-
-    public Vehicle(int vehicleID, string color, int garageParkingID)
-    {
-        Debug.Log("Vehicle constructor");
-        this.vehicleID = vehicleID;
-        AssignModel(vehicleID);
-        
-
-
-
-    }
-
-    void AssignModel(int vehID)
-    {
-        Debug.Log("Assigning model " + vehID);
-        switch (vehID)
-        {
-            case 1:
-                //Object prefab = EditorUtility.CreateEmptyPrefab("Assets/Prefabs/Vehicles/sedan.prefab");
-                
-                Debug.Log("Model assigned");
-                break;
-            //case 2:
-                 
-                
-
-
-
-
-
-        }
-    }
-    
-
-
+    GameObject vehMesh;
 
     //VEHICLE ID LIST
     //1. sedan
@@ -58,5 +33,23 @@ public class Vehicle
     //8. police
     //9. race
     //10. raceFuture
+
+    
+    public Vehicle(GameObject vehMesh, int vehicleID, string color, int garageParkingID)
+    {
+        Debug.Log("Vehicle constructor");
+        this.vehicleID = vehicleID;
+        this.vehMesh = vehMesh;
+        CreateAsset(vehMesh);
+        
+
+
+
+    }
+
+    void CreateAsset(GameObject vehMesh)
+    {
+        
+    }
 
 }

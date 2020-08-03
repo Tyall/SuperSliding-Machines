@@ -9,7 +9,8 @@ public class PlayerProfile : MonoBehaviour
     public static int playerCoins;
     public static int playerExp;
     public static int unlockedLevels = 2;
-    //public static int ownedVehicles[];
+    public static int[] ownedVehicles = new int[10] { 1, 7, 0, 0, 0, 0, 0, 0, 0 ,0 }; //max 10, create a function which will check if you can buy another veh; checking when trying to buy a vehicle
+    //also check if the user already has X type of vehicle so no dupes or maybe create a veh selling possibility
 
     //public int unlockedVehicles; - working as unlockedLevels, vehicles will be in order
     //public string ownedVehicles[hatchbackSports, taxiVehicle]; - colors of the vehicles have to be saved also
