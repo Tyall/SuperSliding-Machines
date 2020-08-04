@@ -85,5 +85,6 @@ public class MainMenuCameraMovement : MonoBehaviour
     {
         moveToMenuFromShop = true;
     }
+    
 
 }

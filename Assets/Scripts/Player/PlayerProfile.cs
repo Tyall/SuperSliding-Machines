@@ -9,13 +9,16 @@ public class PlayerProfile : MonoBehaviour
     public static int playerCoins;
     public static int playerExp;
     public static int unlockedLevels = 2;
-    public static int[] ownedVehicles = new int[10] { 1, 0, 0, 0, 5, 6, 0, 0, 0, 0}; //max 10, create a function which will check if you can buy another veh; checking when trying to buy a vehicle
+    public static int[] ownedVehicles = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; //max 10, create a function which will check if you can buy another veh; checking when trying to buy a vehicle
     //also check if the user already has X type of vehicle so no dupes or maybe create a veh selling possibility
+    public static int selectedVehicle = 1;
+
+    //TODO : clear owned vehicles and make owned vehicles along with selectedVehicle be saved to a binary file
 
     //public int unlockedVehicles; - working as unlockedLevels, vehicles will be in order
-    //public string ownedVehicles[hatchbackSports, taxiVehicle]; - colors of the vehicles have to be saved also
+    // - colors of the vehicles have to be saved also
     //to handle the color probably a new class called LoadPlayerProfile giving a car color dependent on cases will be needed
-    //public string selectedVehicle; - currently selected vehicle
+
 
     public void Start()
     {

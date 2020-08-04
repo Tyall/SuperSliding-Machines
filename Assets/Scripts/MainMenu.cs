@@ -24,10 +24,7 @@ public class MainMenu : MonoBehaviour
         placeholderCoins = GameObject.Find("CoinsText");
         placeholderExp = GameObject.Find("ExpText");
 
-        
         UpdateUI();
-
-        
     }
 
     public void PlayGame()
@@ -54,11 +51,21 @@ public class MainMenu : MonoBehaviour
 
     public void ShowLevelSelection()
     {
-        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 0.7f);
+        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 0.7f); //MOVE FIND TO START()
         Camera cam = GameObject.Find("Camera").GetComponent<Camera>();
         postProcessVolume = cam.GetComponent<PostProcessVolume>();
         ChangeDepthOfField(0.1f);
         
+    }
+
+    public void ShowGarageUI()
+    {
+        GameObject.Find("GarageUI").LeanMoveLocalY(420, 0.7f); //MOVE FIND TO START()
+    }
+
+    public void HideGarageUI()
+    {
+        GameObject.Find("GarageUI").LeanMoveLocalY(650, 0.7f);
     }
 
     public void ChangeDepthOfField(float value)

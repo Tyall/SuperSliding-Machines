@@ -17,7 +17,8 @@ public class GarageManager : MonoBehaviour
     static int[] ownedVehicles = PlayerProfile.ownedVehicles;
     int vehCount;
     Vector3 position;
-    Quaternion rotation;
+    
+    
     void Start()
     {
         GetVehicleCount();
@@ -45,38 +46,39 @@ public class GarageManager : MonoBehaviour
     }
     void CreateVehicle(int vehID, int vehPOS)
     {
+        Quaternion rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
         Debug.Log("Created vehicle with ID " + vehID);
         switch (vehID)
         {
             case 1:
-                Instantiate(sedan, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(sedan, GetParkingPosition(vehPOS), rotation);
                 break;
             case 2:
-                Instantiate(sedanSport, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(sedanSport, GetParkingPosition(vehPOS), rotation);
                 break;
             case 3:
-                Instantiate(suv, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(suv, GetParkingPosition(vehPOS), rotation);
                 break;
             case 4:
-                Instantiate(hatchbackSport, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(hatchbackSport, GetParkingPosition(vehPOS), rotation);
                 break;
             case 5:
-                Instantiate(suvLuxury, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(suvLuxury, GetParkingPosition(vehPOS), rotation);
                 break;
             case 6:
-                Instantiate(truck, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(truck, GetParkingPosition(vehPOS), rotation);
                 break;
             case 7:
-                Instantiate(van, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(van, GetParkingPosition(vehPOS), rotation);
                 break;
             case 8:
-                Instantiate(police, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(police, GetParkingPosition(vehPOS), rotation);
                 break;
             case 9:
-                Instantiate(race, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(race, GetParkingPosition(vehPOS), rotation);
                 break;
             case 10:
-                Instantiate(raceFuture, GetParkingPosition(vehPOS), GetParkingRotation(vehPOS));
+                Instantiate(raceFuture, GetParkingPosition(vehPOS), rotation);
                 break;
 
         }
@@ -90,6 +92,7 @@ public class GarageManager : MonoBehaviour
 
     Vector3 GetParkingPosition(int GaragePosition)
     {
+        
         Debug.Log("Garage position: " + GaragePosition);
         switch (GaragePosition)
         {
@@ -126,44 +129,9 @@ public class GarageManager : MonoBehaviour
         }
         return position;
     }
+
+  
     
-    Quaternion GetParkingRotation(int GaragePosition)
-    {
-        Debug.Log("Garage rotation: " + GaragePosition);
-        switch (GaragePosition)
-        {
-            case 1:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f); //get values from inspector, move objects and save the exact values and rotations                 
-                break;
-            case 2:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-            case 3:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-            case 4:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-            case 5:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-            case 6:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-            case 7:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-            case 8:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-            case 9:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-            case 10:
-                rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
-                break;
-        }
-        return rotation;
-    }
+   
     
 }
