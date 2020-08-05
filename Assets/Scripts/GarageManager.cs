@@ -18,7 +18,7 @@ public class GarageManager : MonoBehaviour
     int vehCount;
     Vector3 position;
     
-    
+    //ADD A FUNCTION TO MANAGE CURRENTLY SELECTED VEHICLE. TAG IT DIFFERENTLY AND SPAWN IT IN SHOP ALSO
     void Start()
     {
         GetVehicleCount();
@@ -109,22 +109,22 @@ public class GarageManager : MonoBehaviour
                 position = new Vector3(58.35f, 110.24f, -296.21f);
                 break;
             case 5:
-                position = new Vector3(58.35f, 110.25f, -298.62f);
+                position = new Vector3(58.35f, 110.19f, -298.62f);
                 break;
             case 6:
-                position = new Vector3(71.35f, 110.29f, -296.21f);
+                position = new Vector3(71.35f, 110.18f, -296.21f);
                 break;
             case 7:
-                position = new Vector3(71.35f, 110.28f, -298.62f);
+                position = new Vector3(71.35f, 110.18f, -298.62f);
                 break;
             case 8:
-                position = new Vector3(71.35f, 110.27f, -293.7f);
+                position = new Vector3(71.35f, 110.17f, -293.7f);
                 break;
             case 9:
-                position = new Vector3(71.35f, 110.26f, -291.25f);
+                position = new Vector3(71.35f, 110.17f, -291.25f);
                 break;
             case 10:
-                position = new Vector3(71.35f, 110.25f, -288.78f);
+                position = new Vector3(71.35f, 110.16f, -288.78f);
                 break;
         }
         return position;

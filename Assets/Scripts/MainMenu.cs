@@ -63,7 +63,7 @@ public class MainMenu : MonoBehaviour
         GameObject.Find("GarageUI").LeanMoveLocalY(420, 0.7f); //MOVE FIND TO START()
     }
 
-    public void HideGarageUI()
+    static public void HideGarageUI()
     {
         GameObject.Find("GarageUI").LeanMoveLocalY(650, 0.7f);
     }
