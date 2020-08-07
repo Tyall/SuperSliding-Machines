@@ -9,9 +9,16 @@ public class PlayerProfile : MonoBehaviour
     public static int playerCoins;
     public static int playerExp;
     public static int unlockedLevels = 2;
-    public static int[] ownedVehicles = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; //max 10, create a function which will check if you can buy another veh; checking when trying to buy a vehicle
+
+
+    public static int[] ownedVehicles = new int[10] { 3, 5, 1, 4, 2, 6, 7, 8, 9, 10}; 
+    
+    
+    
+    //max 10, create a function which will check if you can buy another veh; checking when trying to buy a vehicle
     //also check if the user already has X type of vehicle so no dupes or maybe create a veh selling possibility
     public static int selectedVehicle = 1;
+    //Selected vehicle will have to remove the car from ownedVehicles list
 
     //TODO : clear owned vehicles and make owned vehicles along with selectedVehicle be saved to a binary file
 

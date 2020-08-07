@@ -35,34 +35,34 @@ public class GarageCameraMovement : MonoBehaviour
             currentCameraFocusPlace = 0;
             transform.position = new Vector3(47.7f, 111.5f, -288.9f);
             transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 70f) ;
-            vehNameText.text = "VEHICLE " + currentCameraFocusPlace; //temporarily
+            vehNameText.text = "SELECTED VEHICLE";
         }
         else if (currentCameraFocusPlace == 0)
         {
             currentCameraFocusPlace = 1;
             transform.position = new Vector3(53.6f, 111.3f, -285.54f);
             transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 60f);
-            vehNameText.text = "VEHICLE  " + currentCameraFocusPlace;
+            SetVehicleName(currentCameraFocusPlace);
         }
         else if (currentCameraFocusPlace < 5) //if <1;5> then alg X, if 5 then switch to 2nd lane if <6;10> alg, 10->1 ect
         {
 
             currentCameraFocusPlace++;
             transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y , transform.position.z - 2.2f);
-            vehNameText.text = "VEHICLE  " + currentCameraFocusPlace;
+            SetVehicleName(currentCameraFocusPlace);
 
         }
         else if (currentCameraFocusPlace == 5)
         {
             currentCameraFocusPlace = 6;
             transform.position = new Vector3(66.5f, 110.9f, -295.3f);
-            vehNameText.text = "VEHICLE  " + currentCameraFocusPlace;
+            SetVehicleName(currentCameraFocusPlace);
         }
         else if (currentCameraFocusPlace < 10)
         {
             currentCameraFocusPlace++;
             transform.position = new Vector3(transform.position.x + 0.3f, transform.position.y, transform.position.z + 2.2f);
-            vehNameText.text = "VEHICLE  " + currentCameraFocusPlace;
+            SetVehicleName(currentCameraFocusPlace);
         }
         else if(currentCameraFocusPlace == 10)
         {
@@ -97,26 +97,37 @@ public class GarageCameraMovement : MonoBehaviour
             transform.position = new Vector3(47.7f, 111.5f, -288.9f);
             transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 70f);
             currentCameraFocusPlace = 0;
-            vehNameText.text = "VEHICLE " + currentCameraFocusPlace; //temporarily
+            vehNameText.text = "SELECTED VEHICLE";
         }
         else if (currentCameraFocusPlace < 6)
         {
             currentCameraFocusPlace--;
             transform.position = new Vector3(transform.position.x + 0.3f, transform.position.y, transform.position.z + 2.2f);
-            vehNameText.text = "VEHICLE " + currentCameraFocusPlace;
+            vehNameText.text = GarageManager.GetVehicleName(GarageManager.ownedVehicles[currentCameraFocusPlace-1]);
         }
         else if (currentCameraFocusPlace == 6)
         {
             currentCameraFocusPlace = 5;
             transform.position = new Vector3(52.4f, 111.3f, -294.3f);
-            vehNameText.text = "VEHICLE  " + currentCameraFocusPlace;
+            SetVehicleName(currentCameraFocusPlace);
         }
         else if (currentCameraFocusPlace < 10)
         {
             currentCameraFocusPlace--;
             transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y, transform.position.z - 2.2f);
-            vehNameText.text = "VEHICLE  " + currentCameraFocusPlace;
+            SetVehicleName(currentCameraFocusPlace);
         }
 
+    }
+
+    void SetVehicleName(int currentCameraFocus)
+    {
+        vehNameText.text = GarageManager.GetVehicleName(GarageManager.ownedVehicles[currentCameraFocus - 1]);
+    }
+
+    public void HideGarageSelectorElements()
+    {
+        currentCameraFocusPlace = 0;
+        MoveCameraPrevious();
     }
 }

@@ -14,9 +14,10 @@ public class GarageManager : MonoBehaviour
     public GameObject police;
     public GameObject race;
     public GameObject raceFuture;
-    static int[] ownedVehicles = PlayerProfile.ownedVehicles;
+    public static int[] ownedVehicles = PlayerProfile.ownedVehicles;
     int vehCount;
     Vector3 position;
+    static string vehicleName;
     
     //ADD A FUNCTION TO MANAGE CURRENTLY SELECTED VEHICLE. TAG IT DIFFERENTLY AND SPAWN IT IN SHOP ALSO
     void Start()
@@ -128,6 +129,44 @@ public class GarageManager : MonoBehaviour
                 break;
         }
         return position;
+    }
+
+    public static string GetVehicleName(int vehID)
+    {
+        switch (vehID)
+        {
+            case 1:
+                vehicleName = "SEDAN";              
+                break;
+            case 2:
+                vehicleName = "SEDAN SPORT";
+                break;
+            case 3:
+                vehicleName = "SUV";
+                break;
+            case 4:
+                vehicleName = "HATCHBACK SPORT";
+                break;
+            case 5:
+                vehicleName = "LUXURY SUV";
+                break;
+            case 6:
+                vehicleName = "TRUCK";
+                break;
+            case 7:
+                vehicleName = "VAN";
+                break;
+            case 8:
+                vehicleName = "POLICE";
+                break;
+            case 9:
+                vehicleName = "RACE";
+                break;
+            case 10:
+                vehicleName = "RACE FUTURE";
+                break;
+        }
+        return vehicleName;
     }
 
   
