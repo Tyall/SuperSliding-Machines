@@ -18,22 +18,19 @@ public class GarageManager : MonoBehaviour
     int vehCount;
     Vector3 position;
     static string vehicleName;
-    
-    //ADD A FUNCTION TO MANAGE CURRENTLY SELECTED VEHICLE. TAG IT DIFFERENTLY AND SPAWN IT IN SHOP ALSO
+    public int selectedVehicle = PlayerProfile.ownedVehicles[0];
+    Quaternion rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
+    Quaternion _rotation = new Quaternion(-0.214f, -11f, 0f, 90f);
+
+    bool firstspawn = true;
+
+  
+    //TODO:
+    //1. Clean the code
+    //2. Turn off or tweak the blur
     void Start()
     {
-        GetVehicleCount();
-        for( int i=0; i < ownedVehicles.Length; i++)
-        {
-            if (ownedVehicles[i] > 0)
-            {
-                CreateVehicle(ownedVehicles[i], i+1);
-            }
-            
-        }
-        
-        AssignColor();
-        
+        InstantiateVehicles();
     }
 
     void GetVehicleCount() //Is it even useful?
@@ -45,60 +42,76 @@ public class GarageManager : MonoBehaviour
         }
         Debug.Log("vehCount = " + vehCount);
     }
-    void CreateVehicle(int vehID, int vehPOS)
+    void CreateVehicle(int vehID, int vehPOS, Quaternion rot)
     {
-        Quaternion rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
+
+
         Debug.Log("Created vehicle with ID " + vehID);
         switch (vehID)
         {
+
             case 1:
-                Instantiate(sedan, GetParkingPosition(vehPOS), rotation);
+                var newObject = (GameObject)Instantiate(sedan, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 2:
-                Instantiate(sedanSport, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(sedanSport, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 3:
-                Instantiate(suv, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(suv, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 4:
-                Instantiate(hatchbackSport, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(hatchbackSport, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 5:
-                Instantiate(suvLuxury, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(suvLuxury, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 6:
-                Instantiate(truck, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(truck, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 7:
-                Instantiate(van, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(van, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 8:
-                Instantiate(police, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(police, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 9:
-                Instantiate(race, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(race, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
             case 10:
-                Instantiate(raceFuture, GetParkingPosition(vehPOS), rotation);
+                newObject = (GameObject)Instantiate(raceFuture, GetParkingPosition(vehPOS), rot);
+                newObject.name = ("ParkingLotVehicle" + vehPOS);
                 break;
 
         }
-        
+
     }
 
     void AssignColor()
     {
         //This will be problematic
+        //Colors will have to go together with reinstantiating and other things so switching a vehicle would also switch its color etc.
     }
 
     Vector3 GetParkingPosition(int GaragePosition)
     {
-        
+
         Debug.Log("Garage position: " + GaragePosition);
         switch (GaragePosition)
         {
+            case 0:
+                position = new Vector3(54.34f, 110.22f, -292.46f);//Current Vehicle
+                break;
             case 1:
-                position = new Vector3(58.35f, 110.21f, -288.78f); //get values from inspector, move objects and save the exact values and rotations                
+                position = new Vector3(58.35f, 110.21f, -288.78f);
                 break;
             case 2:
                 position = new Vector3(58.35f, 110.22f, -291.25f);
@@ -113,10 +126,10 @@ public class GarageManager : MonoBehaviour
                 position = new Vector3(58.35f, 110.19f, -298.62f);
                 break;
             case 6:
-                position = new Vector3(71.35f, 110.18f, -296.21f);
+                position = new Vector3(71.35f, 110.18f, -298.62f);
                 break;
             case 7:
-                position = new Vector3(71.35f, 110.18f, -298.62f);
+                position = new Vector3(71.35f, 110.18f, -296.21f);
                 break;
             case 8:
                 position = new Vector3(71.35f, 110.17f, -293.7f);
@@ -135,8 +148,11 @@ public class GarageManager : MonoBehaviour
     {
         switch (vehID)
         {
+            case 0:
+                vehicleName = "EMPTY PLACE";
+                break;
             case 1:
-                vehicleName = "SEDAN";              
+                vehicleName = "SEDAN";
                 break;
             case 2:
                 vehicleName = "SEDAN SPORT";
@@ -169,8 +185,68 @@ public class GarageManager : MonoBehaviour
         return vehicleName;
     }
 
-  
+    public void SetCurrentVehicle()
+    {
+        int place = GarageCameraMovement.currentCameraFocusPlace;
+        int currentlySelectedVehID = PlayerProfile.ownedVehicles[0];
+        int newlySelectedVehID = PlayerProfile.ownedVehicles[place];
+
+        if (ownedVehicles[place] != 0)
+        {
+            if (place > 0 && place <= 10)
+            {
+                PlayerProfile.ownedVehicles[place] = currentlySelectedVehID;
+                PlayerProfile.ownedVehicles[0] = newlySelectedVehID;
+
+                InstantiateVehicles();
+            }
+        }
+
+        //After selection move camera to the place of id 0 so it will be looking at newly selected vehicle
+    }
+
+    public void ReadVehArray()
+    {
+        Debug.Log("Veh array: " + PlayerProfile.ownedVehicles[0] + " " + PlayerProfile.ownedVehicles[1] + " " + PlayerProfile.ownedVehicles[2] + " " + PlayerProfile.ownedVehicles[3] +
+             " " + PlayerProfile.ownedVehicles[4] + " " + PlayerProfile.ownedVehicles[5] + " " + PlayerProfile.ownedVehicles[6] + " " + PlayerProfile.ownedVehicles[7] + " " +
+            PlayerProfile.ownedVehicles[8] + " " + PlayerProfile.ownedVehicles[9]);
+
+    }
+
+    public void InstantiateVehicles()
+    {
+        if(!firstspawn) {
+            DestroyInstantiatedVehicles();
+        }
+        
+        //remove vehs instantiated before
+        
+        GetVehicleCount();
+        
+        CreateVehicle(ownedVehicles[0], 0, _rotation);
+        for (int i = 1; i < ownedVehicles.Length; i++)
+        {
+            if (ownedVehicles[i] > 0)
+            {
+                CreateVehicle(ownedVehicles[i], i , rotation);
+            }
+            
+        }
+
+        AssignColor();
+        firstspawn = false;
+    }
+
+    public void DestroyInstantiatedVehicles()
+    {
+        for (int id = 0; id<=10; id++)
+        {
+            GameObject toDestroy = GameObject.Find("ParkingLotVehicle" + id);
+            Destroy(toDestroy);
+            Debug.Log("ParkingLotVehicle" + id + " destroyed");
+        }
+        
+    }
     
-   
-    
+
 }

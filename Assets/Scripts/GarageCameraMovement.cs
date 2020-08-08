@@ -5,13 +5,16 @@ using UnityEngine;
 public class GarageCameraMovement : MonoBehaviour
 {
 
-    public int currentCameraFocusPlace = -1;
+    public static int currentCameraFocusPlace = -1;
     public GameObject vehNameGameObject;
     public GameObject garageGoBack;
     public GameObject garageTapAnywhere;
     TMPro.TextMeshProUGUI vehNameText;
+    GameObject currentVehicleGameObject;
 
-    // Start is called before the first frame update
+    //TODO: IF A SPOT YOU'RE ABOUT TO LOOK AT IS EMPTY - DON'T SHOW IT
+    //probably CheckIfEmpty() will do
+    //CheckIfEmpty { if ownedVehicles[currentCamLookingAt-1] - 0, currentCamLookingAt+=1, MoveCameraNext/Prev }
     void Start()
     {
         currentCameraFocusPlace = -1;
@@ -19,6 +22,7 @@ public class GarageCameraMovement : MonoBehaviour
         vehNameText.text = "CURRENT VEHICLE";//Rework with currently selected, maybe add another UI element 
         //or perhaps currently selected vehicle stands in front of them all and camera has also a special place like -1 is menu, 0 is selected car, others are parking lots
         //show top menu only when clicked anywhere
+        currentVehicleGameObject = GameObject.Find("ParkingLotVehicle0");
     }
 
     // Update is called once per frame
@@ -43,8 +47,9 @@ public class GarageCameraMovement : MonoBehaviour
             transform.position = new Vector3(53.6f, 111.3f, -285.54f);
             transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 60f);
             SetVehicleName(currentCameraFocusPlace);
+            HideCurrentVehicle();
         }
-        else if (currentCameraFocusPlace < 5) //if <1;5> then alg X, if 5 then switch to 2nd lane if <6;10> alg, 10->1 ect
+        else if (currentCameraFocusPlace < 5) 
         {
 
             currentCameraFocusPlace++;
@@ -98,6 +103,7 @@ public class GarageCameraMovement : MonoBehaviour
             transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 70f);
             currentCameraFocusPlace = 0;
             vehNameText.text = "SELECTED VEHICLE";
+            ShowCurrentVehicle();
         }
         else if (currentCameraFocusPlace < 6)
         {
@@ -111,7 +117,7 @@ public class GarageCameraMovement : MonoBehaviour
             transform.position = new Vector3(52.4f, 111.3f, -294.3f);
             SetVehicleName(currentCameraFocusPlace);
         }
-        else if (currentCameraFocusPlace < 10)
+        else if (currentCameraFocusPlace <= 10)
         {
             currentCameraFocusPlace--;
             transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y, transform.position.z - 2.2f);
@@ -129,5 +135,28 @@ public class GarageCameraMovement : MonoBehaviour
     {
         currentCameraFocusPlace = 0;
         MoveCameraPrevious();
+    }
+
+    public void ShowCurrentVehicle()
+    {
+        GameObject.Find("ParkingLotVehicle0").transform.position = new Vector3(54.34f, 110.22f, -292.46f);
+    }
+
+    public void HideCurrentVehicle()
+    {
+        GameObject.Find("ParkingLotVehicle0").transform.position = new Vector3(40f, 100f, -250f);
+    }
+
+    public void FocusCameraOnSelectedVehicle()
+    {
+        transform.position = new Vector3(47.7f, 111.5f, -288.9f);
+        transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 70f);
+        currentCameraFocusPlace = 0;
+        vehNameText.text = "SELECTED VEHICLE";
+        ShowCurrentVehicle();
+    }
+    public void DebugShowCurrentCameraSpotID()
+    {
+        Debug.Log(currentCameraFocusPlace);
     }
 }

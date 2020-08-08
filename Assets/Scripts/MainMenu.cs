@@ -72,7 +72,17 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    public void ShowCoinsAndExp()
+    {
+        GameObject.Find("Coins").LeanMoveLocalY(472, 0.7f); //MOVE FIND TO START()
+        GameObject.Find("Exp").LeanMoveLocalY(387, 0.7f);
+    }
     
+    public void HideCoinsAndExp()
+    {
+        GameObject.Find("Coins").LeanMoveLocalY(672, 0.7f); //MOVE FIND TO START()
+        GameObject.Find("Exp").LeanMoveLocalY(587, 0.7f);
+    }
 
     public void ChangeDepthOfField(float value)
     {
