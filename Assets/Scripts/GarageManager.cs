@@ -21,6 +21,7 @@ public class GarageManager : MonoBehaviour
     public int selectedVehicle = PlayerProfile.ownedVehicles[0];
     Quaternion rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
     Quaternion _rotation = new Quaternion(-0.214f, -11f, 0f, 90f);
+    Quaternion _rotationShop = new Quaternion(-0.214f, -255f, 0f, 90f);
 
     bool firstspawn = true;
 
@@ -140,6 +141,9 @@ public class GarageManager : MonoBehaviour
             case 10:
                 position = new Vector3(71.35f, 110.16f, -288.78f);
                 break;
+            case 11: //Shop
+                position = new Vector3(47.9f, 110.23f, -263.66f);
+                break;
         }
         return position;
     }
@@ -202,16 +206,9 @@ public class GarageManager : MonoBehaviour
             }
         }
 
-        //After selection move camera to the place of id 0 so it will be looking at newly selected vehicle
     }
 
-    public void ReadVehArray()
-    {
-        Debug.Log("Veh array: " + PlayerProfile.ownedVehicles[0] + " " + PlayerProfile.ownedVehicles[1] + " " + PlayerProfile.ownedVehicles[2] + " " + PlayerProfile.ownedVehicles[3] +
-             " " + PlayerProfile.ownedVehicles[4] + " " + PlayerProfile.ownedVehicles[5] + " " + PlayerProfile.ownedVehicles[6] + " " + PlayerProfile.ownedVehicles[7] + " " +
-            PlayerProfile.ownedVehicles[8] + " " + PlayerProfile.ownedVehicles[9]);
-
-    }
+   
 
     public void InstantiateVehicles()
     {
@@ -224,6 +221,7 @@ public class GarageManager : MonoBehaviour
         GetVehicleCount();
         
         CreateVehicle(ownedVehicles[0], 0, _rotation);
+        CreateVehicle(ownedVehicles[0], 11, _rotationShop);//Instantiate current vehicle into a shop scene
         for (int i = 1; i < ownedVehicles.Length; i++)
         {
             if (ownedVehicles[i] > 0)
@@ -239,7 +237,7 @@ public class GarageManager : MonoBehaviour
 
     public void DestroyInstantiatedVehicles()
     {
-        for (int id = 0; id<=10; id++)
+        for (int id = 0; id<=11; id++)
         {
             GameObject toDestroy = GameObject.Find("ParkingLotVehicle" + id);
             Destroy(toDestroy);
