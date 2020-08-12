@@ -33,6 +33,7 @@ public class GarageCameraMovement : MonoBehaviour
 
     public void MoveCameraNext()
     {
+        Debug.Log("Camera place before " + currentCameraFocusPlace);
         //Hide CurrentVehicle GameObject in case 1 so it won't be visible through 2-10 cases and don't forget to show it if it overlaps 10->1
         if (currentCameraFocusPlace == -1)
         {
@@ -79,13 +80,14 @@ public class GarageCameraMovement : MonoBehaviour
             garageTapAnywhere.SetActive(true);
             vehNameText.text = "UI SAYS GOODBYE";
         }
+        Debug.Log("Camera place after " +currentCameraFocusPlace);
         
     }
 
     public void MoveCameraPrevious()
     {
         //Show CurrentVehicle GameObject in case 1 so it will be visible in states -1 and 0
-        
+        Debug.Log("Camera place before " + currentCameraFocusPlace);
         if (currentCameraFocusPlace == 0)
         {
             //Back to garage main screen
@@ -109,7 +111,7 @@ public class GarageCameraMovement : MonoBehaviour
         {
             currentCameraFocusPlace--;
             transform.position = new Vector3(transform.position.x + 0.3f, transform.position.y, transform.position.z + 2.2f);
-            vehNameText.text = GarageManager.GetVehicleName(GarageManager.ownedVehicles[currentCameraFocusPlace-1]);
+            SetVehicleName(currentCameraFocusPlace);
         }
         else if (currentCameraFocusPlace == 6)
         {
@@ -123,12 +125,13 @@ public class GarageCameraMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y, transform.position.z - 2.2f);
             SetVehicleName(currentCameraFocusPlace);
         }
+        Debug.Log("Camera place after " + currentCameraFocusPlace);
 
     }
 
     void SetVehicleName(int currentCameraFocus)
     {
-        vehNameText.text = GarageManager.GetVehicleName(GarageManager.ownedVehicles[currentCameraFocus - 1]);
+       vehNameText.text = GarageManager.GetVehicleName(GarageManager.ownedVehicles[currentCameraFocus]);
     }
 
     public void HideGarageSelectorElements()

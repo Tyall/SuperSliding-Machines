@@ -11,7 +11,8 @@ public class PlayerProfile : MonoBehaviour
     public static int unlockedLevels = 2;
 
 
-    public static int[] ownedVehicles = new int[11] {8, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}; 
+    public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    public static int[] ownedVehiclesColors = new int[11] { 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 };
     //Rebuilding: first element is the CURRENT CAR, next 10 elements are parking lots. 4th is empty, player can have 11 cars in total 
     
     
@@ -19,7 +20,7 @@ public class PlayerProfile : MonoBehaviour
     //max 10, create a function which will check if you can buy another veh; checking when trying to buy a vehicle
     //also check if the user already has X type of vehicle so no dupes or maybe create a veh selling possibility
    
-    //Selected vehicle will have to remove the car from ownedVehicles list
+    
 
     //TODO : clear owned vehicles and make owned vehicles along with selectedVehicle be saved to a binary file
 

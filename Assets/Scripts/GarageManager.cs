@@ -14,11 +14,32 @@ public class GarageManager : MonoBehaviour
     public GameObject police;
     public GameObject race;
     public GameObject raceFuture;
+
+    public GameObject debugObject;
+
+    public Material materialGrey; //1
+    public Material materialLightBlue; //2
+    public Material materialRed; //3
+    public Material materialPurple; //4
+    public Material materialYellow; //5
+    public Material materialOrange; //6
+    public Material materialGreen; //7
+    public Material materialPink; //8
+    public Material materialDarkBlue; //9
+    public Material materialBlack; //10
+
+    public Material[] materialsArray;
+    Material material;
+
+    static int[] ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;
     public static int[] ownedVehicles = PlayerProfile.ownedVehicles;
+
     int vehCount;
-    Vector3 position;
     static string vehicleName;
     public int selectedVehicle = PlayerProfile.ownedVehicles[0];
+
+    Vector3 position;
+    
     Quaternion rotation = new Quaternion(-0.214f, 90f, 0f, -90f);
     Quaternion _rotation = new Quaternion(-0.214f, -11f, 0f, 90f);
     Quaternion _rotationShop = new Quaternion(-0.214f, -255f, 0f, 90f);
@@ -45,8 +66,6 @@ public class GarageManager : MonoBehaviour
     }
     void CreateVehicle(int vehID, int vehPOS, Quaternion rot)
     {
-
-
         Debug.Log("Created vehicle with ID " + vehID);
         switch (vehID)
         {
@@ -54,57 +73,140 @@ public class GarageManager : MonoBehaviour
             case 1:
                 var newObject = (GameObject)Instantiate(sedan, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
+                //newObject.transform.Find("body").GetComponent<MeshRenderer>().materials = materialsArray;
                 break;
             case 2:
                 newObject = (GameObject)Instantiate(sedanSport, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
             case 3:
                 newObject = (GameObject)Instantiate(suv, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
             case 4:
                 newObject = (GameObject)Instantiate(hatchbackSport, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
             case 5:
                 newObject = (GameObject)Instantiate(suvLuxury, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
             case 6:
                 newObject = (GameObject)Instantiate(truck, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
             case 7:
                 newObject = (GameObject)Instantiate(van, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
             case 8:
                 newObject = (GameObject)Instantiate(police, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
             case 9:
                 newObject = (GameObject)Instantiate(race, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
             case 10:
                 newObject = (GameObject)Instantiate(raceFuture, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
+                AssignMaterials(newObject, vehID);
                 break;
 
         }
 
     }
 
-    void AssignColor()
+    void AssignMaterials(GameObject target, int vehID)
     {
-        //This will be problematic
-        //Colors will have to go together with reinstantiating and other things so switching a vehicle would also switch its color etc.
+        //Some vehicles required special cases because they have extra parts or just different IDs
+        materialsArray = target.GetComponentInChildren<MeshRenderer>().materials;
+
+        if (vehID == 2)
+        {
+            Transform vehicle = target.transform.FindChild("body");
+            Transform spoiler = vehicle.transform.FindChild("spoiler");
+            Material[] spoilerMaterialsArray;
+            materialsArray[1] = AssignColor(vehID);
+            spoilerMaterialsArray = spoiler.GetComponent<MeshRenderer>().materials;
+            spoilerMaterialsArray[1] = AssignColor(vehID);
+            spoiler.GetComponent<MeshRenderer>().materials = spoilerMaterialsArray;
+
+        }   
+        else if (vehID == 9)
+        {
+            materialsArray[0] = AssignColor(vehID);
+        }
+        else
+        {
+            materialsArray[1] = AssignColor(vehID);
+        }
+        
+
+        
+        target.GetComponentInChildren<MeshRenderer>().materials = materialsArray;
+
+    }
+
+    public void DebugFunction()
+    {
+        AssignMaterials(debugObject, 6);
+
+    }
+
+    Material AssignColor(int vehID)
+    {
+        switch (ownedVehiclesColors[vehID])
+        {
+
+            
+            case 1:
+                material = materialGrey;
+                break;
+            case 2:
+                material = materialLightBlue;
+                break;
+            case 3:
+                material = materialRed; 
+                break;
+            case 4:
+                material = materialPurple;
+                break;
+            case 5:
+                material = materialYellow;
+                break;
+            case 6:
+                material = materialOrange;
+                break;
+            case 7:
+                material = materialGreen;
+                break;
+            case 8:
+                material = materialPink;
+                break;
+            case 9:
+                material = materialDarkBlue;
+                break;
+            case 10:
+                material = materialBlack;
+                break;
+            
+        }
+        return material;
     }
 
     Vector3 GetParkingPosition(int GaragePosition)
     {
-
+        
         Debug.Log("Garage position: " + GaragePosition);
         switch (GaragePosition)
         {
@@ -150,6 +252,8 @@ public class GarageManager : MonoBehaviour
 
     public static string GetVehicleName(int vehID)
     {
+        //vehID -= 1;
+        Debug.Log("GetVehName vehId " + vehID);
         switch (vehID)
         {
             case 0:
@@ -231,7 +335,7 @@ public class GarageManager : MonoBehaviour
             
         }
 
-        AssignColor();
+        
         firstspawn = false;
     }
 
