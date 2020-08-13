@@ -51,7 +51,7 @@ public class MainMenu : MonoBehaviour
 
     public void ShowLevelSelection()
     {
-        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 0.7f); //MOVE FIND TO START()
+        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 0.7f); //REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
         Camera cam = GameObject.Find("Camera").GetComponent<Camera>();
         postProcessVolume = cam.GetComponent<PostProcessVolume>();
         ChangeDepthOfField(0.1f);
@@ -60,7 +60,7 @@ public class MainMenu : MonoBehaviour
 
     public void ShowGarageUI()
     {
-        GameObject.Find("GarageUI").LeanMoveLocalY(420, 0.7f);//MOVE FIND TO START()
+        GameObject.Find("GarageUI").LeanMoveLocalY(420, 0.7f);//REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
         GameObject.Find("GarageButtons").LeanMoveLocalY(80, 0.7f);
         
     }
@@ -72,15 +72,27 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    public void ShowShopUI()
+    {
+        GameObject.Find("ShopUI").LeanMoveLocalY(420, 0.7f);//REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
+        GameObject.Find("ShopButtons").LeanMoveLocalY(80, 0.7f);
+    }
+
+    static public void HideShopUI()
+    {
+        GameObject.Find("ShopUI").LeanMoveLocalY(650, 0.7f);
+        GameObject.Find("ShopButtons").LeanMoveLocalY(1080, 0.7f);
+    }
+
     public void ShowCoinsAndExp()
     {
-        GameObject.Find("Coins").LeanMoveLocalY(472, 0.7f); //MOVE FIND TO START()
+        GameObject.Find("Coins").LeanMoveLocalY(472, 0.7f); //REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
         GameObject.Find("Exp").LeanMoveLocalY(387, 0.7f);
     }
     
     public void HideCoinsAndExp()
     {
-        GameObject.Find("Coins").LeanMoveLocalY(672, 0.7f); //MOVE FIND TO START()
+        GameObject.Find("Coins").LeanMoveLocalY(672, 0.7f); //REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
         GameObject.Find("Exp").LeanMoveLocalY(587, 0.7f);
     }
 

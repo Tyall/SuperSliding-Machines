@@ -133,8 +133,8 @@ public class GarageManager : MonoBehaviour
 
         if (vehID == 2)
         {
-            Transform vehicle = target.transform.FindChild("body");
-            Transform spoiler = vehicle.transform.FindChild("spoiler");
+            Transform vehicle = target.transform.Find("body");
+            Transform spoiler = vehicle.transform.Find("spoiler");
             Material[] spoilerMaterialsArray;
             materialsArray[1] = AssignColor(vehID);
             spoilerMaterialsArray = spoiler.GetComponent<MeshRenderer>().materials;
@@ -295,7 +295,7 @@ public class GarageManager : MonoBehaviour
 
     public void SetCurrentVehicle()
     {
-        int place = GarageCameraMovement.currentCameraFocusPlace;
+        int place = GarageCameraMovement.currentCameraFocus;
         int currentlySelectedVehID = PlayerProfile.ownedVehicles[0];
         int newlySelectedVehID = PlayerProfile.ownedVehicles[place];
 
