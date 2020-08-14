@@ -12,7 +12,7 @@ public class PlayerProfile : MonoBehaviour
 
 
     public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    public static int[] ownedVehiclesColors = new int[11] { 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 };
+    public static int[] ownedVehiclesColors = new int[11] { 3, 6, 5, 7, 6, 2, 10, 1, 4, 2, 7 };
     //Rebuilding: first element is the CURRENT CAR, next 10 elements are parking lots. 4th is empty, player can have 11 cars in total 
     
     

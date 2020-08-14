@@ -339,6 +339,7 @@ public class GarageManager : MonoBehaviour
         firstspawn = false;
     }
 
+
     public void DestroyInstantiatedVehicles()
     {
         for (int id = 0; id<=11; id++)
