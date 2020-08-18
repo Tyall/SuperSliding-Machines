@@ -48,8 +48,7 @@ public class GarageManager : MonoBehaviour
 
   
     //TODO:
-    //1. Clean the code
-    //2. Turn off or tweak the blur
+    //1. Turn off or tweak the blur
     void Start()
     {
         InstantiateVehicles();
@@ -74,7 +73,6 @@ public class GarageManager : MonoBehaviour
                 var newObject = (GameObject)Instantiate(sedan, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
                 AssignMaterials(newObject, vehID);
-                //newObject.transform.Find("body").GetComponent<MeshRenderer>().materials = materialsArray;
                 break;
             case 2:
                 newObject = (GameObject)Instantiate(sedanSport, GetParkingPosition(vehPOS), rot);
@@ -319,13 +317,11 @@ public class GarageManager : MonoBehaviour
         if(!firstspawn) {
             DestroyInstantiatedVehicles();
         }
-        
-        //remove vehs instantiated before
-        
+               
         GetVehicleCount();
         
         CreateVehicle(ownedVehicles[0], 0, _rotation);
-        CreateVehicle(ownedVehicles[0], 11, _rotationShop);//Instantiate current vehicle into a shop scene
+        CreateVehicle(ownedVehicles[0], 11, _rotationShop); //Instantiate current vehicle into a shop scene
         for (int i = 1; i < ownedVehicles.Length; i++)
         {
             if (ownedVehicles[i] > 0)

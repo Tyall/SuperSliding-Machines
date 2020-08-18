@@ -10,7 +10,6 @@ public class GarageCameraMovement : MonoBehaviour
     public GameObject garageGoBack;
     public GameObject garageTapAnywhere;
     TMPro.TextMeshProUGUI vehNameText;
-    GameObject currentVehicleGameObject;
 
     //TODO: IF A SPOT YOU'RE ABOUT TO LOOK AT IS EMPTY - DON'T SHOW IT
     //probably CheckIfEmpty() will do
@@ -19,13 +18,8 @@ public class GarageCameraMovement : MonoBehaviour
     {
         currentCameraFocus = -1;
         vehNameText = vehNameGameObject.GetComponent<TMPro.TextMeshProUGUI>();
-        vehNameText.text = "CURRENT VEHICLE";//Rework with currently selected, maybe add another UI element 
-        //or perhaps currently selected vehicle stands in front of them all and camera has also a special place like -1 is menu, 0 is selected car, others are parking lots
-        //show top menu only when clicked anywhere
-        currentVehicleGameObject = GameObject.Find("ParkingLotVehicle0");
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -78,14 +72,13 @@ public class GarageCameraMovement : MonoBehaviour
             garageGoBack.SetActive(true);
             garageTapAnywhere.SetActive(true);
             vehNameText.text = "UI SAYS GOODBYE";
+            ShowCurrentVehicle();
         }
         Debug.Log("Camera place after " +currentCameraFocus);
-        
     }
 
     public void MoveCameraPrevious()
     {
-        //Show CurrentVehicle GameObject in case 1 so it will be visible in states -1 and 0
         Debug.Log("Camera place before " + currentCameraFocus);
         if (currentCameraFocus == 0)
         {

@@ -8,21 +8,42 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    [SerializeField] private PostProcessVolume postProcessVolume;
+    [SerializeField][HideInInspector] private PostProcessVolume postProcessVolume;
         
     private GameObject[] levelPanels;
     public static int levelNum;
 
     static GameObject placeholderCoins;
     static GameObject placeholderExp;
+
+    public GameObject Logo;
+    public GameObject Camera;
+    public GameObject GarageUI;
+    public GameObject GarageButtons;
+    public GameObject ShopUI;
+    public GameObject ShopButtons;
+    public GameObject Coins;
+    public GameObject Exp;
+    public GameObject LevelSelectionBG;
+
+    static GameObject _GarageUI;
+    static GameObject _GarageButtons;
+    static GameObject _ShopUI;
+    static GameObject _ShopButtons;
   
 
     public void Start()
     {
+        //LevelPanels is an array of all panels involving details of the levels. It has to be handled with FindWithTag
         levelPanels = GameObject.FindGameObjectsWithTag("LevelDetails");
 
-        placeholderCoins = GameObject.Find("CoinsText");
-        placeholderExp = GameObject.Find("ExpText");
+        Camera cam = Camera.GetComponent<Camera>();
+        postProcessVolume = cam.GetComponent<PostProcessVolume>();      
+
+        _GarageUI = GarageUI;
+        _GarageButtons = GarageButtons;
+        _ShopUI = ShopUI;
+        _ShopButtons = ShopButtons;
 
         UpdateUI();
     }
@@ -35,65 +56,63 @@ public class MainMenu : MonoBehaviour
 
    public static void UpdateUI()
     {
+        //This method is used only once, at start of the Main Menu script so it's not really taking much resources with the Finds
+        placeholderCoins = GameObject.Find("CoinsText");
+        placeholderExp = GameObject.Find("ExpText");
         placeholderCoins.GetComponent<TMPro.TextMeshProUGUI>().text = "" + PlayerProfile.playerCoins;
         placeholderExp.GetComponent<TMPro.TextMeshProUGUI>().text = "" + PlayerProfile.playerExp;
     }
 
     public void HideLogo()
     {
-        GameObject.Find("Logo").LeanMoveLocalY(750, 0.5f);
+        Logo.LeanMoveLocalY(750, 0.5f);
     }
 
     public void ShowLogo()
     {
-        GameObject.Find("Logo").LeanMoveLocalY(345, 0.5f);
+        Logo.LeanMoveLocalY(345, 0.5f);
     }
 
     public void ShowLevelSelection()
     {
-        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(100, 0.7f); //REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
-        Camera cam = GameObject.Find("Camera").GetComponent<Camera>();
-        postProcessVolume = cam.GetComponent<PostProcessVolume>();
+        LevelSelectionBG.LeanMoveLocalY(100, 0.7f); 
         ChangeDepthOfField(0.1f);
-        
     }
 
     public void ShowGarageUI()
     {
-        GameObject.Find("GarageUI").LeanMoveLocalY(420, 0.7f);//REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
-        GameObject.Find("GarageButtons").LeanMoveLocalY(80, 0.7f);
-        
+        GarageUI.LeanMoveLocalY(420, 0.7f);
+        GarageButtons.LeanMoveLocalY(80, 0.7f);
     }
 
     static public void HideGarageUI()
     {
-        GameObject.Find("GarageUI").LeanMoveLocalY(650, 0.7f);
-        GameObject.Find("GarageButtons").LeanMoveLocalY(1080, 0.7f);
-        
+        _GarageUI.LeanMoveLocalY(650, 0.7f); 
+        _GarageButtons.LeanMoveLocalY(1080, 0.7f);
     }
 
     public void ShowShopUI()
     {
-        GameObject.Find("ShopUI").LeanMoveLocalY(420, 0.7f);//REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
-        GameObject.Find("ShopButtons").LeanMoveLocalY(80, 0.7f);
+        ShopUI.LeanMoveLocalY(420, 0.7f);
+        ShopButtons.LeanMoveLocalY(80, 0.7f);
     }
 
     static public void HideShopUI()
     {
-        GameObject.Find("ShopUI").LeanMoveLocalY(650, 0.7f);
-        GameObject.Find("ShopButtons").LeanMoveLocalY(1080, 0.7f);
+        _ShopUI.LeanMoveLocalY(650, 0.7f);
+        _ShopButtons.LeanMoveLocalY(1080, 0.7f);
     }
 
     public void ShowCoinsAndExp()
     {
-        GameObject.Find("Coins").LeanMoveLocalY(472, 0.7f); //REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
-        GameObject.Find("Exp").LeanMoveLocalY(387, 0.7f);
+        Coins.LeanMoveLocalY(472, 0.7f); 
+        Exp.LeanMoveLocalY(387, 0.7f);
     }
     
     public void HideCoinsAndExp()
     {
-        GameObject.Find("Coins").LeanMoveLocalY(672, 0.7f); //REPLACE WITH PUBLIC VARS AND ASSIGN THEM IN INSPECTOR
-        GameObject.Find("Exp").LeanMoveLocalY(587, 0.7f);
+        Coins.LeanMoveLocalY(672, 0.7f); 
+        Exp.LeanMoveLocalY(587, 0.7f);
     }
 
     public void ChangeDepthOfField(float value)
@@ -102,17 +121,13 @@ public class MainMenu : MonoBehaviour
         var profile = volume.sharedProfile;
         var depthOfField = profile.GetSetting<DepthOfField>();
         depthOfField.aperture.value = value;
-        //make it progressive?
+        //TODO: Try to make it progressive
     }
 
     public void HideLevelSelection()
     {
-        
-        GameObject.Find("LevelSelectionBG").LeanMoveLocalY(1000, 0.7f);
-        Camera cam = GameObject.Find("Camera").GetComponent<Camera>();
-        postProcessVolume = cam.GetComponent<PostProcessVolume>();
+        LevelSelectionBG.LeanMoveLocalY(1000, 0.7f);
         ChangeDepthOfField(4.1f);
-
         ShowLogo();
     }
 
@@ -132,9 +147,7 @@ public class MainMenu : MonoBehaviour
     public void LoadLevel()
     {
         Debug.Log("Load Level");
-        SceneManager.LoadScene(levelNum);
-        
-        
+        SceneManager.LoadScene(levelNum); 
     }
 
     public void ChooseLevelPopUp()
