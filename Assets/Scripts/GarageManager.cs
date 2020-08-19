@@ -36,7 +36,6 @@ public class GarageManager : MonoBehaviour
 
     int vehCount;
     static string vehicleName;
-    public int selectedVehicle = PlayerProfile.ownedVehicles[0];
 
     Vector3 position;
     
@@ -52,6 +51,13 @@ public class GarageManager : MonoBehaviour
     void Start()
     {
         InstantiateVehicles();
+    }
+
+    
+    public static void UpdateVehicles()
+    {
+        ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;
+        ownedVehicles = PlayerProfile.ownedVehicles;
     }
 
     void GetVehicleCount() //Is it even useful?
@@ -119,9 +125,9 @@ public class GarageManager : MonoBehaviour
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
                 AssignMaterials(newObject, vehID);
                 break;
-
+                
         }
-
+        
     }
 
     void AssignMaterials(GameObject target, int vehID)
@@ -155,18 +161,12 @@ public class GarageManager : MonoBehaviour
 
     }
 
-    public void DebugFunction()
-    {
-        AssignMaterials(debugObject, 6);
-
-    }
 
     Material AssignColor(int vehID)
     {
-        switch (ownedVehiclesColors[vehID])
+        switch (PlayerProfile.ownedVehiclesColors[vehID])
         {
 
-            
             case 1:
                 material = materialGrey;
                 break;
@@ -199,6 +199,12 @@ public class GarageManager : MonoBehaviour
                 break;
             
         }
+        Debug.Log("returning material " + material +" based on vehid " +vehID + "in array: " + ownedVehiclesColors[vehID]);
+        //ERROR IS CAUSED BY NULL MATERIAL
+        //MATERIALS ARE CORRECTLY REFERENCED BUT NONE OF THE CASES IS TRIGGERED
+        //TRACE THE VEHID
+        //PlayerProfile.ownedVehiclesColors[vehID] is null so ownedVehiclesColors[vehID] is also null
+        //CHECK WHY
         return material;
     }
 
@@ -345,6 +351,13 @@ public class GarageManager : MonoBehaviour
             Debug.Log("ParkingLotVehicle" + id + " destroyed");
         }
         
+    }
+
+    public void DEBUGVehArray()
+    {
+        
+            Debug.Log("OwnedVehs |0: " + ownedVehicles[0] + " |1: " + ownedVehicles[1] + " |2: " + ownedVehicles[2] + " |3: " + ownedVehicles[3] + " |4: " + ownedVehicles[4]);
+            Debug.Log("OwnedVehsColors |0: " + ownedVehiclesColors[0] + " |1: " + ownedVehiclesColors[1] + " |2: " + ownedVehiclesColors[2] + " |3: " + ownedVehiclesColors[3] + " |4: " + ownedVehiclesColors[4]);
     }
     
 

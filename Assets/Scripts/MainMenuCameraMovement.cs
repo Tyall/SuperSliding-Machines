@@ -37,7 +37,7 @@ public class MainMenuCameraMovement : MonoBehaviour
 
         if (moveToMenuFromGarage == true)
         {
-            if (transform.rotation.y > 0.525)
+            if (transform.rotation.y > 0.53)
             {
                 transform.Rotate(0, Time.deltaTime * -movementSpeed, 0);
             }

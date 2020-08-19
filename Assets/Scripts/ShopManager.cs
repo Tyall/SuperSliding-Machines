@@ -63,34 +63,24 @@ public class ShopManager : MonoBehaviour
         {
             case 1:
                 return "SEDAN \n1000 COINS";
-                break;
             case 2:
                 return "SEDAN SPORT \n5000 COINS";
-                break;
             case 3:
                 return "SUV \n10000 COINS";
-                break;
             case 4:
                 return "HATCHBACK SPORT \n15000 COINS";
-                break;
             case 5:
                 return "SUV LUXURY \n20000 COINS";
-                break;
             case 6:
                 return "TRUCK \n25000 COINS";
-                break;
             case 7:
                 return "VAN \n30000 COINS";
-                break;
             case 8:
                 return "POLICE \n35000 COINS";
-                break;
             case 9:
                 return "RACE \n50000 COINS";
-                break;
             case 10:
                 return "RACE FUTURE \n100000 COINS";
-                break;
         }
         return null;
     }

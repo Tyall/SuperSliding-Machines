@@ -11,10 +11,10 @@ public class PlayerData
     public int playerCoins;
     public int playerExp;
     public int unlockedLevels;
-   // public int[] ownedVehicles;
-   // public int[] ownedVehiclesColors;
-    
-    
+    public int[] ownedVehicles = new int[11];
+    public int[] ownedVehiclesColors = new int[11];
+
+
     public PlayerData ()
     {
         isFirstStartup = PlayerProfile.isFirstStartup;
@@ -23,8 +23,8 @@ public class PlayerData
         playerCoins = PlayerProfile.playerCoins;
         playerExp = PlayerProfile.playerExp;
         unlockedLevels = PlayerProfile.unlockedLevels;
-        //ownedVehicles = PlayerProfile.ownedVehicles;
-        //ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;
+        ownedVehicles = PlayerProfile.ownedVehicles;
+        ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;
     }
 
 }

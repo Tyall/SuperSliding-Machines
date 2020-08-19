@@ -11,19 +11,18 @@ public class PlayerProfile : MonoBehaviour
     public static int playerCoins;
     public static int playerExp;
 
-    public static int unlockedLevels = 2; //Temporary solution. Completing a N level will unlock N+1 level
+    //public static int unlockedLevels = 2; //Temporary solution. Completing a N level will unlock N+1 level
 
-    public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    public static int[] ownedVehiclesColors = new int[11] {3, 6, 5, 7, 6, 2, 10, 1, 4, 2, 7};
+    //public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    //public static int[] ownedVehiclesColors = new int[11] {3, 6, 5, 7, 6, 2, 10, 1, 4, 2, 7};
 
-    //public static int unlockedLevels;
-    //public static int[] ownedVehicles = new int[11];
-    //public static int[] ownedVehiclesColors = new int[11];
+    public static int unlockedLevels;
+    public static int[] ownedVehicles = new int[11];
+    public static int[] ownedVehiclesColors = new int[11];
 
     //Explanation of the ownedVehicles arrays: First element is the CURRENT CAR, next 10 elements are parking lots. Player can have 11 cars in total
     //Temporary solution. Player will start with a sedan or perhaps 1000 coins and the tutorial will force player to buy a vehicle and maybe repaint it (1000 coins + repaint cost)
     //public static bool isTutorial;
-
 
 
 
@@ -37,22 +36,41 @@ public class PlayerProfile : MonoBehaviour
     {
         LoadPlayer();
 
-        //Code below isn't working
-        if (isFirstStartup){
-            FirstStartupSetupTest();
-        }
-        
+        DebugResetFirstTimeOpening();
+
+        FirstStartupSetupTest();
+        GarageManager.UpdateVehicles();
     }
 
+    public void DebugResetFirstTimeOpening()
+    {
+        PlayerPrefs.SetInt("FIRSTTIMEOPENING", 1);
+    }
     public void FirstStartupSetupTest()
     {
-        //Not working
-        unlockedLevels = 3;
-        ownedVehicles[0] = 1;
-        ownedVehiclesColors[0] = 3;
-        isFirstStartup = false;
-        Debug.Log("First Startup");
-        SavePlayer();
+
+        if (PlayerPrefs.GetInt("FIRSTTIMEOPENING", 1) == 1)
+        {
+            Debug.Log("First Time Opening");
+            PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
+            unlockedLevels = 3;
+            ownedVehicles = new int[11] {2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            ownedVehiclesColors = new int[11] {7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            
+            SaveSystem.SavePlayer();
+        }
+        else
+        {
+            
+            Debug.Log("Not First Time Opening");
+        }
+
+        //It has to reinstantiate vehicles or sth
+        
+        
+
+        
+        
     }
     public static void UpdateProfile(int coin, int exp)
     {
@@ -77,8 +95,8 @@ public class PlayerProfile : MonoBehaviour
         playerCoins = data.playerCoins;
         playerExp = data.playerExp;
         unlockedLevels = data.unlockedLevels;
-        //ownedVehicles = data.ownedVehicles;
-        //ownedVehiclesColors = data.ownedVehiclesColors;
+        ownedVehicles = data.ownedVehicles;
+        ownedVehiclesColors = data.ownedVehiclesColors;
 
         MainMenu.UpdateUI(); 
     }
