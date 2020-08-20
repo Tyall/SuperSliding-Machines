@@ -11,8 +11,8 @@ public class PlayerData
     public int playerCoins;
     public int playerExp;
     public int unlockedLevels;
-    public int[] ownedVehicles = new int[11];
-    public int[] ownedVehiclesColors = new int[11];
+    public int[] ownedVehicles;
+    public int[] ownedVehiclesColors;
 
 
     public PlayerData ()

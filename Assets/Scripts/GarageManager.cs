@@ -48,16 +48,18 @@ public class GarageManager : MonoBehaviour
   
     //TODO:
     //1. Turn off or tweak the blur
-    void Start()
+    public void Start()
     {
         InstantiateVehicles();
     }
 
     
-    public static void UpdateVehicles()
+    public void UpdateVehicles()
     {
-        ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;
+        
         ownedVehicles = PlayerProfile.ownedVehicles;
+        ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;
+        InstantiateVehicles();
     }
 
     void GetVehicleCount() //Is it even useful?
@@ -69,7 +71,7 @@ public class GarageManager : MonoBehaviour
         }
         Debug.Log("vehCount = " + vehCount);
     }
-    void CreateVehicle(int vehID, int vehPOS, Quaternion rot)
+    void CreateVehicle(int vehID, int vehPOS, Quaternion rot, int vehPosInArray)
     {
         Debug.Log("Created vehicle with ID " + vehID);
         switch (vehID)
@@ -78,59 +80,59 @@ public class GarageManager : MonoBehaviour
             case 1:
                 var newObject = (GameObject)Instantiate(sedan, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 2:
                 newObject = (GameObject)Instantiate(sedanSport, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 3:
                 newObject = (GameObject)Instantiate(suv, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 4:
                 newObject = (GameObject)Instantiate(hatchbackSport, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 5:
                 newObject = (GameObject)Instantiate(suvLuxury, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 6:
                 newObject = (GameObject)Instantiate(truck, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 7:
                 newObject = (GameObject)Instantiate(van, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 8:
                 newObject = (GameObject)Instantiate(police, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 9:
                 newObject = (GameObject)Instantiate(race, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
             case 10:
                 newObject = (GameObject)Instantiate(raceFuture, GetParkingPosition(vehPOS), rot);
                 newObject.name = ("ParkingLotVehicle" + vehPOS);
-                AssignMaterials(newObject, vehID);
+                AssignMaterials(newObject, vehID, vehPosInArray);
                 break;
                 
         }
         
     }
 
-    void AssignMaterials(GameObject target, int vehID)
+    void AssignMaterials(GameObject target, int vehID, int vehPosInArray)
     {
         //Some vehicles required special cases because they have extra parts or just different IDs
         materialsArray = target.GetComponentInChildren<MeshRenderer>().materials;
@@ -140,19 +142,19 @@ public class GarageManager : MonoBehaviour
             Transform vehicle = target.transform.Find("body");
             Transform spoiler = vehicle.transform.Find("spoiler");
             Material[] spoilerMaterialsArray;
-            materialsArray[1] = AssignColor(vehID);
+            materialsArray[1] = AssignColor(vehPosInArray);
             spoilerMaterialsArray = spoiler.GetComponent<MeshRenderer>().materials;
-            spoilerMaterialsArray[1] = AssignColor(vehID);
+            spoilerMaterialsArray[1] = AssignColor(vehPosInArray);
             spoiler.GetComponent<MeshRenderer>().materials = spoilerMaterialsArray;
 
         }   
         else if (vehID == 9)
         {
-            materialsArray[0] = AssignColor(vehID);
+            materialsArray[0] = AssignColor(vehPosInArray);
         }
         else
         {
-            materialsArray[1] = AssignColor(vehID);
+            materialsArray[1] = AssignColor(vehPosInArray);
         }
         
 
@@ -164,6 +166,10 @@ public class GarageManager : MonoBehaviour
 
     Material AssignColor(int vehID)
     {
+        //Debug.Log("ownedVehiclesColors[vehID]: " + ownedVehiclesColors[vehID]);
+        //Debug.Log("ownedVehiclesColors[0]: " + ownedVehiclesColors[0] + " [1]: " + ownedVehiclesColors[1] + " [2]: " + ownedVehiclesColors[2] + " [3]: " + ownedVehiclesColors[3]
+           // + " [4]: " + ownedVehiclesColors[4] + " [5]: " + ownedVehiclesColors[5] + " [6]: " + ownedVehiclesColors[6] + " [7]: " + ownedVehiclesColors[7] + " [8]: " + ownedVehiclesColors[8]
+           // + " [9]: " + ownedVehiclesColors[9] + " [10]: " + ownedVehiclesColors[10] + " vehID: " + vehID + " ownedVehiclesColors[vehID]: " + ownedVehiclesColors[vehID]);
         switch (PlayerProfile.ownedVehiclesColors[vehID])
         {
 
@@ -199,12 +205,9 @@ public class GarageManager : MonoBehaviour
                 break;
             
         }
-        Debug.Log("returning material " + material +" based on vehid " +vehID + "in array: " + ownedVehiclesColors[vehID]);
-        //ERROR IS CAUSED BY NULL MATERIAL
-        //MATERIALS ARE CORRECTLY REFERENCED BUT NONE OF THE CASES IS TRIGGERED
-        //TRACE THE VEHID
-        //PlayerProfile.ownedVehiclesColors[vehID] is null so ownedVehiclesColors[vehID] is also null
-        //CHECK WHY
+        //Debug.Log("returning material " + material +" based on vehid " +vehID + "in array: " + ownedVehiclesColors[vehID]);
+        
+        //NEWEST: ERROR IS CAUSED BY WRONG IMPLEMENTATION OF COLOR ASSIGNING. VEHID CANNOT BE PASSED OR IT HAS TO BE VEHID-SOMETHING
         return material;
     }
 
@@ -302,6 +305,8 @@ public class GarageManager : MonoBehaviour
         int place = GarageCameraMovement.currentCameraFocus;
         int currentlySelectedVehID = PlayerProfile.ownedVehicles[0];
         int newlySelectedVehID = PlayerProfile.ownedVehicles[place];
+        int currentlySelectedVehColor = PlayerProfile.ownedVehiclesColors[0];
+        int newlySelectedVehColor = PlayerProfile.ownedVehiclesColors[place];
 
         if (ownedVehicles[place] != 0)
         {
@@ -309,7 +314,9 @@ public class GarageManager : MonoBehaviour
             {
                 PlayerProfile.ownedVehicles[place] = currentlySelectedVehID;
                 PlayerProfile.ownedVehicles[0] = newlySelectedVehID;
-
+                PlayerProfile.ownedVehiclesColors[place] = currentlySelectedVehColor;
+                PlayerProfile.ownedVehiclesColors[0] = newlySelectedVehColor;
+                //Test a lot times if it works
                 InstantiateVehicles();
             }
         }
@@ -326,13 +333,13 @@ public class GarageManager : MonoBehaviour
                
         GetVehicleCount();
         
-        CreateVehicle(ownedVehicles[0], 0, _rotation);
-        CreateVehicle(ownedVehicles[0], 11, _rotationShop); //Instantiate current vehicle into a shop scene
+        CreateVehicle(ownedVehicles[0], 0, _rotation, 0);
+        CreateVehicle(ownedVehicles[0], 11, _rotationShop, 0); //Instantiate current vehicle into a shop scene
         for (int i = 1; i < ownedVehicles.Length; i++)
         {
             if (ownedVehicles[i] > 0)
             {
-                CreateVehicle(ownedVehicles[i], i , rotation);
+                CreateVehicle(ownedVehicles[i], i , rotation, i);
             }
             
         }

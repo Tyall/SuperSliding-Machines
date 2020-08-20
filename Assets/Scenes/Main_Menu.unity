@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: INSTANT
+  m_text: SAVE GAME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1305,10 +1305,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 208037069}
-    characterCount: 7
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -3952,8 +3952,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1974065222}
-        m_MethodName: InstantiateVehicles
+      - m_Target: {fileID: 849933972}
+        m_MethodName: SavePlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4144,7 +4144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LOG
+  m_text: RESET 1ST
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4213,10 +4213,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 707883490}
-    characterCount: 3
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -5046,8 +5046,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1974065222}
-        m_MethodName: DEBUGVehArray
+      - m_Target: {fileID: 849933972}
+        m_MethodName: DebugResetFirstTimeOpening
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5202,6 +5202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea4618af91af42439befa5f46752908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GManager: {fileID: 1974065220}
 --- !u!4 &849933973
 Transform:
   m_ObjectHideFlags: 0
@@ -9561,7 +9562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -51.80005, y: 648}
+  m_AnchoredPosition: {x: -51.80017, y: 648}
   m_SizeDelta: {x: -658.4774, y: 228.63019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1742990189
@@ -10827,7 +10828,6 @@ MonoBehaviour:
   materialDarkBlue: {fileID: 2100000, guid: 90f8f777936aaf646b6c0ce6749b7969, type: 2}
   materialBlack: {fileID: 2100000, guid: e82bf77661368494e83d8b6564ccb101, type: 2}
   materialsArray: []
-  selectedVehicle: 8
 --- !u!1 &2033329362
 GameObject:
   m_ObjectHideFlags: 0

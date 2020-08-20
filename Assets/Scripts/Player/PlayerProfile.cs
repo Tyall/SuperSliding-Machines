@@ -17,8 +17,10 @@ public class PlayerProfile : MonoBehaviour
     //public static int[] ownedVehiclesColors = new int[11] {3, 6, 5, 7, 6, 2, 10, 1, 4, 2, 7};
 
     public static int unlockedLevels;
-    public static int[] ownedVehicles = new int[11];
-    public static int[] ownedVehiclesColors = new int[11];
+    public static int[] ownedVehicles;
+    public static int[] ownedVehiclesColors;
+
+    public GameObject GManager;
 
     //Explanation of the ownedVehicles arrays: First element is the CURRENT CAR, next 10 elements are parking lots. Player can have 11 cars in total
     //Temporary solution. Player will start with a sedan or perhaps 1000 coins and the tutorial will force player to buy a vehicle and maybe repaint it (1000 coins + repaint cost)
@@ -36,15 +38,18 @@ public class PlayerProfile : MonoBehaviour
     {
         LoadPlayer();
 
-        DebugResetFirstTimeOpening();
+        //DebugResetFirstTimeOpening();
 
         FirstStartupSetupTest();
-        GarageManager.UpdateVehicles();
+
+        GManager.GetComponent<GarageManager>().UpdateVehicles();
+
     }
 
     public void DebugResetFirstTimeOpening()
     {
         PlayerPrefs.SetInt("FIRSTTIMEOPENING", 1);
+        Debug.Log("First time opening flag reseted");
     }
     public void FirstStartupSetupTest()
     {
@@ -54,9 +59,10 @@ public class PlayerProfile : MonoBehaviour
             Debug.Log("First Time Opening");
             PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
             unlockedLevels = 3;
-            ownedVehicles = new int[11] {2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-            ownedVehiclesColors = new int[11] {7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-            
+            ownedVehicles = new int[11] {2, 4, 7, 0, 0, 0, 0, 0, 0, 0, 0};
+            ownedVehiclesColors = new int[11] {7, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0};
+
+
             SaveSystem.SavePlayer();
         }
         else
@@ -65,7 +71,6 @@ public class PlayerProfile : MonoBehaviour
             Debug.Log("Not First Time Opening");
         }
 
-        //It has to reinstantiate vehicles or sth
         
         
 
