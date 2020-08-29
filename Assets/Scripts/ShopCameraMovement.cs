@@ -165,7 +165,7 @@ public class ShopCameraMovement : MonoBehaviour
         transform.position = new Vector3(43.4f, 113.4f, -280.75f);
         transform.rotation = new Quaternion(1.8f, 6.02f, -2.2f, 65f); //z -1.7 kinda worked except garage
         currentCameraFocus = -1;
-        MainMenu.HideShopUI();
+        //MainMenu.HideShopUI();
         shopTopBack.SetActive(true);
         shopTapAnywhere.SetActive(true);
     }

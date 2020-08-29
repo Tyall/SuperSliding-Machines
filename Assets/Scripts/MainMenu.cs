@@ -66,11 +66,13 @@ public class MainMenu : MonoBehaviour
     public void HideLogo()
     {
         Logo.LeanMoveLocalY(750, 0.5f);
+        HideCoinsAndExp();
     }
 
     public void ShowLogo()
     {
         Logo.LeanMoveLocalY(345, 0.5f);
+        ShowCoinsAndExp();
     }
 
     public void ShowLevelSelection()
@@ -85,7 +87,7 @@ public class MainMenu : MonoBehaviour
         GarageButtons.LeanMoveLocalY(80, 0.7f);
     }
 
-    static public void HideGarageUI()
+    public void HideGarageUI()
     {
         _GarageUI.LeanMoveLocalY(650, 0.7f); 
         _GarageButtons.LeanMoveLocalY(1080, 0.7f);
@@ -97,7 +99,7 @@ public class MainMenu : MonoBehaviour
         ShopButtons.LeanMoveLocalY(80, 0.7f);
     }
 
-    static public void HideShopUI()
+    public void HideShopUI()
     {
         _ShopUI.LeanMoveLocalY(650, 0.7f);
         _ShopButtons.LeanMoveLocalY(1080, 0.7f);

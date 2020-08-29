@@ -68,7 +68,7 @@ public class GarageCameraMovement : MonoBehaviour
             currentCameraFocus = -1;
             transform.position = new Vector3(43.38f, 113.37f, -280.75f);
             transform.rotation = new Quaternion(6.168f, 129.36f, -0.316f, 65f);
-            MainMenu.HideGarageUI();
+            //MainMenu.HideGarageUI();
             garageGoBack.SetActive(true);
             garageTapAnywhere.SetActive(true);
             vehNameText.text = "UI SAYS GOODBYE";
@@ -85,7 +85,7 @@ public class GarageCameraMovement : MonoBehaviour
             //Back to garage main screen
             transform.position = new Vector3(43.38f, 113.37f, -280.75f);
             transform.rotation = new Quaternion(6.168f, 129.36f, -0.316f, 65f);
-            MainMenu.HideGarageUI();
+            //MainMenu.HideGarageUI();
             garageGoBack.SetActive(true);
             garageTapAnywhere.SetActive(true);
             currentCameraFocus = -1;
