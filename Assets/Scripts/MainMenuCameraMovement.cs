@@ -42,24 +42,24 @@ public class MainMenuCameraMovement : MonoBehaviour
     public void ViewMenuFromGarage()
     {
         GetComponent<GarageCameraMovement>().enabled = false;
-        MainMenu.GetComponent<MainMenu>().HideShopUI(); //rework in other cameras
+        MainMenu.GetComponent<MainMenu>().HideShopUI(); 
         anim.Play("garage_to_main");
         GarageMenu.SetActive(false);
-        
+        MainMenu.GetComponent<MainMenu>().ShowLogo();
     }
     public void OnViewMenuFromGarageEnd()
     {
-        MainMenu.GetComponent<MainMenu>().ShowLogo(); //there or on end of the animation
+        
         MainMenu.SetActive(true);
         TapAnywhere.SetActive(true);
     }
     public void ViewMenuFromShop()
     {
         GetComponent<ShopCameraMovement>().enabled = false;
-        MainMenu.GetComponent<MainMenu>().HideShopUI(); //rework in other cameras
+        MainMenu.GetComponent<MainMenu>().HideShopUI();
         anim.Play("shop_to_main");
         ShopMenu.SetActive(false);
-        MainMenu.GetComponent<MainMenu>().ShowLogo(); //there or on end of the animation
+        MainMenu.GetComponent<MainMenu>().ShowLogo(); 
     }
     public void OnViewMenuFromShopEnd()
     {

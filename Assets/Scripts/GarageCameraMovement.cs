@@ -11,6 +11,9 @@ public class GarageCameraMovement : MonoBehaviour
     public GameObject garageTapAnywhere;
     TMPro.TextMeshProUGUI vehNameText;
 
+    public GameObject _GarageUI;
+    public GameObject _GarageButtons;
+
     //TODO: IF A SPOT YOU'RE ABOUT TO LOOK AT IS EMPTY - DON'T SHOW IT
     //probably CheckIfEmpty() will do
     //CheckIfEmpty { if ownedVehicles[currentCamLookingAt-1] - 0, currentCamLookingAt+=1, MoveCameraNext/Prev }
@@ -68,7 +71,7 @@ public class GarageCameraMovement : MonoBehaviour
             currentCameraFocus = -1;
             transform.position = new Vector3(43.38f, 113.37f, -280.75f);
             transform.rotation = new Quaternion(6.168f, 129.36f, -0.316f, 65f);
-            //MainMenu.HideGarageUI();
+            HideGarageUI();
             garageGoBack.SetActive(true);
             garageTapAnywhere.SetActive(true);
             vehNameText.text = "UI SAYS GOODBYE";
@@ -85,7 +88,7 @@ public class GarageCameraMovement : MonoBehaviour
             //Back to garage main screen
             transform.position = new Vector3(43.38f, 113.37f, -280.75f);
             transform.rotation = new Quaternion(6.168f, 129.36f, -0.316f, 65f);
-            //MainMenu.HideGarageUI();
+            HideGarageUI(); 
             garageGoBack.SetActive(true);
             garageTapAnywhere.SetActive(true);
             currentCameraFocus = -1;
@@ -153,5 +156,11 @@ public class GarageCameraMovement : MonoBehaviour
     public void DebugShowCurrentCameraSpotID()
     {
         Debug.Log(currentCameraFocus);
+    }
+
+    public void HideGarageUI()
+    {
+        _GarageUI.LeanMoveLocalY(650, 0.7f);
+        _GarageButtons.LeanMoveLocalY(1080, 0.7f);
     }
 }
