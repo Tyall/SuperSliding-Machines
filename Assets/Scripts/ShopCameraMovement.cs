@@ -6,11 +6,14 @@ public class ShopCameraMovement : MonoBehaviour
 {
     public static int currentCameraFocus = -1;
     public static int vehicleShopCameraFocus = -1;
+    public GameObject MainMenu;
     public GameObject shopFunction;
     public GameObject shopBack;
     public GameObject shopTopBack;
     public GameObject shopSelect;
     public GameObject shopTapAnywhere;
+    public GameObject LeftArrow;
+    public GameObject RightArrow;
     TMPro.TextMeshProUGUI shopFunctionText;
     public bool VehicleBrowserMode = false;
 
@@ -59,8 +62,11 @@ public class ShopCameraMovement : MonoBehaviour
         if (VehicleBrowserMode)
         {
             VehicleBrowserMode = false;
-            currentCameraFocus = 1;
-            MoveCameraNext();
+            RightArrow.SetActive(true);
+            currentCameraFocus = 2;
+            vehicleShopCameraFocus = -1;
+            anim.Play("shop_set_at_cars");
+            shopFunctionText.text = "BUY NEW VEHICLE";
         }
         else
         {
@@ -182,6 +188,7 @@ public class ShopCameraMovement : MonoBehaviour
     {
         if (currentCameraFocus == 2 && vehicleShopCameraFocus == -1)
         {
+            RightArrow.SetActive(false);
             VehicleBrowserMode = true;
             anim.Play("shop_car_zoom");//check if events have to be done after the animation or is it ok now
             vehicleShopCameraFocus = 1;
@@ -201,6 +208,7 @@ public class ShopCameraMovement : MonoBehaviour
             {
 
                 case 1:
+                    RightArrow.SetActive(true);
                     anim.Play("shop_car_1_2", 0, 0);
                     break;
                 case 2:
@@ -226,6 +234,7 @@ public class ShopCameraMovement : MonoBehaviour
                     break;
                 case 9:
                     anim.Play("shop_car_9_10", 0, 0);
+                    LeftArrow.SetActive(false);
                     break;
 
             }
@@ -248,6 +257,7 @@ public class ShopCameraMovement : MonoBehaviour
             switch (vehicleShopCameraFocus)
             {
                 case 2:
+                    RightArrow.SetActive(false);
                     anim.Play("shop_car_1_2", 0, 1);
                     break;
                 case 3:
@@ -272,6 +282,7 @@ public class ShopCameraMovement : MonoBehaviour
                     anim.Play("shop_car_8_9", 0, 1);
                     break;
                 case 10:
+                    LeftArrow.SetActive(true);
                     anim.Play("shop_car_9_10", 0, 1);
                     break;
 
@@ -291,7 +302,7 @@ public class ShopCameraMovement : MonoBehaviour
     {
         
         currentCameraFocus = -1;
-        //MainMenu.HideShopUI();
+        MainMenu.GetComponent<MainMenu>().HideShopUI();
         shopTopBack.SetActive(true);
         shopTapAnywhere.SetActive(true);
     }

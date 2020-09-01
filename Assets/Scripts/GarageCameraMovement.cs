@@ -13,12 +13,15 @@ public class GarageCameraMovement : MonoBehaviour
 
     public GameObject _GarageUI;
     public GameObject _GarageButtons;
+    public GameObject LeftArrow;
+    public GameObject RightArrow;
 
-    //TODO: IF A SPOT YOU'RE ABOUT TO LOOK AT IS EMPTY - DON'T SHOW IT
-    //probably CheckIfEmpty() will do
-    //CheckIfEmpty { if ownedVehicles[currentCamLookingAt-1] - 0, currentCamLookingAt+=1, MoveCameraNext/Prev }
+    [HideInInspector]
+    public Animator anim;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         currentCameraFocus = -1;
         vehNameText = vehNameGameObject.GetComponent<TMPro.TextMeshProUGUI>();
     }
@@ -30,99 +33,109 @@ public class GarageCameraMovement : MonoBehaviour
 
     public void MoveCameraNext()
     {
-        Debug.Log("Camera place before " + currentCameraFocus);
-        if (currentCameraFocus == -1)
+        anim.SetFloat("Direction", 1);
+        if (currentCameraFocus < 10)
         {
-            currentCameraFocus = 0;
-            transform.position = new Vector3(47.7f, 111.5f, -288.9f);
-            transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 70f) ;
-            vehNameText.text = "SELECTED VEHICLE";
-        }
-        else if (currentCameraFocus == 0)
-        {
-            currentCameraFocus = 1;
-            transform.position = new Vector3(53.6f, 111.3f, -285.54f);
-            transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 60f);
-            SetVehicleName(currentCameraFocus);
-            HideCurrentVehicle();
-        }
-        else if (currentCameraFocus < 5) 
-        {
+            switch (currentCameraFocus)
+            {
+                case -1:
+                    LeftArrow.SetActive(false);
+                    anim.Play("garage_zoom", 0, 0);
+                    vehNameText.text = "SELECTED VEHICLE";
+                    break;
+                case 0:
+                    LeftArrow.SetActive(true); ;
+                    anim.Play("garage_car_0_1", 0, 0);
+                    break;
+                case 1:
+                    HideCurrentVehicle();
+                    anim.Play("garage_car_1_2", 0, 0);
+                    break;
+                case 2:
+                    anim.Play("garage_car_2_3", 0, 0);
+                    break;
+                case 3:
+                    anim.Play("garage_car_3_4", 0, 0);
+                    break;
+                case 4:
+                    anim.Play("garage_car_4_5", 0, 0);
+                    break;
+                case 5:
+                    anim.Play("garage_car_5_6", 0, 0);
+                    break;
+                case 6:
+                    anim.Play("garage_car_6_7", 0, 0);
+                    break;
+                case 7:
+                    anim.Play("garage_car_7_8", 0, 0);
+                    break;
+                case 8:
+                    anim.Play("garage_car_8_9", 0, 0);
+                    break;
+                case 9:
+                    RightArrow.SetActive(false);
+                    anim.Play("garage_car_9_10", 0, 0);
+                    break;
 
+            }
             currentCameraFocus++;
-            transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y , transform.position.z - 2.2f);
-            SetVehicleName(currentCameraFocus);
-
-        }
-        else if (currentCameraFocus == 5)
-        {
-            currentCameraFocus = 6;
-            transform.position = new Vector3(66.5f, 110.9f, -295.3f);
             SetVehicleName(currentCameraFocus);
         }
-        else if (currentCameraFocus < 10)
-        {
-            currentCameraFocus++;
-            transform.position = new Vector3(transform.position.x + 0.3f, transform.position.y, transform.position.z + 2.2f);
-            SetVehicleName(currentCameraFocus);
-        }
-        else if(currentCameraFocus == 10)
-        {
-            currentCameraFocus = -1;
-            transform.position = new Vector3(43.38f, 113.37f, -280.75f);
-            transform.rotation = new Quaternion(6.168f, 129.36f, -0.316f, 65f);
-            HideGarageUI();
-            garageGoBack.SetActive(true);
-            garageTapAnywhere.SetActive(true);
-            vehNameText.text = "UI SAYS GOODBYE";
-            ShowCurrentVehicle();
-        }
-        Debug.Log("Camera place after " +currentCameraFocus);
+        
     }
 
     public void MoveCameraPrevious()
     {
-        Debug.Log("Camera place before " + currentCameraFocus);
-        if (currentCameraFocus == 0)
+        anim.SetFloat("Direction", -1);
+        if (currentCameraFocus > -1)
         {
-            //Back to garage main screen
-            transform.position = new Vector3(43.38f, 113.37f, -280.75f);
-            transform.rotation = new Quaternion(6.168f, 129.36f, -0.316f, 65f);
-            HideGarageUI(); 
-            garageGoBack.SetActive(true);
-            garageTapAnywhere.SetActive(true);
-            currentCameraFocus = -1;
-            vehNameText.text = "UI SAYS GOODBYE";
-        }
-        else if (currentCameraFocus == 1)
-        {
-            transform.position = new Vector3(47.7f, 111.5f, -288.9f);
-            transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 70f);
-            currentCameraFocus = 0;
-            vehNameText.text = "SELECTED VEHICLE";
-            ShowCurrentVehicle();
-        }
-        else if (currentCameraFocus < 6)
-        {
-            currentCameraFocus--;
-            transform.position = new Vector3(transform.position.x + 0.3f, transform.position.y, transform.position.z + 2.2f);
-            SetVehicleName(currentCameraFocus);
-        }
-        else if (currentCameraFocus == 6)
-        {
-            currentCameraFocus = 5;
-            transform.position = new Vector3(52.4f, 111.3f, -294.3f);
-            SetVehicleName(currentCameraFocus);
-        }
-        else if (currentCameraFocus <= 10)
-        {
-            currentCameraFocus--;
-            transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y, transform.position.z - 2.2f);
-            SetVehicleName(currentCameraFocus);
-        }
-        Debug.Log("Camera place after " + currentCameraFocus);
+            switch (currentCameraFocus)
+            {
+                case 0:
+                    HideGarageUI();
+                    anim.Play("garage_zoom", 0, 1);
+                    garageGoBack.SetActive(true);
+                    garageTapAnywhere.SetActive(true);
+                    break;
+                case 1:
+                    ShowCurrentVehicle();
+                    LeftArrow.SetActive(false); ;
+                    anim.Play("garage_car_0_1", 0, 1);
+                    break;
+                case 2:
+                    anim.Play("garage_car_1_2", 0, 1);
+                    break;
+                case 3:
+                    anim.Play("garage_car_2_3", 0, 1);
+                    break;
+                case 4:
+                    anim.Play("garage_car_3_4", 0, 1);
+                    break;
+                case 5:
+                    anim.Play("garage_car_4_5", 0, 1);
+                    break;
+                case 6:
+                    anim.Play("garage_car_5_6", 0, 1);
+                    break;
+                case 7:
+                    anim.Play("garage_car_6_7", 0, 1);
+                    break;
+                case 8:
+                    anim.Play("garage_car_7_8", 0, 1);
+                    break;
+                case 9:
+                    anim.Play("garage_car_8_9", 0, 1);
+                    break;
+                case 10:
+                    RightArrow.SetActive(true);
+                    anim.Play("garage_car_9_10", 0, 1);
+                    break;
 
-    }
+            }
+            currentCameraFocus--;
+            SetVehicleName(currentCameraFocus);
+        }
+    }    
 
     void SetVehicleName(int currentCameraFocus)
     {
@@ -131,8 +144,12 @@ public class GarageCameraMovement : MonoBehaviour
 
     public void HideGarageSelectorElements()
     {
-        currentCameraFocus = 0;
-        MoveCameraPrevious();
+        ShowCurrentVehicle();
+        HideGarageUI();
+        garageGoBack.SetActive(true);
+        garageTapAnywhere.SetActive(true);
+        currentCameraFocus = -1;
+        anim.Play("garage_set_at_cars");
     }
 
     public void ShowCurrentVehicle()
@@ -147,8 +164,7 @@ public class GarageCameraMovement : MonoBehaviour
 
     public void FocusCameraOnSelectedVehicle()
     {
-        transform.position = new Vector3(47.7f, 111.5f, -288.9f);
-        transform.rotation = new Quaternion(3.022f, 116.409f, 1.018f, 70f);
+        anim.Play("garage_set_at_selected_car");
         currentCameraFocus = 0;
         vehNameText.text = "SELECTED VEHICLE";
         ShowCurrentVehicle();

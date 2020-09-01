@@ -84,4 +84,19 @@ public class ShopManager : MonoBehaviour
         }
         return null;
     }
+
+    public void BuyVehicle()
+    {
+
+    }
+
+    public void RepaintVehicle()
+    {
+        
+    }
+
+    public void PremiumShop()
+    {
+
+    }
 }
