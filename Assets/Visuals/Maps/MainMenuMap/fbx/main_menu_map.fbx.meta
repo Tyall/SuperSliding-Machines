@@ -7,6 +7,66 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Leaves
+    second: {fileID: 2100000, guid: 800c6e31f9f297f4dac8befbf1fffd7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves.001
+    second: {fileID: 2100000, guid: 800c6e31f9f297f4dac8befbf1fffd7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None
+    second: {fileID: 2100000, guid: 11e0e825df0a85246abf8798550af493, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.001
+    second: {fileID: 2100000, guid: 11e0e825df0a85246abf8798550af493, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.002
+    second: {fileID: 2100000, guid: 11e0e825df0a85246abf8798550af493, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.003
+    second: {fileID: 2100000, guid: 11e0e825df0a85246abf8798550af493, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.004
+    second: {fileID: 2100000, guid: 11e0e825df0a85246abf8798550af493, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road
+    second: {fileID: 2100000, guid: 8dc27d1fb0b06ec4b8dc9758c8ad3e9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road.001
+    second: {fileID: 2100000, guid: 8dc27d1fb0b06ec4b8dc9758c8ad3e9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road.002
+    second: {fileID: 2100000, guid: 8dc27d1fb0b06ec4b8dc9758c8ad3e9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road.003
+    second: {fileID: 2100000, guid: 8dc27d1fb0b06ec4b8dc9758c8ad3e9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road.004
+    second: {fileID: 2100000, guid: 8dc27d1fb0b06ec4b8dc9758c8ad3e9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: carTire
     second: {fileID: 2100000, guid: 23c4761006a46ca4f951d73526138808, type: 2}
   - first:
@@ -112,7 +172,22 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: plastic.004
+    second: {fileID: 2100000, guid: a3b6b33de8d6e0648b305336ffb79f15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: plastic.005
+    second: {fileID: 2100000, guid: a3b6b33de8d6e0648b305336ffb79f15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic.006
+    second: {fileID: 2100000, guid: a3b6b33de8d6e0648b305336ffb79f15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic.008
     second: {fileID: 2100000, guid: a3b6b33de8d6e0648b305336ffb79f15, type: 2}
   materials:
     materialImportMode: 1
