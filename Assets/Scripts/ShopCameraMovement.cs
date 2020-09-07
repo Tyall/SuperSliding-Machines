@@ -11,11 +11,18 @@ public class ShopCameraMovement : MonoBehaviour
     public GameObject shopBack;
     public GameObject shopTopBack;
     public GameObject shopSelect;
+    public GameObject shopSelectButton;
     public GameObject shopTapAnywhere;
     public GameObject LeftArrow;
     public GameObject RightArrow;
+    public GameObject ShopColors;
+    public GameObject GarageMngr;
+    public GameObject ShopMngr;
     TMPro.TextMeshProUGUI shopFunctionText;
+    TMPro.TextMeshProUGUI shopSelectText;
     public bool VehicleBrowserMode = false;
+    public bool RepaintMode = false;
+    
 
     [HideInInspector]
     public Animator anim;
@@ -25,6 +32,7 @@ public class ShopCameraMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         shopFunctionText = shopFunction.GetComponent<TMPro.TextMeshProUGUI>();
+        shopSelectText = shopSelectButton.GetComponent<TMPro.TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -39,6 +47,10 @@ public class ShopCameraMovement : MonoBehaviour
         {
             VehicleShopMoveCameraPrevious();
         }
+        else if (RepaintMode)
+        {
+            ShopMngr.GetComponent<ShopManager>().SwitchColorRight();
+        }
         else
         {
             MoveCameraPrevious();
@@ -50,6 +62,10 @@ public class ShopCameraMovement : MonoBehaviour
         if (VehicleBrowserMode)
         {
             VehicleShopMoveCameraNext();
+        }
+        else if (RepaintMode)
+        {
+            ShopMngr.GetComponent<ShopManager>().SwitchColorLeft();
         }
         else 
         {
@@ -67,6 +83,16 @@ public class ShopCameraMovement : MonoBehaviour
             vehicleShopCameraFocus = -1;
             anim.Play("shop_set_at_cars");
             shopFunctionText.text = "BUY NEW VEHICLE";
+        }
+        else if (RepaintMode)
+        {
+            RepaintMode = false;
+            GarageMngr.GetComponent<GarageManager>().ApplyShopColor(PlayerProfile.ownedVehiclesColors[0]);
+            ShopManager.repaintMode = false;
+            HideColorPanel();
+            currentCameraFocus = 0;
+            shopFunctionText.text = "REPAINT VEHICLE";
+            shopSelectText.text = "SELECT";
         }
         else
         {
@@ -186,15 +212,21 @@ public class ShopCameraMovement : MonoBehaviour
 
     public void SetVehicleShopCameraOnObject()
     {
-        if (currentCameraFocus == 2 && vehicleShopCameraFocus == -1)
+        if (currentCameraFocus == 0)
+        {
+            RepaintMode = true;
+            //SetColorName(currentButtonClicked);
+        }
+        else if (currentCameraFocus == 2 && vehicleShopCameraFocus == -1)
         {
             RightArrow.SetActive(false);
             VehicleBrowserMode = true;
-            anim.Play("shop_car_zoom");//check if events have to be done after the animation or is it ok now
+            anim.Play("shop_car_zoom");
             vehicleShopCameraFocus = 1;
             SetVehicleName(vehicleShopCameraFocus);
 
         }
+        
     }
 
     public void VehicleShopMoveCameraNext()
@@ -306,4 +338,15 @@ public class ShopCameraMovement : MonoBehaviour
         shopTopBack.SetActive(true);
         shopTapAnywhere.SetActive(true);
     }
+
+    public void ShowColorPanel()
+    {
+        ShopColors.LeanMoveLocalY(230, 0.5f);
+    }
+
+    public void HideColorPanel()
+    {
+        ShopColors.LeanMoveLocalY(630, 0.3f);
+    }
 }
+

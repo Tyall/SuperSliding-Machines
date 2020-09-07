@@ -28,14 +28,15 @@ public class GarageManager : MonoBehaviour
     public Material materialDarkBlue; //9
     public Material materialBlack; //10
 
-    public Material[] materialsArray;
+    public static Material[] materialsArray;
     Material material;
 
-    static int[] ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;
+    public static int[] ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;
     public static int[] ownedVehicles = PlayerProfile.ownedVehicles;
 
     int vehCount;
-    static string vehicleName;
+    int materialSelector;
+    public static string vehicleName;
 
     Vector3 position;
     
@@ -142,35 +143,72 @@ public class GarageManager : MonoBehaviour
             Transform vehicle = target.transform.Find("body");
             Transform spoiler = vehicle.transform.Find("spoiler");
             Material[] spoilerMaterialsArray;
-            materialsArray[1] = AssignColor(vehPosInArray);
+            materialsArray[1] = AssignColor(vehPosInArray, 0);
             spoilerMaterialsArray = spoiler.GetComponent<MeshRenderer>().materials;
-            spoilerMaterialsArray[1] = AssignColor(vehPosInArray);
+            spoilerMaterialsArray[1] = AssignColor(vehPosInArray, 0);
             spoiler.GetComponent<MeshRenderer>().materials = spoilerMaterialsArray;
 
         }   
         else if (vehID == 9)
         {
-            materialsArray[0] = AssignColor(vehPosInArray);
+            materialsArray[0] = AssignColor(vehPosInArray, 0);
         }
         else
         {
-            materialsArray[1] = AssignColor(vehPosInArray);
+            materialsArray[1] = AssignColor(vehPosInArray, 0);
         }
-        
-
         
         target.GetComponentInChildren<MeshRenderer>().materials = materialsArray;
 
     }
 
-
-    Material AssignColor(int vehID)
+    public void ApplyShopColor(int colorID)
     {
-        //Debug.Log("ownedVehiclesColors[vehID]: " + ownedVehiclesColors[vehID]);
-        //Debug.Log("ownedVehiclesColors[0]: " + ownedVehiclesColors[0] + " [1]: " + ownedVehiclesColors[1] + " [2]: " + ownedVehiclesColors[2] + " [3]: " + ownedVehiclesColors[3]
-           // + " [4]: " + ownedVehiclesColors[4] + " [5]: " + ownedVehiclesColors[5] + " [6]: " + ownedVehiclesColors[6] + " [7]: " + ownedVehiclesColors[7] + " [8]: " + ownedVehiclesColors[8]
-           // + " [9]: " + ownedVehiclesColors[9] + " [10]: " + ownedVehiclesColors[10] + " vehID: " + vehID + " ownedVehiclesColors[vehID]: " + ownedVehiclesColors[vehID]);
-        switch (PlayerProfile.ownedVehiclesColors[vehID])
+
+        GameObject target = GameObject.Find("ParkingLotVehicle11");
+        int vehID = ownedVehicles[0] ;
+        //int vehPosInArray = 0; // Applies color from data array
+        
+        materialsArray = target.GetComponentInChildren<MeshRenderer>().materials;
+
+        if (vehID == 2)
+        {
+            Transform vehicle = target.transform.Find("body");
+            Transform spoiler = vehicle.transform.Find("spoiler");
+            Material[] spoilerMaterialsArray;
+            materialsArray[1] = AssignColor(colorID, 1);
+            spoilerMaterialsArray = spoiler.GetComponent<MeshRenderer>().materials;
+            spoilerMaterialsArray[1] = AssignColor(colorID, 1);
+            spoiler.GetComponent<MeshRenderer>().materials = spoilerMaterialsArray;
+
+        }
+        else if (vehID == 9)
+        {
+            materialsArray[0] = AssignColor(colorID, 1);
+        }
+        else
+        {
+            materialsArray[1] = AssignColor(colorID, 1);
+        }
+
+        target.GetComponentInChildren<MeshRenderer>().materials = materialsArray;
+    }
+
+
+    Material AssignColor(int vehID, int mode)
+    {
+        //mode 0 = color selection from data array
+        //mode 1 = color selection from provided data
+        //switch (PlayerProfile.ownedVehiclesColors[vehID])
+        if (mode == 0)
+        {
+            materialSelector = PlayerProfile.ownedVehiclesColors[vehID];
+        }
+        else
+        {
+            materialSelector = vehID;
+        }
+        switch (materialSelector)
         {
 
             case 1:
