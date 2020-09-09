@@ -8,17 +8,18 @@ public class PlayerProfile : MonoBehaviour
 
     public static string playerName;
     public static int playerLevel;
-    public static int playerCoins;
     public static int playerExp;
 
-    public static int unlockedLevels = 3; //Temporary solution. Completing a N level will unlock N+1 level
-
-    public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    public static int[] ownedVehiclesColors = new int[11] {3, 6, 5, 7, 6, 2, 10, 1, 4, 2, 7};
-
-    //public static int unlockedLevels;
-   // public static int[] ownedVehicles;
-    //public static int[] ownedVehiclesColors;
+    //public static int playerCoins = 34000;
+    public static int playerCoins;
+    // public static int unlockedLevels = 3; //Temporary solution. Completing a N level will unlock N+1 level
+    public static int unlockedLevels;
+    //public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 0, 0, 0, 0, 0, 10};
+    public static int[] ownedVehicles;
+    //public static int[] ownedVehiclesColors = new int[11] {3, 6, 5, 7, 6, 0, 0, 0, 0, 0, 7};
+    public static int[] ownedVehiclesColors;
+    
+    
 
     public GameObject GManager;
 
@@ -36,11 +37,11 @@ public class PlayerProfile : MonoBehaviour
 
     public void Start()
     {
-        //LoadPlayer();
+        LoadPlayer();
 
         //DebugResetFirstTimeOpening();
 
-       // FirstStartupSetupTest();
+        FirstStartupSetupTest();
 
         GManager.GetComponent<GarageManager>().UpdateVehicles();
 
@@ -58,6 +59,7 @@ public class PlayerProfile : MonoBehaviour
           {
             Debug.Log("First Time Opening");
             PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
+            playerCoins = 35000;
             unlockedLevels = 3;
             ownedVehicles = new int[11] {2, 4, 7, 0, 0, 0, 0, 0, 0, 0, 0};
             ownedVehiclesColors = new int[11] {7, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0};

@@ -78,11 +78,13 @@ public class ShopCameraMovement : MonoBehaviour
         if (VehicleBrowserMode)
         {
             VehicleBrowserMode = false;
+            ShopManager.buyvehMode = false;
             RightArrow.SetActive(true);
             currentCameraFocus = 2;
             vehicleShopCameraFocus = -1;
             anim.Play("shop_set_at_cars");
             shopFunctionText.text = "BUY NEW VEHICLE";
+            shopSelectText.text = "SELECT";
         }
         else if (RepaintMode)
         {
@@ -98,6 +100,7 @@ public class ShopCameraMovement : MonoBehaviour
         {
             GoToMainShopScreen();
             HideShopElements();
+            
             
         }
     }
@@ -137,31 +140,6 @@ public class ShopCameraMovement : MonoBehaviour
                 break;
 
         }
-        //if (currentCameraFocus == -1 || currentCameraFocus == 2) // -1- main shop screen
-        //{
-        //    //probably gotta separate -1 and 2
-        //    currentCameraFocus = 0;  
-        //    transform.position = new Vector3(46f, 111.5f, -269.2f);
-        //    transform.rotation = new Quaternion(3.022f, 10f, 1.018f, 70f);
-        //    shopFunctionText.text = "REPAINT VEHICLE";
-
-        //}
-        //else if (currentCameraFocus == 0)  // 0- repaint vehicle screen - zoom on vehicle in the garage
-        //{
-        //    currentCameraFocus = 1;
-        //shopFunctionText.text = "GET MORE COINS";
-        //    transform.position = new Vector3(41.6f, 111.6f, -264f);
-        //    transform.rotation = new Quaternion(3.022f, 7f, 1.018f, 70f);
-        //    
-        //}
-        //else if (currentCameraFocus == 1) // 1- premium goods
-        //{
-        //    currentCameraFocus = 2;
-        //shopFunctionText.text = "BUY NEW VEHICLE";
-        //    transform.position = new Vector3(36.6f, 113.3f, -233.4f);
-        //    transform.rotation = new Quaternion(1.022f, 230f, -16.018f, 70f);
-        //    
-        //}
 
     }
 
@@ -215,7 +193,6 @@ public class ShopCameraMovement : MonoBehaviour
         if (currentCameraFocus == 0)
         {
             RepaintMode = true;
-            //SetColorName(currentButtonClicked);
         }
         else if (currentCameraFocus == 2 && vehicleShopCameraFocus == -1)
         {

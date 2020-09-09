@@ -11,8 +11,13 @@ public class ShopManager : MonoBehaviour
     TMPro.TextMeshProUGUI shopSelectText;
     public TMPro.TextMeshProUGUI shopRightButtonText;
     public GameObject vehicleShopButtons;
-    
-    
+    public GameObject ShopVehicleBuy;
+    public GameObject PopupEnoughMoney;
+    public GameObject PopupUniversal;
+    public TMPro.TextMeshProUGUI PopupText;
+
+
+
     public GameObject ShopColors;
     int selectedColor;
     public GameObject GarageMngr;
@@ -24,6 +29,7 @@ public class ShopManager : MonoBehaviour
     Vector3 unscaled = new Vector3(1, 1, 1);
 
     public static bool repaintMode = false;
+    public static bool buyvehMode = false;
 
     // Start is called before the first frame update
     void Start()
@@ -55,8 +61,7 @@ public class ShopManager : MonoBehaviour
                 Debug.Log("Premium");
                 break;
             case 2:
-                //vehicle buy menu
-                ShowVehicleShopUI();
+                BuyVehicle();
                 break;
         }
     }
@@ -105,6 +110,43 @@ public class ShopManager : MonoBehaviour
         {
             ColorButtonSelected(selectedColor);
         }
+    }
+
+    public void FinalizeVehiclePurchase()
+    {
+        PlayerProfile.playerCoins -= GetVehiclePrice(ShopCameraMovement.vehicleShopCameraFocus);
+        int place = GetFirstEmptyParkingPlace();
+        PlayerProfile.ownedVehicles[place] = ShopCameraMovement.vehicleShopCameraFocus;
+        PlayerProfile.ownedVehiclesColors[place] = GetVehicleBasicColor(ShopCameraMovement.vehicleShopCameraFocus);
+
+        PopupEnoughMoney.SetActive(false);
+        PopupUniversal.SetActive(true);
+        PopupText.text = "VEHICLE HAS BEEN SUCCESFULLY BOUGHT AND PLACED IN YOUR GARAGE";
+        //DO THERE
+        //Vehicle has been succesfully bought popup!
+        //Maybe reuse the other popup window, change text and "Go Back" will suit somehow
+        //Or even change "Go Back" to "Okay"!
+    }
+
+    public void NotEnoughFounds()
+    {
+        PopupText.text = "YOU DON'T HAVE ENOUGH COINS TO BUY THIS VEHICLE";
+        ShopVehicleBuy.SetActive(true);
+        PopupUniversal.SetActive(true);
+    }
+
+    public void NotEnoughtParkingSpace()
+    {
+        PopupText.text = "YOUR GARAGE IS FULL. SELL ONE OF YOUR VEHICLES BEFORE BUYING A NEW ONE";
+        ShopVehicleBuy.SetActive(true);
+        PopupUniversal.SetActive(true);
+    }
+
+    public void VehBuyGoBack()
+    {
+        ShopVehicleBuy.SetActive(false);
+        PopupEnoughMoney.SetActive(false);
+        PopupUniversal.SetActive(false);
     }
     public string GetColorName(int buttonId)
     {
@@ -161,9 +203,128 @@ public class ShopManager : MonoBehaviour
         return null;
     }
 
+   
+
+    public bool CheckIfEmptyParkingSpot()
+    {
+        int number = 0;
+        for (int i=0; i<11; i++)
+        {
+            if (PlayerProfile.ownedVehicles[i] == 0)
+            {
+                number++;
+            }
+        }
+        if (number != 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public int GetFirstEmptyParkingPlace()
+    {
+        int place=-1;
+
+        for (int i = 0; i < 11; i++)
+        {
+            if (PlayerProfile.ownedVehicles[i] == 0)
+            {
+                place = i;
+                return place; //Does it even work?
+            }
+        }
+        return place;
+        
+    }
+
+    public int GetVehicleBasicColor(int vehID)
+    {
+        switch (vehID) 
+        {
+            case 1:
+                return 3;
+            case 2:
+                return 3;
+            case 3:
+                return 7;
+            case 4:
+                return 7;
+            case 5:
+                return 5;
+            case 6:
+                return 7;
+            case 7:
+                return 2;
+            case 8:
+                return 1;
+            case 9:
+                return 3;
+            case 10:
+                return 2;
+        }
+        return -1;
+    }
+    public int GetVehiclePrice(int vehID)
+    {
+        switch (vehID) //tweak vehicle prices
+        {
+            case 1:
+                return 1000;
+            case 2:
+                return 5000;
+            case 3:
+                return 10000;
+            case 4:
+                return 15000;
+            case 5:
+                return 20000;
+            case 6:
+                return 25000;
+            case 7:
+                return 30000;
+            case 8:
+                return 35000;
+            case 9:
+                return 50000;
+            case 10:
+                return 100000;
+        }
+        return 9999999;
+    }
+
     public void BuyVehicle()
     {
-
+        Debug.Log("BuyVeh");
+        if (!buyvehMode)
+        {
+            ShowVehicleShopUI();
+            buyvehMode = true;
+        }
+        else
+        {
+            Debug.Log("BuyVehStage2");
+            if (PlayerProfile.playerCoins>= GetVehiclePrice(ShopCameraMovement.vehicleShopCameraFocus))
+            {
+                if (CheckIfEmptyParkingSpot())
+                {
+                    ShopVehicleBuy.SetActive(true);
+                    PopupEnoughMoney.SetActive(true);
+                }
+                else
+                {
+                    NotEnoughtParkingSpace();
+                }
+            }
+            else
+            {
+                NotEnoughFounds();
+            }
+           
+        }
     }
 
     public void RepaintVehicle()
