@@ -39,7 +39,7 @@ public class PlayerProfile : MonoBehaviour
     {
         LoadPlayer();
 
-        //DebugResetFirstTimeOpening();
+        //DebugResetFirstTimeOpening(); //Has to be redone every unity launch? strange thing, gotta do it differently to work on android
 
         FirstStartupSetupTest();
 
@@ -49,20 +49,20 @@ public class PlayerProfile : MonoBehaviour
 
     public void DebugResetFirstTimeOpening()
     {
-        PlayerPrefs.SetInt("FIRSTTIMEOPENING", 1);
+        PlayerPrefs.SetInt("FIRSTTIMEOPENINGTEST", 1);
         Debug.Log("First time opening flag reseted");
     }
     public void FirstStartupSetupTest()
     {
 
-          if (PlayerPrefs.GetInt("FIRSTTIMEOPENING", 1) == 1)
+          if (PlayerPrefs.GetInt("FIRSTTIMEOPENINGTEST", 1) == 1)
           {
             Debug.Log("First Time Opening");
-            PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
+            PlayerPrefs.SetInt("FIRSTTIMEOPENINGTEST", 0);
             playerCoins = 35000;
             unlockedLevels = 3;
-            ownedVehicles = new int[11] {2, 4, 7, 0, 0, 0, 0, 0, 0, 0, 0};
-            ownedVehiclesColors = new int[11] {7, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0};
+            ownedVehicles = new int[11] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0};
+            ownedVehiclesColors = new int[11] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0};
 
 
             SaveSystem.SavePlayer();

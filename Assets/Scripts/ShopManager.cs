@@ -341,7 +341,7 @@ public class ShopManager : MonoBehaviour
         {
             //Repainting done there. Data arrays changed
             PlayerProfile.ownedVehiclesColors[0] = selectedColor;
-            GarageManager.ownedVehiclesColors[0] = selectedColor; //not working
+            GarageManager.ownedVehiclesColors[0] = selectedColor; 
        }
     }
 

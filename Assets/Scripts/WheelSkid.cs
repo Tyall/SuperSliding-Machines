@@ -30,6 +30,7 @@ public class WheelSkid : MonoBehaviour
 
     protected void Awake()
     {
+        skidmarksController = GameObject.Find("Skidmarks").GetComponent<Skidmarks>();
         wheelCollider = GetComponent<WheelCollider>();
         lastFixedUpdateTime = Time.time;
     }

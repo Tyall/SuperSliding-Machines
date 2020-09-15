@@ -11,9 +11,11 @@ public class SmoothFollow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        target = GameObject.Find("PlayerVehicle").GetComponent<Transform>();
         offset = transform.position - target.position;
     }
 
+    
     // Update is called once per frame
     void LateUpdate()
     {

@@ -63,15 +63,7 @@ public class GarageManager : MonoBehaviour
         InstantiateVehicles();
     }
 
-    void GetVehicleCount() //Is it even useful?
-    {
-        for (int j = 0; j < ownedVehicles.Length; j++)
-        {
-            if (ownedVehicles[j] > 0)
-                vehCount++;
-        }
-        Debug.Log("vehCount = " + vehCount);
-    }
+   
     void CreateVehicle(int vehID, int vehPOS, Quaternion rot, int vehPosInArray)
     {
         Debug.Log("Created vehicle with ID " + vehID);
@@ -199,7 +191,6 @@ public class GarageManager : MonoBehaviour
     {
         //mode 0 = color selection from data array
         //mode 1 = color selection from provided data
-        //switch (PlayerProfile.ownedVehiclesColors[vehID])
         if (mode == 0)
         {
             materialSelector = PlayerProfile.ownedVehiclesColors[vehID];
@@ -243,9 +234,6 @@ public class GarageManager : MonoBehaviour
                 break;
             
         }
-        //Debug.Log("returning material " + material +" based on vehid " +vehID + "in array: " + ownedVehiclesColors[vehID]);
-        
-        //NEWEST: ERROR IS CAUSED BY WRONG IMPLEMENTATION OF COLOR ASSIGNING. VEHID CANNOT BE PASSED OR IT HAS TO BE VEHID-SOMETHING
         return material;
     }
 
@@ -369,7 +357,7 @@ public class GarageManager : MonoBehaviour
             DestroyInstantiatedVehicles();
         }
                
-        GetVehicleCount();
+       
         
         CreateVehicle(ownedVehicles[0], 0, _rotation, 0);
         CreateVehicle(ownedVehicles[0], 11, _rotationShop, 0); //Instantiate current vehicle into a shop scene
