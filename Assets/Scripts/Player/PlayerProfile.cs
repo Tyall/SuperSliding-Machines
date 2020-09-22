@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerProfile : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerProfile : MonoBehaviour
     public static int[] ownedVehicles;
     //public static int[] ownedVehiclesColors = new int[11] {3, 6, 5, 7, 6, 0, 0, 0, 0, 0, 7};
     public static int[] ownedVehiclesColors;
+
+    public TextMeshProUGUI debugobject;
     
     
 
@@ -37,53 +40,47 @@ public class PlayerProfile : MonoBehaviour
 
     public void Start()
     {
-        LoadPlayer();
-
-        //DebugResetFirstTimeOpening(); //Has to be redone every unity launch? strange thing, gotta do it differently to work on android
-
-        FirstStartupSetupTest();
+        StartupSetup();
 
         GManager.GetComponent<GarageManager>().UpdateVehicles();
 
     }
 
-    public void DebugResetFirstTimeOpening()
+    public void StartupSetup()
     {
-        PlayerPrefs.SetInt("FIRSTTIMEOPENINGTEST", 1);
-        Debug.Log("First time opening flag reseted");
-    }
-    public void FirstStartupSetupTest()
-    {
-
-          if (PlayerPrefs.GetInt("FIRSTTIMEOPENINGTEST", 1) == 1)
-          {
+        //Directly test first time setup
+        if (PlayerPrefs.GetInt("FIRSTTIMEOPENINGTEST4", 1) == 1)
+        {
             Debug.Log("First Time Opening");
-            PlayerPrefs.SetInt("FIRSTTIMEOPENINGTEST", 0);
-            playerCoins = 35000;
+            PlayerPrefs.SetInt("FIRSTTIMEOPENINGTEST4", 0);
+            playerCoins = 500;
             unlockedLevels = 3;
-            ownedVehicles = new int[11] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0};
-            ownedVehiclesColors = new int[11] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0};
+            ownedVehicles = new int[11] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            ownedVehiclesColors = new int[11] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 
             SaveSystem.SavePlayer();
+            LoadPlayer();
+            MainMenu.UpdateUI();
         }
         else
         {
-            
+            LoadPlayer();
             Debug.Log("Not First Time Opening");
         }
+        //end of test
 
-        
-        
-
-        
-        
     }
     public static void UpdateProfile(int coin, int exp)
     {
         playerExp += exp;
         playerCoins += coin;
 
+    }
+
+    public void debugFunction()
+    {
+        debugobject.text = "UNLOCKED LEVELS " + unlockedLevels;
     }
 
     public void SavePlayer()

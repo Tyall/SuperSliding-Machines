@@ -17,12 +17,13 @@ public class LevelButton : MonoBehaviour
     private GameObject levelLockedPanel;
     private GameObject levelLocked;
     private GameObject levelStartButton;
+    private int unlockedLevels;
 
 
     void Start()
     {
+        unlockedLevels = PlayerProfile.unlockedLevels;
         levelNum = int.Parse(buttonText.text);
-
         levelDetails = GameObject.Find("LevelDetails");
         currentLevel = GameObject.Find("Level " + levelNum + " Details");
         levelLockedPanel = GameObject.Find("LevelLockedPanel");
@@ -32,18 +33,24 @@ public class LevelButton : MonoBehaviour
         ShowUnlockedLevels();
     }
 
-    void ShowUnlockedLevels()
+    private void Awake()
     {
-        if (levelNum <= PlayerProfile.unlockedLevels)
+        unlockedLevels = PlayerProfile.unlockedLevels;
+           
+    }
+    public void ShowUnlockedLevels()
+    {
+        if (levelNum <= unlockedLevels)
         {           
             buttonText.color = new Color(0.996f, 0.7137f, 0.0352f, 1f);
             buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
         }
     }
 
+
     public void LoadLevel()
     {
-        if (levelNum <= PlayerProfile.unlockedLevels)
+        if (levelNum <= unlockedLevels)
         {
             ShowPanels();
         }

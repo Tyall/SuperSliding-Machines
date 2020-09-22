@@ -52,6 +52,7 @@ public class MainMenu : MonoBehaviour
     {
         HideLogo();
         ShowLevelSelection();
+        //Update game panel there with how many levels are unlocked etc
     }
 
    public static void UpdateUI()
