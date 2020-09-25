@@ -11,13 +11,14 @@ public class LevelButton : MonoBehaviour
     [HideInInspector] public int levelNum;
     public TextMeshProUGUI buttonText;
     public Image buttonImage;
+    public GameObject levelLoader;
 
     private GameObject levelDetails;
     private GameObject currentLevel;
     private GameObject levelLockedPanel;
     private GameObject levelLocked;
     private GameObject levelStartButton;
-    private int unlockedLevels;
+    public static volatile int unlockedLevels;
 
 
     void Start()
@@ -25,12 +26,11 @@ public class LevelButton : MonoBehaviour
         unlockedLevels = PlayerProfile.unlockedLevels;
         levelNum = int.Parse(buttonText.text);
         levelDetails = GameObject.Find("LevelDetails");
-        currentLevel = GameObject.Find("Level " + levelNum + " Details");
         levelLockedPanel = GameObject.Find("LevelLockedPanel");
         levelLocked = GameObject.Find("LevelLocked");
         levelStartButton = GameObject.Find("StartLevelButton");
-
-        ShowUnlockedLevels();
+        debugShowUnlockedLevels();
+       // ShowUnlockedLevels();
     }
 
     private void Awake()
@@ -38,26 +38,32 @@ public class LevelButton : MonoBehaviour
         unlockedLevels = PlayerProfile.unlockedLevels;
            
     }
-    public void ShowUnlockedLevels()
+    public void ShowUnlockedLevels(int levelNumber)
     {
-        if (levelNum <= unlockedLevels)
+        
+        //var levelNumber = levelNum;
+        if (levelNumber <= unlockedLevels)
         {           
             buttonText.color = new Color(0.996f, 0.7137f, 0.0352f, 1f);
             buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
+            Debug.Log("Repainted level icon");
         }
     }
 
 
     public void LoadLevel()
     {
-        if (levelNum <= unlockedLevels)
+        LevelLoader.LoadLevel(int.Parse(buttonText.text));
+        /*var levelNumber = levelNum;
+        currentLevel = GameObject.Find("Level " + levelNum + " Details");
+        if (levelNumber <= unlockedLevels)
         {
             ShowPanels();
         }
         else
         {
             ShowLockedInfo();
-        }
+        }*/
     }
 
     public void ShowPanels()
@@ -82,6 +88,11 @@ public class LevelButton : MonoBehaviour
         obj.GetComponent<CanvasGroup>().LeanAlpha(1, 0.2f);
         obj.GetComponent<CanvasGroup>().interactable = true;
         obj.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+
+    public void debugShowUnlockedLevels()
+    {
+        Debug.Log("levelNum: " + levelNum);
     }
 
 }

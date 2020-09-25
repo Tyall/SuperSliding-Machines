@@ -81,7 +81,7 @@ public class ShopManager : MonoBehaviour
     public void ColorButtonSelected(int buttonId)
     {
         ResetColorButtons();
-        colorButtons[buttonId].LeanScale(scaled, 0.1f);
+        colorButtons[buttonId].LeanScale(scaled, 0.1f); //scales wrong button in build app
         shopFunctionText.text = GetColorName(buttonId+1);
         GarageMngr.GetComponent<GarageManager>().ApplyShopColor(buttonId + 1);
         selectedColor = buttonId+1;

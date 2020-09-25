@@ -1921,7 +1921,7 @@ GameObject:
   - component: {fileID: 246200953}
   - component: {fileID: 246200952}
   m_Layer: 5
-  m_Name: PaintGreen
+  m_Name: Paint7Green
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3985,7 +3985,7 @@ GameObject:
   - component: {fileID: 407379853}
   - component: {fileID: 407379852}
   m_Layer: 5
-  m_Name: PaintYellow
+  m_Name: Paint5Yellow
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4903,36 +4903,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623797032}
   m_Mesh: {fileID: -8678823145569952518, guid: ef628146e17cfdb4888038a88077f372, type: 3}
---- !u!1 &634941655
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 634941659}
-  m_Layer: 0
-  m_Name: combineParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &634941659
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634941655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &671007918
 Mesh:
   m_ObjectHideFlags: 0
@@ -6825,7 +6795,7 @@ GameObject:
   - component: {fileID: 891472142}
   - component: {fileID: 891472141}
   m_Layer: 5
-  m_Name: PaintLightBlue
+  m_Name: Paint2LightBlue
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7581,7 +7551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -59.000122}
+  m_AnchoredPosition: {x: 0, y: -59.000244}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993998953
@@ -7902,6 +7872,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017308671}
   m_CullTransparentMesh: 1
+--- !u!1 &1018231546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1018231547}
+  - component: {fileID: 1018231548}
+  - component: {fileID: 1018231549}
+  m_Layer: 0
+  m_Name: LevelSelector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1018231547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018231546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1304965011}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018231548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018231546}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf4c177c086f87449ed89cd2baf36bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelHolder: {fileID: 724075284}
+  levelIcon: {fileID: 3584497414311912356, guid: 8fb1affa98d723b46a4c03cc1d03bfa1,
+    type: 3}
+  thisCanvas: {fileID: 1725661970}
+  numberOfLevels: 15
+  iconSpacing: {x: 200, y: 350}
+--- !u!114 &1018231549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018231546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7360a488f474aa542836b08031994834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1035123695
 GameObject:
   m_ObjectHideFlags: 0
@@ -8382,7 +8414,7 @@ GameObject:
   - component: {fileID: 1103547585}
   - component: {fileID: 1103547584}
   m_Layer: 5
-  m_Name: PaintPink
+  m_Name: Paint8Pink
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10198,6 +10230,7 @@ Transform:
   - {fileID: 1974065221}
   - {fileID: 1251650077}
   - {fileID: 507343925}
+  - {fileID: 1018231547}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10585,7 +10618,7 @@ GameObject:
   - component: {fileID: 1365857303}
   - component: {fileID: 1365857302}
   m_Layer: 5
-  m_Name: PaintRed
+  m_Name: Paint3Red
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10715,7 +10748,7 @@ GameObject:
   - component: {fileID: 1371089950}
   - component: {fileID: 1371089949}
   m_Layer: 5
-  m_Name: PaintDarkBlue
+  m_Name: Paint9DarkBlue
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11040,7 +11073,7 @@ GameObject:
   - component: {fileID: 1432157126}
   - component: {fileID: 1432157125}
   m_Layer: 5
-  m_Name: PaintBlack
+  m_Name: Paint10Black
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12352,7 +12385,7 @@ GameObject:
   - component: {fileID: 1566267571}
   - component: {fileID: 1566267570}
   m_Layer: 5
-  m_Name: PaintGrey
+  m_Name: Paint1Grey
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13834,7 +13867,7 @@ GameObject:
   - component: {fileID: 1765224221}
   - component: {fileID: 1765224220}
   m_Layer: 5
-  m_Name: PaintPurple
+  m_Name: Paint4Purple
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16064,7 +16097,7 @@ GameObject:
   - component: {fileID: 2059364693}
   - component: {fileID: 2059364692}
   m_Layer: 5
-  m_Name: PaintOrange
+  m_Name: Paint6Orange
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
