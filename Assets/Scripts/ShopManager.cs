@@ -23,6 +23,17 @@ public class ShopManager : MonoBehaviour
     public GameObject GarageMngr;
     GameObject[] colorButtons; //check if Button[] works
 
+    public GameObject btnGrey;
+    public GameObject btnLBlue;
+    public GameObject btnRed;
+    public GameObject btnPurple;
+    public GameObject btnYellow;
+    public GameObject btnOrange;
+    public GameObject btnGreen;
+    public GameObject btnPink;
+    public GameObject btnDBlue;
+    public GameObject btnBlack;
+
     int shopMode;
 
     Vector3 scaled = new Vector3(1.3f, 1.3f, 1);
@@ -30,19 +41,11 @@ public class ShopManager : MonoBehaviour
 
     public static bool repaintMode = false;
     public static bool buyvehMode = false;
-
-    // Start is called before the first frame update
     void Start()
     {
         shopFunctionText = shopFunction.GetComponent<TMPro.TextMeshProUGUI>();
         shopSelectText = shopSelectButton.GetComponent<TMPro.TextMeshProUGUI>();
         colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SelectFunction()
@@ -81,11 +84,40 @@ public class ShopManager : MonoBehaviour
     public void ColorButtonSelected(int buttonId)
     {
         ResetColorButtons();
-        colorButtons[buttonId].LeanScale(scaled, 0.1f); //scales wrong button in build app
+        GetCorrectColorButton(buttonId).LeanScale(scaled, 0.1f); //scales wrong button in build app
         shopFunctionText.text = GetColorName(buttonId+1);
         GarageMngr.GetComponent<GarageManager>().ApplyShopColor(buttonId + 1);
         selectedColor = buttonId+1;
         Debug.Log("colbutselected");
+    }
+
+    public GameObject GetCorrectColorButton(int btnID)
+    {
+        switch (btnID+1)
+        {
+            case 1:
+                return btnGrey;
+            case 2:
+                return btnLBlue;
+            case 3:
+                return btnRed;
+            case 4:
+                return btnPurple;
+            case 5:
+                return btnYellow;
+            case 6:
+                return btnOrange;
+            case 7:
+                return btnGreen;
+            case 8:
+                return btnPink;
+            case 9:
+                return btnDBlue;
+            case 10:
+                return btnBlack;
+
+        }
+        return null;
     }
 
     public void ResetColorButtons()
