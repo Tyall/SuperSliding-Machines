@@ -67,6 +67,7 @@ public class LevelSelector : MonoBehaviour
             icon.name = "Level " + i;
             icon.GetComponentInChildren<TextMeshProUGUI>().SetText("" + currentLevelCount);
             icon.GetComponent<LevelButton>().ShowUnlockedLevels(currentLevelCount);
+            icon.GetComponent<LevelButton>().SetLevelNumber(currentLevelCount);
             
         }
     }

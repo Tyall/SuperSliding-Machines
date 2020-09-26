@@ -54,7 +54,7 @@ public class PlayerProfile : MonoBehaviour
             Debug.Log("First Time Opening");
             PlayerPrefs.SetInt("FIRSTTIMEOPENINGTEST4", 0);
             playerCoins = 500;
-            unlockedLevels = 3;
+            unlockedLevels = 1;
             ownedVehicles = new int[11] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             ownedVehiclesColors = new int[11] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 

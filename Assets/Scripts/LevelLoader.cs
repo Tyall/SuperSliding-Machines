@@ -5,28 +5,27 @@ using TMPro;
 
 public class LevelLoader : MonoBehaviour
 {
-    static int levelNumber;
+    
     public static TextMeshProUGUI buttonText;
     private static GameObject levelDetails;
     private static GameObject currentLevel;
     private static GameObject levelLockedPanel;
     private static GameObject levelLocked;
     private static GameObject levelStartButton;
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public static void LoadLevel(int levelNum)
     {
-        
+
         levelDetails = GameObject.Find("LevelDetails");
         currentLevel = GameObject.Find("Level " + levelNum + " Details");
         levelLockedPanel = GameObject.Find("LevelLockedPanel");
         levelLocked = GameObject.Find("LevelLocked");
         levelStartButton = GameObject.Find("StartLevelButton");
-        if (levelNum <= PlayerProfile.unlockedLevels) 
+        if (levelNum <= PlayerProfile.unlockedLevels)
         {
             ShowPanels();
         }
@@ -39,8 +38,6 @@ public class LevelLoader : MonoBehaviour
 
     public static void ShowPanels()
     {
-       
-
         EnableComponent(levelStartButton);
         EnableComponent(currentLevel);
         EnableComponent(levelDetails);

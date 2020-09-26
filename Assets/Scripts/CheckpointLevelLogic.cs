@@ -20,6 +20,7 @@ public class CheckpointLevelLogic : MonoBehaviour
     public GameObject winMenu;
     public GameObject winCoins;
     public GameObject winExp;
+    public int LevelNumber;
 
     
     bool isFinished = false;
@@ -57,9 +58,10 @@ public class CheckpointLevelLogic : MonoBehaviour
             isFinished = true;
             GenerateRewards();
             winMenu.SetActive(true);
-
+            LevelUnlocker();
             SaveSystem.SavePlayer();
         }
+        
     }
 
     void GenerateRewards()
@@ -85,5 +87,13 @@ public class CheckpointLevelLogic : MonoBehaviour
         failMenu.SetActive(true);                                        //-that determines what level are we on is the best way to solve the problem
                                                                          //Find out a better way to determine which level do you currently play
                                                                          //Maybe do something like cpCountL+getCurrentLevel
+    }
+
+    public void LevelUnlocker()
+    {
+        if (LevelNumber == PlayerProfile.unlockedLevels)
+        {
+            PlayerProfile.unlockedLevels++;
+        }
     }
 }

@@ -6442,6 +6442,7 @@ MonoBehaviour:
   winMenu: {fileID: 1188774772}
   winCoins: {fileID: 1984229574}
   winExp: {fileID: 1401449554}
+  LevelNumber: 1
 --- !u!114 &600028302
 MonoBehaviour:
   m_ObjectHideFlags: 0
