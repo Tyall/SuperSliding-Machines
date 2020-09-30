@@ -134,6 +134,10 @@ public class ShopManager : MonoBehaviour
         {
             ColorButtonSelected(selectedColor-2);
         }
+        else if (selectedColor == 1)
+        {
+            ColorButtonSelected(9);
+        }
     }
 
     public void SwitchColorRight()
@@ -141,6 +145,10 @@ public class ShopManager : MonoBehaviour
         if (selectedColor < 10)
         {
             ColorButtonSelected(selectedColor);
+        }
+        else if (selectedColor == 10)
+        {
+            ColorButtonSelected(0);
         }
     }
 

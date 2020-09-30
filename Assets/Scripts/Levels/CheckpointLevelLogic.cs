@@ -21,6 +21,7 @@ public class CheckpointLevelLogic : MonoBehaviour
     public GameObject winCoins;
     public GameObject winExp;
     public int LevelNumber;
+    public GameObject joystick;
 
     
     bool isFinished = false;
@@ -33,6 +34,7 @@ public class CheckpointLevelLogic : MonoBehaviour
         failMenu = setFailMenu;
         numOfCheckpointsLeft = NumberOfCheckpoints;
         totalCheckpointCount = NumberOfCheckpoints;
+        joystick.SetActive(true);
     }
 
     private void Update()
@@ -53,7 +55,8 @@ public class CheckpointLevelLogic : MonoBehaviour
     {
         if (numOfCheckpointsLeft == 0)
         {
-            Debug.Log("Level Finished!"); 
+            Debug.Log("Level Finished!");
+            joystick.SetActive(false);
             Time.timeScale = 0f;
             isFinished = true;
             GenerateRewards();
@@ -82,7 +85,7 @@ public class CheckpointLevelLogic : MonoBehaviour
     {
         
         Debug.Log("You hit the traffic cone!");
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         ResetCheckpoints(); //Probably doing a method in CheckpointLevelLogic-
         failMenu.SetActive(true);                                        //-that determines what level are we on is the best way to solve the problem
                                                                          //Find out a better way to determine which level do you currently play

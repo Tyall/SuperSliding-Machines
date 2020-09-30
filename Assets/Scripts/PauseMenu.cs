@@ -39,5 +39,9 @@ public class PauseMenu : MonoBehaviour
         CheckpointLevelLogic.ResetCheckpoints();
     }
     
-      
+    public void NextLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(levelNum+1);
+    }  
 }

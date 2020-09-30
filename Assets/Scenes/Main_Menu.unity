@@ -647,8 +647,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL DESCRIPTION DETAILED PLACEHOLDER TEXT TO MEASURE THE BEHAVIOR OF
-    WRAPPING
+  m_text: "FINAL TEST OF YOUR SKILLS BEFORE YOU START THE REAL DRIVING. \nDRIVE THROUGH
+    5 CHECKPOINTS WITHOUT HITTING ANY CONES\nGOOD LUCK"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30dda0e3eb656d848a76e201018c9c1c, type: 2}
   m_sharedMaterial: {fileID: -102716538344379877, guid: 30dda0e3eb656d848a76e201018c9c1c,
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 116
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -715,15 +715,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -939.98474, y: -195.80733, z: -1688.7981, w: -573.69543}
+  m_margin: {x: -939.98474, y: -195.80733, z: -1688.7981, w: -555.0198}
   m_textInfo:
     textComponent: {fileID: 80138377}
-    characterCount: 79
+    characterCount: 125
     spriteCount: 0
-    spaceCount: 10
-    wordCount: 11
+    spaceCount: 21
+    wordCount: 21
     linkCount: 0
-    lineCount: 4
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -4386,7 +4386,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 56fe54c4835e73941a99b09143d5c74a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c1cf0072df9c3342bae0a015a0105fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4458,6 +4458,16 @@ MonoBehaviour:
   PopupText: {fileID: 2101832786}
   ShopColors: {fileID: 2027859158}
   GarageMngr: {fileID: 1974065220}
+  btnGrey: {fileID: 1566267568}
+  btnLBlue: {fileID: 891472139}
+  btnRed: {fileID: 1365857300}
+  btnPurple: {fileID: 1765224218}
+  btnYellow: {fileID: 407379850}
+  btnOrange: {fileID: 2059364690}
+  btnGreen: {fileID: 246200950}
+  btnPink: {fileID: 1103547582}
+  btnDBlue: {fileID: 1371089947}
+  btnBlack: {fileID: 1432157123}
 --- !u!1 &524951329
 GameObject:
   m_ObjectHideFlags: 0

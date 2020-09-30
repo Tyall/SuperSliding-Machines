@@ -16,6 +16,7 @@ public class SteeringScript : MonoBehaviour
 
 
     protected Joystick joystick;
+    public GameObject joy;
     float joyH;
     float joyV;
 
@@ -24,6 +25,7 @@ public class SteeringScript : MonoBehaviour
     {
         joystick = FindObjectOfType<Joystick>();
         vehicle = GetComponent<Rigidbody>();
+        joy = GameObject.Find("Fixed Joystick");
     }
 
     
@@ -85,7 +87,8 @@ public class SteeringScript : MonoBehaviour
     {
         if (collision.collider.tag == "Obstacle") 
         {
-            CheckpointLevelLogic.LevelFailed();                      
+            CheckpointLevelLogic.LevelFailed();
+            joy.SetActive(false);
         }
     }
     
