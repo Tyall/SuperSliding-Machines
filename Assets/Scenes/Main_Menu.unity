@@ -2094,8 +2094,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL DESCRIPTION DETAILED PLACEHOLDER TEXT TO MEASURE THE BEHAVIOR OF
-    WRAPPING
+  m_text: 'YOUR FIRST OPPORTUNITY TO FEEL LIKE A REAL RACING DRIVER
+
+
+    BE FASTER
+    THAN YOUR ENEMIES AND WIN THE RACE
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30dda0e3eb656d848a76e201018c9c1c, type: 2}
   m_sharedMaterial: {fileID: -102716538344379877, guid: 30dda0e3eb656d848a76e201018c9c1c,
@@ -2141,7 +2146,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 86
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2165,12 +2170,12 @@ MonoBehaviour:
   m_margin: {x: -939.98474, y: -195.80733, z: -1688.7981, w: -573.69543}
   m_textInfo:
     textComponent: {fileID: 268728216}
-    characterCount: 79
+    characterCount: 103
     spriteCount: 0
-    spaceCount: 10
-    wordCount: 11
+    spaceCount: 20
+    wordCount: 19
     linkCount: 0
-    lineCount: 4
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2409,7 +2414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 56fe54c4835e73941a99b09143d5c74a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b146b2e6e2cfd2146ab2988cb849cecd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7781,7 +7786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CAR SUMO 1
+  m_text: OVAL RACE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30dda0e3eb656d848a76e201018c9c1c, type: 2}
   m_sharedMaterial: {fileID: -102716538344379877, guid: 30dda0e3eb656d848a76e201018c9c1c,
@@ -7851,10 +7856,10 @@ MonoBehaviour:
   m_margin: {x: -939.98474, y: -195.80733, z: -1777.9313, w: 44.428757}
   m_textInfo:
     textComponent: {fileID: 1017308673}
-    characterCount: 10
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1

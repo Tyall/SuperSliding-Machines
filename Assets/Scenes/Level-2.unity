@@ -1194,6 +1194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   acceleration: 800000
+  joy: {fileID: 0}
 --- !u!1 &113414843
 GameObject:
   m_ObjectHideFlags: 0
