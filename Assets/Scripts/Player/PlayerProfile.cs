@@ -15,10 +15,10 @@ public class PlayerProfile : MonoBehaviour
     public static int playerCoins;
     //public static int unlockedLevels = 3; //Temporary solution. Completing a N level will unlock N+1 level
     public static volatile int unlockedLevels;
-    //public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 0, 0, 0, 0, 0, 10};
-    public static int[] ownedVehicles;
-    //public static int[] ownedVehiclesColors = new int[11] {3, 6, 5, 7, 6, 0, 0, 0, 0, 0, 7};
-    public static int[] ownedVehiclesColors;
+    public static int[] ownedVehicles = new int[11] {3, 1, 2, 3, 4, 0, 0, 0, 0, 0, 10};
+    //public static int[] ownedVehicles;
+    public static int[] ownedVehiclesColors = new int[11] {3, 6, 5, 7, 6, 0, 0, 0, 0, 0, 7};
+    //public static int[] ownedVehiclesColors;
 
     public TextMeshProUGUI debugobject;
     

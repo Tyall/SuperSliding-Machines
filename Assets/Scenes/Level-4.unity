@@ -8078,8 +8078,37 @@ MonoBehaviour:
   materialPink: {fileID: 2100000, guid: 46c3a23767cd1b442bf5969a872c61ce, type: 2}
   materialDarkBlue: {fileID: 2100000, guid: 90f8f777936aaf646b6c0ce6749b7969, type: 2}
   materialBlack: {fileID: 2100000, guid: e82bf77661368494e83d8b6564ccb101, type: 2}
-  StartingPosition: {x: -7.7, y: 1.93, z: -12.4}
-  StartingRotation: {x: 0, y: 18, z: 0, w: 45}
+  StartingPosition: {x: -6.63, y: 1.78, z: -15.16}
+  StartingRotation: {x: 0, y: 19, z: 0, w: 45}
+  numberOfAiOpponents: 3
+  maxEnemyVehicleLevel: 10
+  AIVehicles:
+  - {fileID: 6467682090617582408, guid: d59ad74982e015146afcfb63e8bce94a, type: 3}
+  - {fileID: 705231042140226328, guid: 651d9134ad0f86f4eb94d491f8687de2, type: 3}
+  - {fileID: 6970970524246644968, guid: de221bf35ac6ecf4aa8b1820b35bc008, type: 3}
+  - {fileID: 572035244711548675, guid: 7e56c7e0de70944499b79bf6b2c827dd, type: 3}
+  - {fileID: 7436287625981971143, guid: 10f7cae492f745b419439bb379aec676, type: 3}
+  - {fileID: 222361673824924166, guid: 124e4c80773edda449316db5f10324da, type: 3}
+  - {fileID: 2749837689300923249, guid: 7e68c852ede2efc4dbeccbffc00122e7, type: 3}
+  - {fileID: 1275294535427691056, guid: fdbf0b8a8a855e344b330e842063a141, type: 3}
+  - {fileID: 5626834614774559009, guid: 401510db6c2be7a49a2464b50547e69d, type: 3}
+  - {fileID: 7144720344042236267, guid: 4d8984a0321f22d498509b9feeef021d, type: 3}
+  AIPosition:
+  - {x: -9, y: 2, z: -14.7}
+  - {x: -9.07, y: 1.76, z: -17.57}
+  - {x: -11.24, y: 1.97, z: -16.89}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  AIRotation:
+  - {x: 0, y: 19, z: 0, w: 45}
+  - {x: 0, y: 19, z: 0, w: 45}
+  - {x: 0, y: 19, z: 0, w: 45}
+  - {x: 0, y: 19, z: 0, w: 45}
+  - {x: 0, y: 19, z: 0, w: 45}
+  - {x: 0, y: 19, z: 0, w: 45}
+  - {x: 0, y: 19, z: 0, w: 45}
 --- !u!1 &1550481031
 GameObject:
   m_ObjectHideFlags: 0
@@ -8656,7 +8685,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683312073}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64b79802345247c4fa7cab8ad6fdec59, type: 3}
   m_Name: 
