@@ -11,10 +11,6 @@ public class SteeringScript : MonoBehaviour
     Quaternion targetRotation;
     Rigidbody vehicle;
 
-    Vector3 lastPosition;
-  
-
-
     protected Joystick joystick;
     public GameObject joy;
     float joyH;
@@ -38,15 +34,8 @@ public class SteeringScript : MonoBehaviour
 
     void Update()
     {
-      
         SetRotationPoint();
-       
-        
     }
-
-  
-
-
 
     void FixedUpdate()
     {
