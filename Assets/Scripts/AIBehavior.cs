@@ -50,21 +50,19 @@ public class AIBehavior : MonoBehaviour
     {
         
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
+        print(relativeVector);
         float newSteer = (relativeVector.x / relativeVector.magnitude) * maxSteerAngle;
-        vehicle.AddRelativeForce(Vector3.forward * Acceleration * Time.fixedDeltaTime);
 
-        //It's good to this point
+        vehicle.AddRelativeForce(Vector3.forward * Acceleration * Time.deltaTime);
 
-
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * TurnSpeed);
-
-        //Vector3 target = new Vector3(joyH * 100f, 0, joyV * 100f); //JAK TO DZIALA XDDD
-        Vector3 target = new Vector3((relativeVector.x / relativeVector.magnitude) * maxSteerAngle, 0, (relativeVector.y / relativeVector.magnitude) * maxSteerAngle); 
+        Vector3 target = nodes[currentNode].position;
         Vector3 direction = target - transform.position;
         float rotationAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
         targetRotation = Quaternion.Euler(0, rotationAngle, 0);
-        //Something is not yes
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * TurnSpeed);
+
+
     }
 
     private void ApplySteer()
@@ -75,18 +73,10 @@ public class AIBehavior : MonoBehaviour
         wheelFR.steerAngle = newSteer;
     }
 
-    private void Drive()
-    {
-        wheelFL.motorTorque = Acceleration;
-        wheelFR.motorTorque = Acceleration;
-        //Make car lighter i guess but it'll break the mass of the car on collisions
-        //Probably gotta rebuild it to the way player car is handled
-        //Rigidbody velocity instead of motor torque
-    }
 
     private void CheckWaypointDistance()
     {
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 0.5f)
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 2f)
         {
             if (currentNode == nodes.Count - 1)
             {
@@ -96,7 +86,7 @@ public class AIBehavior : MonoBehaviour
             {
                 currentNode++;
             }
-            
+            Debug.Log("Switching node to " + currentNode);
         }
     }
 }
