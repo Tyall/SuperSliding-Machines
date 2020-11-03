@@ -824,3 +824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurnSpeed: 3.5
   Acceleration: 900000
+  maxSteerAngle: 40
+  wheelFL: {fileID: 0}
+  wheelFR: {fileID: 0}
+  vehicle: {fileID: 7436287625981971141}
+  path: {fileID: 0}

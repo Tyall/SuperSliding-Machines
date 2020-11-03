@@ -9,8 +9,6 @@ public class AIBehavior : MonoBehaviour
     public float Acceleration;
 
     public float maxSteerAngle = 40f;
-    public WheelCollider wheelFL;
-    public WheelCollider wheelFR;
 
     Quaternion targetRotation;
     public Rigidbody vehicle;
@@ -24,6 +22,7 @@ public class AIBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        path = GameObject.Find("AI_Path").transform;
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
         nodes = new List<Transform>();
 
@@ -40,8 +39,6 @@ public class AIBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //ApplySteer();
-        //Drive();
         CheckWaypointDistance();
         DriveByRigidbody();
     }
@@ -50,7 +47,7 @@ public class AIBehavior : MonoBehaviour
     {
         
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
-        print(relativeVector);
+        //print(relativeVector);
         float newSteer = (relativeVector.x / relativeVector.magnitude) * maxSteerAngle;
 
         vehicle.AddRelativeForce(Vector3.forward * Acceleration * Time.deltaTime);
@@ -65,13 +62,6 @@ public class AIBehavior : MonoBehaviour
 
     }
 
-    private void ApplySteer()
-    {
-        Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
-        float newSteer = (relativeVector.x / relativeVector.magnitude) * maxSteerAngle;
-        wheelFL.steerAngle = newSteer;
-        wheelFR.steerAngle = newSteer;
-    }
 
 
     private void CheckWaypointDistance()
@@ -86,7 +76,7 @@ public class AIBehavior : MonoBehaviour
             {
                 currentNode++;
             }
-            Debug.Log("Switching node to " + currentNode);
+            //Debug.Log("Switching node to " + currentNode);
         }
     }
 }

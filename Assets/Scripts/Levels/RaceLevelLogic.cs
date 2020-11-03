@@ -9,6 +9,10 @@ public class RaceLevelLogic : MonoBehaviour
 
     public int NumberOfCheckpoints;
     public int NumberOfEnemies;
+    public int NumberOfLaps;
+    public int GridPosition; //Make a functionality in vehicle spawning where the player pos will be changable (random), maybe rewards will depend from them
+    public int CurrentLap;
+    public int CurrentPosition;
     public int MinAmountOfCoins;
     public int MaxAmountOfCoins;
     public int MinAmountOfExp;
@@ -23,6 +27,13 @@ public class RaceLevelLogic : MonoBehaviour
     public GameObject countdownMenu;
     public TMPro.TextMeshProUGUI countdownText;
 
+    public TMPro.TextMeshProUGUI playerPosition;
+    public TMPro.TextMeshProUGUI playerPositionBG;
+    public TMPro.TextMeshProUGUI playerLap;
+    public TMPro.TextMeshProUGUI playerLapBG;
+    public GameObject HUDPanel;
+
+
 
     bool isFinished = false;
 
@@ -33,6 +44,8 @@ public class RaceLevelLogic : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ShowCountdownMenu());
+        CurrentLap = 1;
+        CurrentPosition = GridPosition;
     }
     private void Awake()
     {
@@ -49,6 +62,32 @@ public class RaceLevelLogic : MonoBehaviour
             LevelFinished();
         }
 
+    }
+
+    public void UpdatePosition()
+    {
+        SetHUDText(1, "POSITION  " + CurrentLap + "  I  " + CurrentPosition);
+    }
+
+    public void UpdateLap()
+    {
+        SetHUDText(2, "LAP  "+ CurrentLap + "  I  " + NumberOfLaps);
+    }
+
+    public void SetHUDText(int mode,  string text)
+    {
+        switch (mode)
+        {
+            case 1:
+                playerPosition.text = text;
+                playerPositionBG.text = text;
+                break;
+            case 2:
+                playerLap.text = text;
+                playerLapBG.text = text;
+                break;
+        }
+        
     }
 
     public static void ResetCheckpoints()
@@ -71,6 +110,8 @@ public class RaceLevelLogic : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.2f);
         countdownMenu.active = false;
         Time.timeScale = 1;
+
+        HUDPanel.SetActive(true);
     }
     void LevelFinished()
     {

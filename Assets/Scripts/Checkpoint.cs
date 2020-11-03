@@ -15,5 +15,6 @@ public class Checkpoint : MonoBehaviour
         Debug.Log("Entered " +cpName);
         GameObject.Find(cpName).SetActive(false);
         CheckpointLevelLogic.numOfCheckpointsLeft--;
+        //Race level checkpoints have to be handled different script
     }
 }
