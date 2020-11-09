@@ -7,18 +7,32 @@ public class RaceLevelLogic : MonoBehaviour
     public GameObject setFailMenu;
     public static GameObject failMenu;
 
+    [InspectorName("Level Parameters")]
     public int NumberOfCheckpoints;
     public int NumberOfEnemies;
     public int NumberOfLaps;
     public int GridPosition; //Make a functionality in vehicle spawning where the player pos will be changable (random), maybe rewards will depend from them
     public int CurrentLap;
     public int CurrentPosition;
+    public int CheckpointsPerLap;
     public int MinAmountOfCoins;
     public int MaxAmountOfCoins;
     public int MinAmountOfExp;
     public int MaxAmountOfExp;
-    public static int numOfCheckpointsLeft;
-    public static int totalCheckpointCount;
+
+    [HideInInspector]
+    public static bool raceFinished;
+    public static int totalCheckpointsPassed;
+    public static int cpPerLap;
+    public static int cpPerLapPassed;
+    public static int totalLaps;
+    public static int lapsLeft;
+    public static int currentLap;
+    public static int currentPosition;
+    public static int numberOfEnemies;
+    public static GameObject lastCheckpoint;
+
+    [InspectorName("GameObjects")]
     public GameObject winMenu;
     public GameObject winCoins;
     public GameObject winExp;
@@ -27,12 +41,16 @@ public class RaceLevelLogic : MonoBehaviour
     public GameObject countdownMenu;
     public TMPro.TextMeshProUGUI countdownText;
 
-    public TMPro.TextMeshProUGUI playerPosition;
-    public TMPro.TextMeshProUGUI playerPositionBG;
-    public TMPro.TextMeshProUGUI playerLap;
-    public TMPro.TextMeshProUGUI playerLapBG;
+    public TMPro.TextMeshProUGUI PlayerPosition;
+    public static TMPro.TextMeshProUGUI playerPosition;
+    public TMPro.TextMeshProUGUI PlayerPositionBG;
+    public static TMPro.TextMeshProUGUI playerPositionBG;
+    public TMPro.TextMeshProUGUI PlayerLap;
+    public static TMPro.TextMeshProUGUI playerLap;
+    public TMPro.TextMeshProUGUI PlayerLapBG;
+    public static TMPro.TextMeshProUGUI playerLapBG;
     public GameObject HUDPanel;
-
+    public GameObject LastCheckpoint;
 
 
     bool isFinished = false;
@@ -46,12 +64,25 @@ public class RaceLevelLogic : MonoBehaviour
         StartCoroutine(ShowCountdownMenu());
         CurrentLap = 1;
         CurrentPosition = GridPosition;
+        totalLaps = NumberOfLaps;
+        cpPerLap = CheckpointsPerLap;
+        currentLap = CurrentLap;
+        cpPerLapPassed = 0;
+        lastCheckpoint = LastCheckpoint;
+        numberOfEnemies = NumberOfEnemies;
+        currentPosition = CurrentPosition;
+
+
+        playerPosition = PlayerPosition;
+        playerPositionBG = PlayerPositionBG;
+        playerLap = PlayerLap;
+        playerLapBG = PlayerLapBG;
+
+        UpdateHUD();
     }
     private void Awake()
     {
         failMenu = setFailMenu;
-        numOfCheckpointsLeft = NumberOfCheckpoints;
-        totalCheckpointCount = NumberOfCheckpoints;
         joystick.SetActive(true);
     }
 
@@ -62,19 +93,28 @@ public class RaceLevelLogic : MonoBehaviour
             LevelFinished();
         }
 
-    }
 
-    public void UpdatePosition()
+    }
+   
+
+   public static void UpdateHUD()
     {
-        SetHUDText(1, "POSITION  " + CurrentLap + "  I  " + CurrentPosition);
+       UpdatePosition();
+       UpdateLap();
     }
 
-    public void UpdateLap()
+    public static void UpdatePosition()
     {
-        SetHUDText(2, "LAP  "+ CurrentLap + "  I  " + NumberOfLaps);
+        print("current pos: " + currentPosition);
+        SetHUDText(1, "POSITION  " + currentPosition + "  I  " + (numberOfEnemies+1));
     }
 
-    public void SetHUDText(int mode,  string text)
+    public static void UpdateLap()
+    {
+        SetHUDText(2, "LAP  "+ currentLap + "  I  " + totalLaps);
+    }
+
+    public static void SetHUDText(int mode,  string text)
     {
         switch (mode)
         {
@@ -90,10 +130,10 @@ public class RaceLevelLogic : MonoBehaviour
         
     }
 
-    public static void ResetCheckpoints()
+    /*public static void ResetCheckpoints()
     {
         numOfCheckpointsLeft = totalCheckpointCount;
-    }
+    }*/
 
     IEnumerator ShowCountdownMenu()
     {
@@ -115,7 +155,7 @@ public class RaceLevelLogic : MonoBehaviour
     }
     void LevelFinished()
     {
-        if (numOfCheckpointsLeft == 0)
+        if (raceFinished == true)
         {
             Debug.Log("Level Finished!");
             joystick.SetActive(false);
@@ -148,10 +188,8 @@ public class RaceLevelLogic : MonoBehaviour
 
         Debug.Log("You hit the traffic cone!");
         //Time.timeScale = 0f;
-        ResetCheckpoints(); //Probably doing a method in CheckpointLevelLogic-
-        failMenu.SetActive(true);                                        //-that determines what level are we on is the best way to solve the problem
-                                                                         //Find out a better way to determine which level do you currently play
-                                                                         //Maybe do something like cpCountL+getCurrentLevel
+        
+        failMenu.SetActive(true);                                        
     }
 
     public void LevelUnlocker()
@@ -161,4 +199,42 @@ public class RaceLevelLogic : MonoBehaviour
             PlayerProfile.unlockedLevels++;
         }
     }
+
+    public static void RaceLevelBehavior(string cpName)
+    {
+        Debug.Log("Entered " + cpName);
+        //GameObject.Find(cpName).SetActive(false);
+        if (cpPerLapPassed < (cpPerLap-1))
+        {
+            cpPerLapPassed++;
+            totalCheckpointsPassed++;
+            if (cpPerLapPassed == 10)
+            {
+                lastCheckpoint.SetActive(true); //reactivate last checkpoint around the middle of the race
+            } 
+        }
+        else if (cpPerLapPassed == (cpPerLap-1))
+        {
+            HandleLaps();
+        }
+        UpdateHUD();
+    }
+
+    public static void HandleLaps()
+    {
+        Debug.Log("Lap + " + currentLap + " completed");
+        cpPerLapPassed = 0;
+        
+        
+        if (currentLap == totalLaps)
+        {
+            raceFinished = true;
+        }
+        else
+        {
+            currentLap++;
+        }
+        
+    }
+    
 }

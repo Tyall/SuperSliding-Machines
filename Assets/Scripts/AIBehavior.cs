@@ -19,6 +19,10 @@ public class AIBehavior : MonoBehaviour
     private List<Transform> nodes;
     private int currentNode = 0;
 
+    public static int AIcheckpointsPassed;
+    public bool isInFront;
+    public static bool isFront; // This can't be static. Gotta solve it differently
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,4 +83,40 @@ public class AIBehavior : MonoBehaviour
             //Debug.Log("Switching node to " + currentNode);
         }
     }
+
+    void OnTriggerEnter(Collider hit)
+    {
+        if (hit.gameObject.tag == "Checkpoint")
+        {
+            
+           CheckpointHandler(hit.name);
+            
+        }
+
+    }
+
+    public static void CheckpointHandler(string cpName)
+    {
+        Debug.Log("AI Entered " + cpName);
+        AIcheckpointsPassed++;
+        MeasurePosition();
+    }
+
+    public static void MeasurePosition()
+    {
+        if (isFront == false)
+        {
+            if (AIcheckpointsPassed > RaceLevelLogic.totalCheckpointsPassed)
+            {
+                if (RaceLevelLogic.currentPosition <= RaceLevelLogic.numberOfEnemies)
+                {
+                    RaceLevelLogic.currentPosition++;
+                    isFront = true;
+                    print("rll pos: " + RaceLevelLogic.currentPosition);
+                }
+            }
+        }
+        
+    }
+
 }

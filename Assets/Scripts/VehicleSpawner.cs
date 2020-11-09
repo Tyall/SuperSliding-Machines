@@ -29,6 +29,12 @@ public class VehicleSpawner : MonoBehaviour
     public Vector3 StartingPosition;
     public Quaternion StartingRotation;
 
+    [Header("Level Parameters")]
+    public static int levelType;
+    public int LevelType;
+    //1 = CheckpointLevel
+    //2 = RaceTrackLevel
+
     [Header("AI")]
     public int numberOfAiOpponents;
     public int maxEnemyVehicleLevel;
@@ -47,10 +53,12 @@ public class VehicleSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelType = LevelType;
         CreateVehicle();
         SpawnAIVehicles();
+        print("level type: " + levelType + " nonstatic: " + LevelType);
     }
+
 
     // Update is called once per frame
     void Update()

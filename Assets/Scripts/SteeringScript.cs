@@ -16,16 +16,19 @@ public class SteeringScript : MonoBehaviour
     float joyH;
     float joyV;
 
+    public int levelType;
+
 
     private void Start()
     {
+        levelType = VehicleSpawner.levelType;
         joystick = FindObjectOfType<Joystick>();
         vehicle = GetComponent<Rigidbody>();
         joy = GameObject.Find("Fixed Joystick");
+        
     }
 
-    
-
+ 
     void GetJoystickPosition()
     {
         joyH = joystick.Horizontal;
@@ -67,7 +70,14 @@ public class SteeringScript : MonoBehaviour
     {
         if (hit.gameObject.tag == "Checkpoint")
         {
-            Checkpoint.CheckpointBehavior(hit.name);
+            if (levelType == 1)
+            {
+                CheckpointLevelLogic.CheckpointLevelBehavior(hit.name);
+            }
+            else // if (levelType == 2)
+            {
+                RaceLevelLogic.RaceLevelBehavior(hit.name);
+            }
         }
               
     }

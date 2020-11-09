@@ -1119,6 +1119,36 @@ MonoBehaviour:
   materialBlack: {fileID: 2100000, guid: e82bf77661368494e83d8b6564ccb101, type: 2}
   StartingPosition: {x: 0.5, y: 1.75, z: -6.7}
   StartingRotation: {x: 0, y: 15, z: 0, w: 45}
+  LevelType: 1
+  numberOfAiOpponents: 0
+  maxEnemyVehicleLevel: 0
+  AIVehicles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  AIPosition:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  AIRotation:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &68420874
 GameObject:
   m_ObjectHideFlags: 0
@@ -11809,6 +11839,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   acceleration: 800000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!1 &1055312266
 GameObject:
   m_ObjectHideFlags: 0
@@ -22925,6 +22957,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 2.5
   acceleration: 600000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!23 &209266580763923111
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23353,6 +23387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 5
   acceleration: 1000000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!54 &315758286080181627
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23791,6 +23827,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   acceleration: 900000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!33 &992622125796946994
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24675,6 +24713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 3.5
   acceleration: 900000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!54 &2724628189019167210
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24753,6 +24793,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 3.5
   acceleration: 500000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!33 &2869463374984766715
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25158,6 +25200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 2.5
   acceleration: 800000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!23 &3484537305163251735
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25254,6 +25298,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4.5
   acceleration: 900000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!33 &3642221350778127079
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25532,6 +25578,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 2.5
   acceleration: 600000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!23 &4058309460350692017
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26517,6 +26565,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   acceleration: 700000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!1 &6387442780664090015
 GameObject:
   m_ObjectHideFlags: 0

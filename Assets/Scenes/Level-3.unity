@@ -1184,6 +1184,36 @@ MonoBehaviour:
   materialBlack: {fileID: 2100000, guid: e82bf77661368494e83d8b6564ccb101, type: 2}
   StartingPosition: {x: 0.5, y: 1.75, z: -6.7}
   StartingRotation: {x: 0, y: 15, z: 0, w: 45}
+  LevelType: 1
+  numberOfAiOpponents: 0
+  maxEnemyVehicleLevel: 0
+  AIVehicles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  AIPosition:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  AIRotation:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &41859768
 GameObject:
   m_ObjectHideFlags: 0
@@ -9568,6 +9598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   acceleration: 800000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!1 &571004404
 GameObject:
   m_ObjectHideFlags: 0

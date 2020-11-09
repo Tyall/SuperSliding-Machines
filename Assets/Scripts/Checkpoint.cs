@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    public static void CheckpointBehavior(string cpName)
-    {
-        Debug.Log("Entered " +cpName);
-        GameObject.Find(cpName).SetActive(false);
-        CheckpointLevelLogic.numOfCheckpointsLeft--;
-        //Race level checkpoints have to be handled different script
-    }
+   
+
+    
 }

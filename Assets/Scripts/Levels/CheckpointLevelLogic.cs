@@ -86,10 +86,9 @@ public class CheckpointLevelLogic : MonoBehaviour
         
         Debug.Log("You hit the traffic cone!");
         //Time.timeScale = 0f;
-        ResetCheckpoints(); //Probably doing a method in CheckpointLevelLogic-
-        failMenu.SetActive(true);                                        //-that determines what level are we on is the best way to solve the problem
-                                                                         //Find out a better way to determine which level do you currently play
-                                                                         //Maybe do something like cpCountL+getCurrentLevel
+        ResetCheckpoints(); 
+        failMenu.SetActive(true);                                        
+                                                                           
     }
 
     public void LevelUnlocker()
@@ -98,5 +97,13 @@ public class CheckpointLevelLogic : MonoBehaviour
         {
             PlayerProfile.unlockedLevels++;
         }
+    }
+
+    public static void CheckpointLevelBehavior(string cpName)
+    {
+        Debug.Log("Entered " + cpName);
+        GameObject.Find(cpName).SetActive(false);
+        numOfCheckpointsLeft--;
+
     }
 }
