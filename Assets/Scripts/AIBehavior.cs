@@ -19,7 +19,7 @@ public class AIBehavior : MonoBehaviour
     private List<Transform> nodes;
     private int currentNode = 0;
 
-    public static int AIcheckpointsPassed;
+    public int AIcheckpointsPassed;
     public bool isInFront;
     public static bool isFront; // This can't be static. Gotta solve it differently
 
@@ -95,14 +95,14 @@ public class AIBehavior : MonoBehaviour
 
     }
 
-    public static void CheckpointHandler(string cpName)
+    public void CheckpointHandler(string cpName)
     {
-        Debug.Log("AI Entered " + cpName);
+       // Debug.Log("AI Entered " + cpName);
         AIcheckpointsPassed++;
-        MeasurePosition();
+        //MeasurePosition();
     }
 
-    public static void MeasurePosition()
+    /*public static void MeasurePosition()
     {
         if (isFront == false)
         {
@@ -117,6 +117,6 @@ public class AIBehavior : MonoBehaviour
             }
         }
         
-    }
+    }*/
 
 }

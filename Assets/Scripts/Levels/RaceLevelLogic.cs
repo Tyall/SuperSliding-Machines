@@ -34,6 +34,7 @@ public class RaceLevelLogic : MonoBehaviour
 
     [InspectorName("GameObjects")]
     public GameObject winMenu;
+    public GameObject raceInfoMenu;
     public GameObject winCoins;
     public GameObject winExp;
     public int LevelNumber;
@@ -51,6 +52,8 @@ public class RaceLevelLogic : MonoBehaviour
     public static TMPro.TextMeshProUGUI playerLapBG;
     public GameObject HUDPanel;
     public GameObject LastCheckpoint;
+    public GameObject[] enemiesArray;
+
 
 
     bool isFinished = false;
@@ -78,6 +81,8 @@ public class RaceLevelLogic : MonoBehaviour
         playerLap = PlayerLap;
         playerLapBG = PlayerLapBG;
 
+        enemiesArray = new GameObject[NumberOfEnemies];
+
         UpdateHUD();
     }
     private void Awake()
@@ -96,11 +101,25 @@ public class RaceLevelLogic : MonoBehaviour
 
     }
    
-
+    public static void ResetLevel()
+    {
+        raceFinished = false;
+        cpPerLapPassed = 0;
+    }
    public static void UpdateHUD()
     {
        UpdatePosition();
        UpdateLap();
+    }
+
+    public void FindEnemies()
+    {
+        for (int i=0; i<numberOfEnemies; i++)
+        {
+            enemiesArray[i] = GameObject.Find("AIVehicle " + (i + 1));
+            Debug.Log("found veh " + (i + 1));
+        }
+        
     }
 
     public static void UpdatePosition()
@@ -141,6 +160,7 @@ public class RaceLevelLogic : MonoBehaviour
         countdownText.text = "GET READY";
         yield return new WaitForSecondsRealtime(1);
         countdownText.text = "3";
+        FindEnemies();
         yield return new WaitForSecondsRealtime(1);
         countdownText.text = "2";
         yield return new WaitForSecondsRealtime(1);
@@ -163,6 +183,7 @@ public class RaceLevelLogic : MonoBehaviour
             isFinished = true;
             GenerateRewards();
             winMenu.SetActive(true);
+            raceInfoMenu.SetActive(false);
             LevelUnlocker();
             SaveSystem.SavePlayer();
         }
@@ -235,6 +256,18 @@ public class RaceLevelLogic : MonoBehaviour
             currentLap++;
         }
         
+    }
+
+    public void GetVehiclePositions()
+    {
+
+        print("test");
+        Debug.Log("Player's cp passed: " + totalCheckpointsPassed);
+        for (int i = 0; i < numberOfEnemies; i++)
+        {
+            Debug.Log("AI "+ (i+1) +" cp passed: " + enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed);
+        }
+        //Now if you have exact number of checkpoints passed by each enemy - make a function which determines at which position player currently is
     }
     
 }

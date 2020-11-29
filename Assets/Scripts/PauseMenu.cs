@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(levelNum);
         CheckpointLevelLogic.ResetCheckpoints();
+        RaceLevelLogic.ResetLevel();
     }
     
     public void NextLevel()
