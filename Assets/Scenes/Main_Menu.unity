@@ -7935,8 +7935,8 @@ MonoBehaviour:
   levelIcon: {fileID: 3584497414311912356, guid: 8fb1affa98d723b46a4c03cc1d03bfa1,
     type: 3}
   thisCanvas: {fileID: 1725661970}
-  numberOfLevels: 15
-  iconSpacing: {x: 200, y: 350}
+  numberOfLevels: 18
+  iconSpacing: {x: 175, y: 350}
 --- !u!114 &1018231549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17239,7 +17239,6 @@ GameObject:
   - component: {fileID: 727151366}
   - component: {fileID: 727151367}
   - component: {fileID: 65702495203706509}
-  - component: {fileID: 65702495203706510}
   - component: {fileID: 65702495203706511}
   - component: {fileID: 65702495203706512}
   - component: {fileID: 65702495203706513}
@@ -17267,24 +17266,6 @@ MonoBehaviour:
   ShopMenu: {fileID: 1181703593}
   MainMenu: {fileID: 810266005}
   TapAnywhere: {fileID: 121479134}
---- !u!114 &65702495203706510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65702495203706508}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf4c177c086f87449ed89cd2baf36bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelHolder: {fileID: 724075284}
-  levelIcon: {fileID: 3584497414311912356, guid: 8fb1affa98d723b46a4c03cc1d03bfa1,
-    type: 3}
-  thisCanvas: {fileID: 1725661970}
-  numberOfLevels: 15
-  iconSpacing: {x: 200, y: 350}
 --- !u!114 &65702495203706511
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RaceLevelLogic : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class RaceLevelLogic : MonoBehaviour
     public GameObject winCoins;
     public GameObject winExp;
     public int LevelNumber;
+    public static int levelNumber;
     public GameObject joystick;
     public GameObject countdownMenu;
     public TMPro.TextMeshProUGUI countdownText;
@@ -50,9 +52,10 @@ public class RaceLevelLogic : MonoBehaviour
     public static TMPro.TextMeshProUGUI playerLap;
     public TMPro.TextMeshProUGUI PlayerLapBG;
     public static TMPro.TextMeshProUGUI playerLapBG;
+    public TMPro.TextMeshProUGUI WinText;
     public GameObject HUDPanel;
     public GameObject LastCheckpoint;
-    public GameObject[] enemiesArray;
+    public static GameObject[] enemiesArray;
 
 
 
@@ -81,12 +84,15 @@ public class RaceLevelLogic : MonoBehaviour
         playerLap = PlayerLap;
         playerLapBG = PlayerLapBG;
 
+        
+
         enemiesArray = new GameObject[NumberOfEnemies];
 
         UpdateHUD();
     }
     private void Awake()
     {
+        levelNumber = LevelNumber;
         failMenu = setFailMenu;
         joystick.SetActive(true);
     }
@@ -103,8 +109,10 @@ public class RaceLevelLogic : MonoBehaviour
    
     public static void ResetLevel()
     {
+        totalCheckpointsPassed = 0;
         raceFinished = false;
         cpPerLapPassed = 0;
+        SceneManager.LoadScene(levelNumber); 
     }
    public static void UpdateHUD()
     {
@@ -192,13 +200,36 @@ public class RaceLevelLogic : MonoBehaviour
 
     void GenerateRewards()
     {
+        int positionMultiplier = currentPosition;
+
+        if (currentPosition == 1)
+        {
+            WinText.text = "YOU WON THE RACE";
+        }
+        else if (currentPosition == 2)
+        {
+            WinText.text = "YOU FINISHED SECOND";
+            positionMultiplier = 3;
+        }
+        else if (currentPosition == 3)
+        {
+            WinText.text = "YOU FINISHED THIRD";
+            positionMultiplier = 5;
+        }
+        else
+        {
+            WinText.text = "RACE FAILED TRY AGAIN";
+            positionMultiplier = 10;
+        }
+
         System.Random rnd = new System.Random();
-        coins = rnd.Next(MinAmountOfCoins, MaxAmountOfCoins);
+        coins = rnd.Next(MinAmountOfCoins, MaxAmountOfCoins) / positionMultiplier;
+        experience = rnd.Next(MinAmountOfExp, MaxAmountOfExp) / positionMultiplier;
 
-        experience = rnd.Next(MinAmountOfExp, MaxAmountOfExp);
-
+        
         winCoins.GetComponent<TMPro.TextMeshProUGUI>().text = coins + "  COINS GAINED";
         winExp.GetComponent<TMPro.TextMeshProUGUI>().text = experience + "  EXPERIENCE GAINED";
+        
 
         PlayerProfile.UpdateProfile(coins, experience);
 
@@ -207,7 +238,7 @@ public class RaceLevelLogic : MonoBehaviour
     public static void LevelFailed()
     {
 
-        Debug.Log("You hit the traffic cone!");
+        //Debug.Log("You hit the traffic cone!");
         //Time.timeScale = 0f;
         
         failMenu.SetActive(true);                                        
@@ -223,7 +254,8 @@ public class RaceLevelLogic : MonoBehaviour
 
     public static void RaceLevelBehavior(string cpName)
     {
-        Debug.Log("Entered " + cpName);
+        //Debug.Log("Entered " + cpName);
+        GetVehiclePositions();
         //GameObject.Find(cpName).SetActive(false);
         if (cpPerLapPassed < (cpPerLap-1))
         {
@@ -243,7 +275,7 @@ public class RaceLevelLogic : MonoBehaviour
 
     public static void HandleLaps()
     {
-        Debug.Log("Lap + " + currentLap + " completed");
+        //Debug.Log("Lap + " + currentLap + " completed");
         cpPerLapPassed = 0;
         
         
@@ -258,16 +290,20 @@ public class RaceLevelLogic : MonoBehaviour
         
     }
 
-    public void GetVehiclePositions()
+    public static void GetVehiclePositions()
     {
 
-        print("test");
-        Debug.Log("Player's cp passed: " + totalCheckpointsPassed);
+        int playerPos = 1; 
+        //Debug.Log("Player's cp passed: " + totalCheckpointsPassed);
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            Debug.Log("AI "+ (i+1) +" cp passed: " + enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed);
+            //Debug.Log("AI "+ (i+1) +" cp passed: " + enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed);
+            if (totalCheckpointsPassed < enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed)
+            {
+                playerPos++;
+            }
         }
-        //Now if you have exact number of checkpoints passed by each enemy - make a function which determines at which position player currently is
+        currentPosition = playerPos;
     }
     
 }

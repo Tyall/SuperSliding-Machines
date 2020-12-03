@@ -5839,12 +5839,12 @@ GameObject:
   - component: {fileID: 797901923}
   - component: {fileID: 797901922}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DebugButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &797901921
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8502,7 +8502,7 @@ MonoBehaviour:
   setFailMenu: {fileID: 487004525}
   NumberOfCheckpoints: 4
   NumberOfEnemies: 3
-  NumberOfLaps: 1
+  NumberOfLaps: 4
   GridPosition: 1
   CurrentLap: 0
   CurrentPosition: 0
@@ -8523,9 +8523,9 @@ MonoBehaviour:
   PlayerPositionBG: {fileID: 1193978852}
   PlayerLap: {fileID: 686890478}
   PlayerLapBG: {fileID: 1340248914}
+  WinText: {fileID: 1239607011}
   HUDPanel: {fileID: 209419344}
   LastCheckpoint: {fileID: 995668957}
-  enemiesArray: []
 --- !u!1 &1193978850
 GameObject:
   m_ObjectHideFlags: 0
@@ -9088,7 +9088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL COMPLETED
+  m_text: placeholdr
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30dda0e3eb656d848a76e201018c9c1c, type: 2}
   m_sharedMaterial: {fileID: -102716538344379877, guid: 30dda0e3eb656d848a76e201018c9c1c,
@@ -9158,12 +9158,12 @@ MonoBehaviour:
   m_margin: {x: -89.2708, y: -59.31152, z: -91.513245, w: 0}
   m_textInfo:
     textComponent: {fileID: 1239607011}
-    characterCount: 15
+    characterCount: 10
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
