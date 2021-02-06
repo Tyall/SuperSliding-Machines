@@ -42,7 +42,13 @@ public class LevelButton : MonoBehaviour
         {           
             buttonText.color = new Color(0.996f, 0.7137f, 0.0352f, 1f);
             buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
-            Debug.Log("Repainted level icon");
+            if (levelNumber % 5 == 0)
+            {
+                // buttonText.color = new Color(f, 0f, 0f, 1f);
+                // buttonImage.color = new Color(0.4f, 0f, 1f, 1f);
+                buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
+                buttonText.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
+            }
         }
     }
 
@@ -56,4 +62,11 @@ public class LevelButton : MonoBehaviour
        LevelLoader.LoadLevel(thisLevel);
     }
 
+    public void SetAlternativeColor()
+    {
+        // buttonText.color = new Color(1f, 0f, 0f, 0.25f);
+        // buttonImage.color = new Color(0.4f, 0f, 1f, 0.25f);
+        buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 0.25f);
+        buttonText.color = new Color(0.2196f, 0.4156f, 0.7335f, 0.25f);
+    }
 }

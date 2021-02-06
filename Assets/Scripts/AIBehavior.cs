@@ -86,7 +86,7 @@ public class AIBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
-        if (hit.gameObject.tag == "Checkpoint")
+        if (hit.gameObject.tag == "CheckpointAI")
         {
             
            CheckpointHandler(hit.name);

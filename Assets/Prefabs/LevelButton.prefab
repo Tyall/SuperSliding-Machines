@@ -147,6 +147,8 @@ MonoBehaviour:
   levelNum: 0
   buttonText: {fileID: 8082185474447265894}
   buttonImage: {fileID: 992873810293572574}
+  levelLoader: {fileID: 0}
+  thisLevel: 0
 --- !u!1 &4718957877869154766
 GameObject:
   m_ObjectHideFlags: 0

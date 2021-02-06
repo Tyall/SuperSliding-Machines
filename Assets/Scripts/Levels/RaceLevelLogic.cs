@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
+using System;
 
 public class RaceLevelLogic : MonoBehaviour
 {
@@ -44,6 +46,9 @@ public class RaceLevelLogic : MonoBehaviour
     public GameObject countdownMenu;
     public TMPro.TextMeshProUGUI countdownText;
 
+    public GameObject[] checkpoints;
+    public static GameObject[] _checkpoints;
+
     public TMPro.TextMeshProUGUI PlayerPosition;
     public static TMPro.TextMeshProUGUI playerPosition;
     public TMPro.TextMeshProUGUI PlayerPositionBG;
@@ -57,7 +62,10 @@ public class RaceLevelLogic : MonoBehaviour
     public GameObject LastCheckpoint;
     public static GameObject[] enemiesArray;
 
-
+    public static string cp_last;
+    public static string cp_last_1;
+    public static string cp_last_2;
+    public static string cp_last_3;
 
     bool isFinished = false;
 
@@ -78,13 +86,18 @@ public class RaceLevelLogic : MonoBehaviour
         numberOfEnemies = NumberOfEnemies;
         currentPosition = CurrentPosition;
 
+        GameObject[] checkpoints = GameObject.FindGameObjectsWithTag("Checkpoint");
+        _checkpoints = checkpoints;
 
         playerPosition = PlayerPosition;
         playerPositionBG = PlayerPositionBG;
         playerLap = PlayerLap;
         playerLapBG = PlayerLapBG;
 
-        
+        cp_last = "0";
+        cp_last_1 = "1";
+        cp_last_2 = "2";
+        cp_last_3 = "3";
 
         enemiesArray = new GameObject[NumberOfEnemies];
 
@@ -106,42 +119,42 @@ public class RaceLevelLogic : MonoBehaviour
 
 
     }
-   
+
     public static void ResetLevel()
     {
         totalCheckpointsPassed = 0;
         raceFinished = false;
         cpPerLapPassed = 0;
-        SceneManager.LoadScene(levelNumber); 
+        SceneManager.LoadScene(levelNumber);
     }
-   public static void UpdateHUD()
+    public static void UpdateHUD()
     {
-       UpdatePosition();
-       UpdateLap();
+        UpdatePosition();
+        UpdateLap();
     }
 
     public void FindEnemies()
     {
-        for (int i=0; i<numberOfEnemies; i++)
+        for (int i = 0; i < numberOfEnemies; i++)
         {
             enemiesArray[i] = GameObject.Find("AIVehicle " + (i + 1));
             Debug.Log("found veh " + (i + 1));
         }
-        
+
     }
 
     public static void UpdatePosition()
     {
         print("current pos: " + currentPosition);
-        SetHUDText(1, "POSITION  " + currentPosition + "  I  " + (numberOfEnemies+1));
+        SetHUDText(1, "POSITION  " + currentPosition + "  I  " + (numberOfEnemies + 1));
     }
 
     public static void UpdateLap()
     {
-        SetHUDText(2, "LAP  "+ currentLap + "  I  " + totalLaps);
+        SetHUDText(2, "LAP  " + currentLap + "  I  " + totalLaps);
     }
 
-    public static void SetHUDText(int mode,  string text)
+    public static void SetHUDText(int mode, string text)
     {
         switch (mode)
         {
@@ -154,7 +167,7 @@ public class RaceLevelLogic : MonoBehaviour
                 playerLapBG.text = text;
                 break;
         }
-        
+
     }
 
     /*public static void ResetCheckpoints()
@@ -226,22 +239,23 @@ public class RaceLevelLogic : MonoBehaviour
         coins = rnd.Next(MinAmountOfCoins, MaxAmountOfCoins) / positionMultiplier;
         experience = rnd.Next(MinAmountOfExp, MaxAmountOfExp) / positionMultiplier;
 
-        
+
         winCoins.GetComponent<TMPro.TextMeshProUGUI>().text = coins + "  COINS GAINED";
         winExp.GetComponent<TMPro.TextMeshProUGUI>().text = experience + "  EXPERIENCE GAINED";
-        
+
 
         PlayerProfile.UpdateProfile(coins, experience);
 
     }
 
+    
     public static void LevelFailed()
     {
 
         //Debug.Log("You hit the traffic cone!");
         //Time.timeScale = 0f;
-        
-        failMenu.SetActive(true);                                        
+
+        failMenu.SetActive(true);
     }
 
     public void LevelUnlocker()
@@ -254,31 +268,50 @@ public class RaceLevelLogic : MonoBehaviour
 
     public static void RaceLevelBehavior(string cpName)
     {
-        //Debug.Log("Entered " + cpName);
         GetVehiclePositions();
-        //GameObject.Find(cpName).SetActive(false);
-        if (cpPerLapPassed < (cpPerLap-1))
+
+        GameObject.Find(cpName).SetActive(false);
+        Debug.Log("Disabling "+cpName);
+
+        if (cpPerLapPassed < (cpPerLap - 1))
         {
             cpPerLapPassed++;
             totalCheckpointsPassed++;
             if (cpPerLapPassed == 10)
             {
                 lastCheckpoint.SetActive(true); //reactivate last checkpoint around the middle of the race
-            } 
+            }
         }
-        else if (cpPerLapPassed == (cpPerLap-1))
+        else if (cpPerLapPassed == (cpPerLap - 1))
         {
             HandleLaps();
         }
+        // } else
+
+
         UpdateHUD();
     }
 
+    public static void EnableAllCheckpoints()
+    {
+        
+
+        foreach(GameObject cp in _checkpoints)
+        {
+            cp.SetActive(true);
+        }
+        Debug.Log("Enabling checkpoints");
+       // GameObject[] checkpoints = GameObject.FindGameObjectsWithTag("Checkpoint");
+       // _checkpoints = checkpoints;
+
+    }
     public static void HandleLaps()
     {
         //Debug.Log("Lap + " + currentLap + " completed");
         cpPerLapPassed = 0;
-        
-        
+        //enable all checkpoints again
+        EnableAllCheckpoints();
+
         if (currentLap == totalLaps)
         {
             raceFinished = true;
@@ -287,13 +320,14 @@ public class RaceLevelLogic : MonoBehaviour
         {
             currentLap++;
         }
-        
+
     }
 
+   
     public static void GetVehiclePositions()
     {
 
-        int playerPos = 1; 
+        int playerPos = 1;
         //Debug.Log("Player's cp passed: " + totalCheckpointsPassed);
         for (int i = 0; i < numberOfEnemies; i++)
         {
@@ -305,5 +339,5 @@ public class RaceLevelLogic : MonoBehaviour
         }
         currentPosition = playerPos;
     }
-    
+
 }

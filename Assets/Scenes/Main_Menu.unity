@@ -7935,8 +7935,8 @@ MonoBehaviour:
   levelIcon: {fileID: 3584497414311912356, guid: 8fb1affa98d723b46a4c03cc1d03bfa1,
     type: 3}
   thisCanvas: {fileID: 1725661970}
-  numberOfLevels: 18
-  iconSpacing: {x: 175, y: 350}
+  numberOfLevels: 15
+  iconSpacing: {x: 200, y: 350}
 --- !u!114 &1018231549
 MonoBehaviour:
   m_ObjectHideFlags: 0
