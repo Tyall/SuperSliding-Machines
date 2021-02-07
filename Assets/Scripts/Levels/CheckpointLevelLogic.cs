@@ -104,6 +104,5 @@ public class CheckpointLevelLogic : MonoBehaviour
         Debug.Log("Entered " + cpName);
         GameObject.Find(cpName).SetActive(false);
         numOfCheckpointsLeft--;
-
     }
 }

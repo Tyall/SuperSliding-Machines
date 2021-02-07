@@ -3338,7 +3338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d1dd90b70bd0645aa78804907cd7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineColor: {r: 1, g: 1, b: 1, a: 1}
+  lineColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!4 &314150602
 Transform:
   m_ObjectHideFlags: 0

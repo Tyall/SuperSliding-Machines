@@ -70,8 +70,10 @@ public class SteeringScript : MonoBehaviour
     {
         if (hit.gameObject.tag == "Checkpoint")
         {
+            Debug.Log("Level type: " + levelType);
             if (levelType == 1)
             {
+                
                 CheckpointLevelLogic.CheckpointLevelBehavior(hit.name);
             }
             else // if (levelType == 2)
