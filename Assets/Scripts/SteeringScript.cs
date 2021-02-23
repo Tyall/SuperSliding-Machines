@@ -88,8 +88,9 @@ public class SteeringScript : MonoBehaviour
     {
         if (collision.collider.tag == "Obstacle") 
         {
-            CheckpointLevelLogic.LevelFailed();
-            joy.SetActive(false);
+            //CheckpointLevelLogic.LevelFailed();
+            //joy.SetActive(false);
+            Debug.Log("DEBUG: HIT OBSTACLE");
         }
     }
     

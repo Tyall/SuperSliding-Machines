@@ -13,7 +13,7 @@ public class PlayerProfile : MonoBehaviour
 
     //public static int playerCoins = 34000;
     public static int playerCoins;
-    public static int unlockedLevels = 5; //Temporary solution. Completing a N level will unlock N+1 level
+    public static int unlockedLevels = 6; //Temporary solution. Completing a N level will unlock N+1 level
     //public static volatile int unlockedLevels ;
     public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 0, 0, 0, 0, 0, 10};
     //public static int[] ownedVehicles;
@@ -98,7 +98,7 @@ public class PlayerProfile : MonoBehaviour
         playerLevel = data.playerLevel;
         playerCoins = data.playerCoins;
         playerExp = data.playerExp;
-        unlockedLevels = data.unlockedLevels;
+        unlockedLevels = data.unlockedLevels; //DEBUGO
         ownedVehicles = data.ownedVehicles;
         ownedVehiclesColors = data.ownedVehiclesColors;
 
