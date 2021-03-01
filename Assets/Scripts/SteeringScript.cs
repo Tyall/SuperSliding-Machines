@@ -46,6 +46,7 @@ public class SteeringScript : MonoBehaviour
                      
         // float accelerationInput = acceleration * (Input.GetMouseButton(0) ? 1 : Input.GetMouseButton(1) ? -1 : 0) * Time.fixedDeltaTime;
         float accelerationInput = acceleration * ((joyH != 0 || joyV != 0) ? 1 : (joyH == 0 || joyV == 0) ? 0 : 0) * Time.fixedDeltaTime;
+        
 
         vehicle.AddRelativeForce(Vector3.forward * accelerationInput );
 
@@ -88,8 +89,8 @@ public class SteeringScript : MonoBehaviour
     {
         if (collision.collider.tag == "Obstacle") 
         {
-            //CheckpointLevelLogic.LevelFailed();
-            //joy.SetActive(false);
+            CheckpointLevelLogic.LevelFailed();
+            joy.SetActive(false);
             Debug.Log("DEBUG: HIT OBSTACLE");
         }
     }

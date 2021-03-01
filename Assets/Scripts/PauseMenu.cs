@@ -37,7 +37,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(levelNum);
         CheckpointLevelLogic.ResetCheckpoints();
-        RaceLevelLogic.ResetLevel();
+        //RaceLevelLogic.ResetLevel();
+        // Add case where race level restarts
+        // It needs to be restarted cuz if you start the race for the second time the checkpoints remain un-resetted
+        // therefore disabling ability to start the race again
     }
     
     public void NextLevel()
