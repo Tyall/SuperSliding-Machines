@@ -1,20 +1,14 @@
 fileFormatVersion: 2
-guid: 26d3238f69878e84bbd3577584b9024e
+guid: 5e494e55be553f04c94013a1511ae3b5
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -5187248419258813496
-    second: Plane|PlaneAction
+      74: 3961262869619405392
+    second: CURB|PlaneAction
   - first:
-      74: -8094120728054717824
-    second: Plane|Shader NodetreeAction
-  - first:
-      74: -4010991495788677422
-    second: Plane|Shader NodetreeAction.001
-  - first:
-      74: 1489643376836281615
-    second: Plane|WorldAction
+      74: 5943287459479774642
+    second: CURB|Shader NodetreeAction.001
   externalObjects: {}
   materials:
     materialImportMode: 1
