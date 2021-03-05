@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class SteeringScript : MonoBehaviour
+public class VehicleBehavior : MonoBehaviour
 {
     [SerializeField] float turnSpeed = 5;
     [SerializeField] float acceleration = 8;
@@ -18,6 +18,8 @@ public class SteeringScript : MonoBehaviour
 
     public int levelType;
 
+    
+   
 
     private void Start()
     {
@@ -38,6 +40,7 @@ public class SteeringScript : MonoBehaviour
     void Update()
     {
         SetRotationPoint();
+
     }
 
     void FixedUpdate()
@@ -81,7 +84,7 @@ public class SteeringScript : MonoBehaviour
             {
                 RaceLevelLogic.RaceLevelBehavior(hit.name);
             }
-        }
+        } 
               
     }
 
@@ -93,6 +96,12 @@ public class SteeringScript : MonoBehaviour
             joy.SetActive(false);
             Debug.Log("DEBUG: HIT OBSTACLE");
         }
+        else if (collision.collider.tag == "SlowingGround")
+        {
+            Debug.Log("zwalniam");
+
+        }
     }
-    
+
+
 }

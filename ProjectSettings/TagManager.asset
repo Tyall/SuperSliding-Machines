@@ -11,6 +11,8 @@ TagManager:
   - Statistics
   - ColorButton
   - CheckpointAI
+  - SlowingGround
+  - Road
   layers:
   - Default
   - TransparentFX
