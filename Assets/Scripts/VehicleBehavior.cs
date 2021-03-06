@@ -10,6 +10,7 @@ public class VehicleBehavior : MonoBehaviour
 
     Quaternion targetRotation;
     Rigidbody vehicle;
+    float drag;
 
     protected Joystick joystick;
     public GameObject joy;
@@ -18,8 +19,13 @@ public class VehicleBehavior : MonoBehaviour
 
     public int levelType;
 
-    
-   
+    //Ground detection
+    RaycastHit hit;
+    float distance = 10f;
+    Vector3 dir = -Vector3.up;
+    Vector3 offset = new Vector3(0, 0.3f, 0f);
+    bool isOffroad = false;
+
 
     private void Start()
     {
@@ -27,7 +33,9 @@ public class VehicleBehavior : MonoBehaviour
         joystick = FindObjectOfType<Joystick>();
         vehicle = GetComponent<Rigidbody>();
         joy = GameObject.Find("Fixed Joystick");
-        
+
+        drag = vehicle.drag;
+
     }
 
  
@@ -46,7 +54,8 @@ public class VehicleBehavior : MonoBehaviour
     void FixedUpdate()
     {
         GetJoystickPosition();
-                     
+        
+        CheckForGround();
         // float accelerationInput = acceleration * (Input.GetMouseButton(0) ? 1 : Input.GetMouseButton(1) ? -1 : 0) * Time.fixedDeltaTime;
         float accelerationInput = acceleration * ((joyH != 0 || joyV != 0) ? 1 : (joyH == 0 || joyV == 0) ? 0 : 0) * Time.fixedDeltaTime;
         
@@ -96,12 +105,30 @@ public class VehicleBehavior : MonoBehaviour
             joy.SetActive(false);
             Debug.Log("DEBUG: HIT OBSTACLE");
         }
-        else if (collision.collider.tag == "SlowingGround")
-        {
-            Debug.Log("zwalniam");
-
-        }
+        
     }
 
+    void CheckForGround()
+    {
+        if (Physics.Raycast(transform.position+offset, dir, out hit, distance))
+        {
+            if (hit.collider.tag == "Road")
+            {
+                if (isOffroad)
+                {
+                    vehicle.drag = drag;
+                    isOffroad = false;
+                }
+            }
+            else
+            { 
+                if (!isOffroad)
+                {
+                    vehicle.drag *= 2f;
+                    isOffroad = true;
+                }
+            }
+        }
+    }
 
 }

@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class CheckpointLevelLogic : MonoBehaviour
+public class TimeTrialLevelLogic : MonoBehaviour
 {
-    
-
-    public GameObject setFailMenu; 
+    public GameObject setFailMenu;
     public static GameObject failMenu;
 
     public int NumberOfCheckpoints;
@@ -24,6 +21,9 @@ public class CheckpointLevelLogic : MonoBehaviour
     public GameObject joystick;
     bool isFinished = false;
     
+    public GameObject countdownMenu;
+    public TMPro.TextMeshProUGUI countdownText;
+
     int coins;
     int experience;
 
@@ -35,13 +35,13 @@ public class CheckpointLevelLogic : MonoBehaviour
         joystick.SetActive(true);
     }
 
-    private void Update()
+    void Update()
     {
-        if (isFinished==false)
+        if (isFinished == false)
         {
             LevelFinished();
         }
-    
+
     }
 
     public static void ResetCheckpoints()
@@ -62,7 +62,7 @@ public class CheckpointLevelLogic : MonoBehaviour
             LevelUnlocker();
             SaveSystem.SavePlayer();
         }
-        
+
     }
 
     void GenerateRewards()
@@ -79,15 +79,7 @@ public class CheckpointLevelLogic : MonoBehaviour
 
     }
 
-    public static void LevelFailed()
-    {
-        
-        Debug.Log("You hit the traffic cone!");
-        //Time.timeScale = 0f;
-        ResetCheckpoints(); 
-        failMenu.SetActive(true);                                        
-                                                                           
-    }
+    
 
     public void LevelUnlocker()
     {
@@ -97,10 +89,38 @@ public class CheckpointLevelLogic : MonoBehaviour
         }
     }
 
-    public static void CheckpointLevelBehavior(string cpName)
+    public static void TimeTrialLevelBehavior(string cpName)
     {
         Debug.Log("Entered " + cpName);
         GameObject.Find(cpName).SetActive(false);
         numOfCheckpointsLeft--;
+    }
+    IEnumerator ShowCountdownMenu()
+    {
+        Time.timeScale = 0;
+        countdownText.text = "GET READY";
+        yield return new WaitForSecondsRealtime(1);
+        countdownText.text = "3";
+        yield return new WaitForSecondsRealtime(1);
+        countdownText.text = "2";
+        yield return new WaitForSecondsRealtime(1);
+        countdownText.text = "1";
+        yield return new WaitForSecondsRealtime(1);
+        countdownText.text = "GO";
+        yield return new WaitForSecondsRealtime(0.2f);
+        countdownMenu.active = false;
+        Time.timeScale = 1;
+
+        //HUDPanel.SetActive(true);
+    }
+
+    public void MeasureTIme()
+    {
+
+    }
+
+    public void SaveBestTime()
+    {
+
     }
 }
