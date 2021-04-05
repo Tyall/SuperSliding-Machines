@@ -33,9 +33,8 @@ public class VehicleBehavior : MonoBehaviour
         joystick = FindObjectOfType<Joystick>();
         vehicle = GetComponent<Rigidbody>();
         joy = GameObject.Find("Fixed Joystick");
-
+        joy.SetActive(true);
         drag = vehicle.drag;
-
     }
 
  
@@ -58,14 +57,23 @@ public class VehicleBehavior : MonoBehaviour
         GetJoystickPosition();
         
         CheckForGround();
-        // float accelerationInput = acceleration * (Input.GetMouseButton(0) ? 1 : Input.GetMouseButton(1) ? -1 : 0) * Time.fixedDeltaTime;
-        float accelerationInput = acceleration * ((joyH != 0 || joyV != 0) ? 1 : (joyH == 0 || joyV == 0) ? 0 : 0) * Time.fixedDeltaTime;
-        
 
-        vehicle.AddRelativeForce(Vector3.forward * accelerationInput );
+        GetAccelerationStrenght();
+        //float accelerationInput = acceleration * ((joyH != 0 || joyV != 0) ? 1 : (joyH == 0 || joyV == 0) ? 0 : 0) * Time.fixedDeltaTime;
+
+
+        //vehicle.AddRelativeForce(Vector3.forward * accelerationInput );
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * turnSpeed );
 
+    }
+
+    public void GetAccelerationStrenght()
+    {
+        //Vector2 joyPos = new Vector2(joyH, joyV);
+        float distance = Mathf.Sqrt(Mathf.Pow(joyH, 2f) + Mathf.Pow(joyV, 2f));
+        float accelerationInput = acceleration * distance * 0.02f;
+        vehicle.AddRelativeForce(Vector3.forward * accelerationInput);
     }
 
     private void SetRotationPoint()
@@ -93,7 +101,8 @@ public class VehicleBehavior : MonoBehaviour
             }
             else // if (levelType == 2)
             {
-                RaceLevelLogic.RaceLevelBehavior(hit.name);
+                //RaceLevelLogic.RaceLevelBehavior(hit.name); //Commented for AI testing purposes
+
             }
         } 
               

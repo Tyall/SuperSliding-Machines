@@ -75,7 +75,7 @@ public class RaceLevelLogic : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ShowCountdownMenu());
+        //StartCoroutine(ShowCountdownMenu()); //Commented for AI testing purposes
         CurrentLap = 1;
         CurrentPosition = GridPosition;
         totalLaps = NumberOfLaps;
