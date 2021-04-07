@@ -59,13 +59,8 @@ public class VehicleBehavior : MonoBehaviour
         CheckForGround();
 
         GetAccelerationStrenght();
-        //float accelerationInput = acceleration * ((joyH != 0 || joyV != 0) ? 1 : (joyH == 0 || joyV == 0) ? 0 : 0) * Time.fixedDeltaTime;
 
-
-        //vehicle.AddRelativeForce(Vector3.forward * accelerationInput );
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * turnSpeed );
-
+        SetRotation();
     }
 
     public void GetAccelerationStrenght()
@@ -87,6 +82,11 @@ public class VehicleBehavior : MonoBehaviour
             targetRotation = Quaternion.Euler(0, rotationAngle, 0);
         }
 
+    }
+
+    private void SetRotation()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * turnSpeed);
     }
 
     void OnTriggerEnter(Collider hit)
@@ -116,7 +116,6 @@ public class VehicleBehavior : MonoBehaviour
             joy.SetActive(false);
             Debug.Log("DEBUG: HIT OBSTACLE");
         }
-        
     }
 
     void CheckForGround()

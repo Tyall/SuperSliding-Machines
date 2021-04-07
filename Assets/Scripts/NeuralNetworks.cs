@@ -6,7 +6,9 @@ public class NeuralNetworks : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    
+    //Raycast ground detection
+    RaycastHit hit;
+    Vector3 offset = new Vector3(0f, 0f, 0f);
 
     void Start()
     {
@@ -23,38 +25,53 @@ public class NeuralNetworks : MonoBehaviour
     {
         Vector3 pos = transform.position;
         //Draw ray in front of the vehicle
-        CheckRay(this.transform.forward, this.transform.position, Color.green);
+        CheckRay(this.transform.forward, this.transform.position, Color.green, 4f);
         //Draw ray in behind of the vehicle
-        CheckRay(-this.transform.forward, this.transform.position, Color.green);
+        CheckRay(-this.transform.forward, this.transform.position, Color.green, 3f);
         
         //Draw ray left to the vehicle
-        CheckRay(-this.transform.right, this.transform.position, Color.green);
+        CheckRay(-this.transform.right, this.transform.position, Color.green, 3f);
         //Draw Ray right to the vehicle
-        CheckRay(this.transform.right, this.transform.position, Color.green);
+        CheckRay(this.transform.right, this.transform.position, Color.green, 3f);
 
-        //Vector3 lDir = Quaternion.AngleAxis(transform.rotation.y - 30, transform.forward ) * transform.forward;
-        //Vector3 rDir = Quaternion.AngleAxis(transform.rotation.y + 30, transform.forward ) * transform.forward;
+        Vector3 lDir30 = Quaternion.AngleAxis(30f, Vector3.up ) * transform.forward;
+        Vector3 rDir30 = Quaternion.AngleAxis(-30f, Vector3.up ) * transform.forward;
+        Vector3 lDir60 = Quaternion.AngleAxis(60f, Vector3.up) * transform.forward;
+        Vector3 rDir60 = Quaternion.AngleAxis(-60f, Vector3.up) * transform.forward;
 
         //Draw ray 30 degrees left to the front
-        //CheckRay(lDir, this.transform.position);
+        CheckRay(lDir30, this.transform.position, Color.red, 3f);
         //Draw ray 30 degrees right to the front
-        //CheckRay(rDir, this.transform.position);
+        CheckRay(rDir30, this.transform.position, Color.red, 3f);
+        //Draw ray 60 degrees left to the front
+        CheckRay(lDir60, this.transform.position, Color.red, 2f);
+        //Draw ray 60 degrees right to the front
+        CheckRay(rDir60, this.transform.position, Color.red, 2f);
 
-        //TO BE TWEAKED - probably gotta mess with rotation?
-
-        //Draw horizontal ray at front right side of the vehicle
-        CheckRay(-this.transform.up, this.transform.position, Color.red);
-        //Draw horizontal ray at front left side of the vehicle
-        CheckRay(-this.transform.up, this.transform.position, Color.red);
-        //Draw horizontal ray at rear right side of the vehicle
-        CheckRay(-this.transform.up, this.transform.position, Color.red);
-        //Draw horizontal ray at rear right side of the vehicle
-        CheckRay(-this.transform.up, this.transform.position, Color.red);
     }
 
-    private void CheckRay(Vector3 direction, Vector3 origin, Color color)
+    private void CheckRay(Vector3 direction, Vector3 origin, Color color, float distance)
     {
-        float distance = 4f; //To be determined - frontal ones will need further distance than horizontals and others
-        Debug.DrawLine(origin, origin + (direction * distance), color);
+        //Debug.DrawLine(origin, origin + (direction * distance), color);
+
+        //Set color depending on what's on the end of ray
+        //Draw a vertical rays from the end of existing rays
+        //Connect rays in pairs? Get inputs from both ground and 
+        //enemy so it'll try to pick an optimal and clean route at once
+
+        Debug.DrawLine(origin, origin + (direction * distance), Color.green);
+
+        if (Physics.Raycast(transform.position + offset, direction, out hit, distance))
+        {
+            if (hit.collider.tag == "Road") //or enemy
+            {
+                Debug.DrawLine(origin, origin + (direction * distance), Color.blue);
+                //The problem is it always draws Red if something is hit
+            }
+            else
+            {
+                Debug.DrawLine(origin, origin + (direction * distance), Color.red);
+            }
+        }
     }
 }
