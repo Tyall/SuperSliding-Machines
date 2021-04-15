@@ -41,15 +41,16 @@ public class AI_Controller : MonoBehaviour
         startRotation = transform.eulerAngles;
         network = GetComponent<NeuralNetwork>();
 
-        //TEST CODE
-        network.Initalise(LAYERS, NEURONS);
+    }
+
+    public void ResetWithNetwork(NeuralNetwork net)
+    {
+        network = net;
+        Reset();
     }
 
     public void Reset()
     {
-        //TEST CODE
-        network.Initalise(LAYERS, NEURONS);
-
         timeSinceStart = 0f;
         totalDistanceTravelled = 0f;
         avgSpeed = 0f;
@@ -61,7 +62,7 @@ public class AI_Controller : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Reset();
+        Death();
     }
 
     private void FixedUpdate()
@@ -82,6 +83,10 @@ public class AI_Controller : MonoBehaviour
 
     }
 
+    private void Death()
+    {
+        GameObject.FindObjectOfType<GeneticManager>().Death(overallFitness, network);
+    }
     private void CalculateFitness()
     {
         totalDistanceTravelled += Vector3.Distance(transform.position, lastPosition);
@@ -91,12 +96,13 @@ public class AI_Controller : MonoBehaviour
 
         if (timeSinceStart > 20 && overallFitness < 40) //values to be tweaked
         {
-            Reset();
+            Death();
         }
+        //
         if (overallFitness >= 1000) //values to be tweaked
         {
             //Save network to a JSON file
-            Reset();
+            Death();
         }
 
     }
@@ -106,8 +112,12 @@ public class AI_Controller : MonoBehaviour
         Vector3 b = (transform.forward);
         Vector3 c = (transform.forward - transform.right);
 
-        Ray r = new Ray(transform.position, a);
+        Vector3 offset = new Vector3(0, 0.4f, 0f);
+
+        Ray r = new Ray(transform.position + offset, a);
         RaycastHit hit;
+
+        //Add a tag to check if it hit wall/ground instead of random objects like checkpoints
 
         if(Physics.Raycast(r, out hit))
         {
