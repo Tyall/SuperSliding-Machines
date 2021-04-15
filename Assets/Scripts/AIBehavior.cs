@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AIBehavior : MonoBehaviour
 {
+    
 
     public float TurnSpeed;
     public float Acceleration;
