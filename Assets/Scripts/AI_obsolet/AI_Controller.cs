@@ -35,6 +35,12 @@ public class AI_Controller : MonoBehaviour
 
     private float aSensor, bSensor, cSensor; //Neural Network inputs | To be tweaked
 
+    //Ground detection
+    RaycastHit gdHit;
+    float gdDistance = 10f;
+    Vector3 gdDir = -Vector3.up;
+    Vector3 gdOffset = new Vector3(0, 0.3f, 0f);
+
     private void Awake()
     {
         startPosition = transform.position;
@@ -78,6 +84,10 @@ public class AI_Controller : MonoBehaviour
 
         CalculateFitness();
 
+        if (!CheckForRoad()){
+            Death();
+        }
+
         //a = 0;
         //t = 0;
 
@@ -106,7 +116,7 @@ public class AI_Controller : MonoBehaviour
         }
 
     }
-    private void InputSensors()
+    /*private void InputSensors_original()
     {
         Vector3 a = (transform.forward + transform.right);
         Vector3 b = (transform.forward);
@@ -147,6 +157,88 @@ public class AI_Controller : MonoBehaviour
 
         }
 
+    }*/
+
+    private void InputSensors()
+    {
+        Vector3 a = (transform.forward + transform.right);
+        Vector3 b = (transform.forward);
+        Vector3 c = (transform.forward - transform.right);
+
+        Vector3 offset = new Vector3(0, 0.4f, 0f);
+
+        Ray r = new Ray(transform.position + offset, a);
+        RaycastHit hit;
+
+        float maxDistance = 30f;
+
+        //Add a tag to check if it hit wall/ground instead of random objects like checkpoints
+
+        if (Physics.Raycast(r, out hit, maxDistance))
+        {
+            Debug.DrawLine(r.origin, hit.point, Color.green);
+            if (hit.collider.tag == "NotRoad")
+            { //DEBUG: any hit
+                aSensor = hit.distance / 20; //We have to normalize the value before we pass it to the neural network <they have to be a range between 0 and ~1f>
+                print("A : " + aSensor);
+                Debug.DrawLine(r.origin, hit.point, Color.red);
+            }
+            else
+            {
+                Debug.DrawLine(r.origin, hit.point, Color.green);
+            }
+
+        }
+
+        r.direction = b;
+
+        if (Physics.Raycast(r, out hit, maxDistance))
+        {
+            Debug.DrawLine(r.origin, hit.point, Color.green);
+            if (hit.collider.tag == "NotRoad")
+            {
+                bSensor = hit.distance / 20;
+                print("B : " + aSensor);
+                Debug.DrawLine(r.origin, hit.point, Color.red);
+            }
+            else
+            {
+                Debug.DrawLine(r.origin, hit.point, Color.green);
+            }
+
+        }
+
+        r.direction = c;
+
+        if (Physics.Raycast(r, out hit, maxDistance))
+        {
+            Debug.DrawLine(r.origin, hit.point, Color.green);
+            if (hit.collider.tag == "NotRoad")
+            {
+                cSensor = hit.distance / 20;
+                print("C : " + aSensor);
+                Debug.DrawLine(r.origin, hit.point, Color.red);
+            }
+            else
+            {
+                Debug.DrawLine(r.origin, hit.point, Color.green);
+            }
+        }   
+
+    }
+
+    private bool CheckForRoad()
+    {
+        if (Physics.Raycast(transform.position + gdOffset, gdDir, out gdHit, gdDistance))
+        {
+            if (gdHit.collider.tag == "Road")
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        return false;
     }
 
     private Vector3 input;

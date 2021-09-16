@@ -132,9 +132,10 @@ GameObject:
   - component: {fileID: 7486420}
   - component: {fileID: 7486419}
   - component: {fileID: 7486418}
+  - component: {fileID: 7486421}
   m_Layer: 0
   m_Name: barrierWall (10)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,6 +202,100 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 111
   m_LocalEulerAnglesHint: {x: 0, y: 318.293, z: 0}
+--- !u!64 &7486421
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486417}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
+--- !u!1 &14048022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14048023}
+  - component: {fileID: 14048025}
+  - component: {fileID: 14048024}
+  m_Layer: 0
+  m_Name: wheel_backRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14048023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14048022}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.34999996, y: 0.29999998, z: -0.65999985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2066548138}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &14048024
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14048022}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1991239904168531565, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: -3963241562183589234, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &14048025
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14048022}
+  m_Mesh: {fileID: 45928071112724564, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
 --- !u!1 &15621904
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +465,82 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 15967251}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &18492898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18492899}
+  - component: {fileID: 18492901}
+  - component: {fileID: 18492900}
+  m_Layer: 0
+  m_Name: WheelColliderRightRear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &18492899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18492898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.268, y: -0.2693, z: -0.2585}
+  m_LocalScale: {x: 0.71602184, y: 0.71602184, z: 0.71602184}
+  m_Children: []
+  m_Father: {fileID: 1115163799}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &18492900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18492898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63099a04f8a3bd41b0267362b966165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2066548137}
+  skidmarksController: {fileID: 0}
+--- !u!146 &18492901
+WheelCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18492898}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5
+  m_SuspensionSpring:
+    spring: 90000
+    damper: 9000
+    targetPosition: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
+  m_Mass: 100
+  m_WheelDampingRate: 0.25
+  m_ForwardFriction:
+    m_ExtremumSlip: 0.4
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.8
+    m_AsymptoteValue: 0.5
+    m_Stiffness: 1
+  m_SidewaysFriction:
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.5
+    m_AsymptoteValue: 0.75
+    m_Stiffness: 1
+  m_Enabled: 1
 --- !u!1 &19276947
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +1062,7 @@ GameObject:
   - component: {fileID: 55984015}
   m_Layer: 0
   m_Name: traffic_cone (5)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1331,7 +1502,7 @@ GameObject:
   - component: {fileID: 74977599}
   m_Layer: 0
   m_Name: traffic_cone (10)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1886,9 +2057,10 @@ GameObject:
   - component: {fileID: 89013067}
   - component: {fileID: 89013069}
   - component: {fileID: 89013068}
+  - component: {fileID: 89013070}
   m_Layer: 0
   m_Name: BAND_ASSET (12)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1955,6 +2127,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89013066}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &89013070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89013066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.00000010631307, y: 0.009999859, z: -0.010000003}
 --- !u!1 &90576646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,7 +2153,7 @@ GameObject:
   - component: {fileID: 90576648}
   m_Layer: 0
   m_Name: BAND_G_4 (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2137,7 +2322,7 @@ GameObject:
   - component: {fileID: 101256113}
   m_Layer: 0
   m_Name: traffic_cone (4)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2438,7 +2623,7 @@ GameObject:
   - component: {fileID: 146427059}
   m_Layer: 0
   m_Name: traffic_cone (9)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2875,7 +3060,7 @@ GameObject:
   - component: {fileID: 158632187}
   m_Layer: 0
   m_Name: taxi (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3075,7 +3260,7 @@ GameObject:
   - component: {fileID: 177587739}
   m_Layer: 0
   m_Name: road_barrier2 (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3153,9 +3338,10 @@ GameObject:
   - component: {fileID: 178772248}
   - component: {fileID: 178772247}
   - component: {fileID: 178772246}
+  - component: {fileID: 178772249}
   m_Layer: 0
   m_Name: barrierWall (16)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3222,6 +3408,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 117
   m_LocalEulerAnglesHint: {x: 0, y: 208.46399, z: 0}
+--- !u!64 &178772249
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178772245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1001 &179094124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3415,7 +3615,7 @@ GameObject:
   - component: {fileID: 179792784}
   m_Layer: 0
   m_Name: traffic_cone (22)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3673,9 +3873,10 @@ GameObject:
   - component: {fileID: 200377631}
   - component: {fileID: 200377630}
   - component: {fileID: 200377629}
+  - component: {fileID: 200377632}
   m_Layer: 0
   m_Name: barrierWall (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3742,6 +3943,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 104
   m_LocalEulerAnglesHint: {x: 0, y: 230.06, z: 0}
+--- !u!64 &200377632
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200377628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1 &211348342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,7 +3970,7 @@ GameObject:
   - component: {fileID: 211348344}
   m_Layer: 0
   m_Name: road_barrier2 (4)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5530,9 +5745,10 @@ GameObject:
   - component: {fileID: 278699866}
   - component: {fileID: 278699868}
   - component: {fileID: 278699867}
+  - component: {fileID: 278699869}
   m_Layer: 0
   m_Name: BAND_ASSET (11)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5599,6 +5815,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278699865}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &278699869
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278699865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.00000004298313, y: 0.00999974, z: -0.009999984}
 --- !u!1 &288430679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,9 +6221,10 @@ GameObject:
   - component: {fileID: 312132746}
   - component: {fileID: 312132748}
   - component: {fileID: 312132747}
+  - component: {fileID: 312132749}
   m_Layer: 0
   m_Name: BAND_ASSET (11)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6061,6 +6291,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312132745}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &312132749
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312132745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.000000013031794, y: 0.00999971, z: -0.009999999}
 --- !u!1 &316194646
 GameObject:
   m_ObjectHideFlags: 0
@@ -6072,9 +6315,10 @@ GameObject:
   - component: {fileID: 316194649}
   - component: {fileID: 316194648}
   - component: {fileID: 316194647}
+  - component: {fileID: 316194650}
   m_Layer: 0
   m_Name: barrierWall (15)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6141,6 +6385,96 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 114
   m_LocalEulerAnglesHint: {x: 0, y: 196.564, z: 0}
+--- !u!64 &316194650
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316194646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
+--- !u!1 &316277743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 316277744}
+  - component: {fileID: 316277746}
+  - component: {fileID: 316277745}
+  m_Layer: 0
+  m_Name: WheelColliderLeftRear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &316277744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316277743}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27480114, y: -0.26929128, z: -0.25850037}
+  m_LocalScale: {x: 0.71602184, y: 0.71602184, z: 0.71602184}
+  m_Children: []
+  m_Father: {fileID: 1115163799}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &316277745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316277743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63099a04f8a3bd41b0267362b966165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2066548137}
+  skidmarksController: {fileID: 0}
+--- !u!146 &316277746
+WheelCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316277743}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5
+  m_SuspensionSpring:
+    spring: 90000
+    damper: 9000
+    targetPosition: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
+  m_Mass: 100
+  m_WheelDampingRate: 0.25
+  m_ForwardFriction:
+    m_ExtremumSlip: 0.4
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.8
+    m_AsymptoteValue: 0.5
+    m_Stiffness: 1
+  m_SidewaysFriction:
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.5
+    m_AsymptoteValue: 0.75
+    m_Stiffness: 1
+  m_Enabled: 1
 --- !u!1 &316689353
 GameObject:
   m_ObjectHideFlags: 0
@@ -6152,9 +6486,10 @@ GameObject:
   - component: {fileID: 316689354}
   - component: {fileID: 316689356}
   - component: {fileID: 316689355}
+  - component: {fileID: 316689357}
   m_Layer: 0
   m_Name: BAND_ASSET (16)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6221,6 +6556,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316689353}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &316689357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316689353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.000000013180809, y: 0.0099998, z: -0.009999971}
 --- !u!1 &318265840
 GameObject:
   m_ObjectHideFlags: 0
@@ -6493,7 +6841,7 @@ GameObject:
   - component: {fileID: 330432826}
   m_Layer: 0
   m_Name: traffic_cone (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7336,9 +7684,10 @@ GameObject:
   - component: {fileID: 380610553}
   - component: {fileID: 380610555}
   - component: {fileID: 380610554}
+  - component: {fileID: 380610556}
   m_Layer: 0
   m_Name: BAND_ASSET (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7405,6 +7754,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380610552}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &380610556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380610552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.00000014714225, y: 0.009999665, z: -0.010000055}
 --- !u!1001 &381770361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7508,7 +7870,7 @@ GameObject:
   - component: {fileID: 383879450}
   m_Layer: 0
   m_Name: traffic_cone (8)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7586,9 +7948,10 @@ GameObject:
   - component: {fileID: 404241569}
   - component: {fileID: 404241571}
   - component: {fileID: 404241570}
+  - component: {fileID: 404241572}
   m_Layer: 0
   m_Name: BAND_ASSET (5)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7655,6 +8018,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404241568}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &404241572
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404241568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.00000016949399, y: 0.009999785, z: -0.010000016}
 --- !u!1 &409411916
 GameObject:
   m_ObjectHideFlags: 0
@@ -7666,9 +8042,10 @@ GameObject:
   - component: {fileID: 409411917}
   - component: {fileID: 409411919}
   - component: {fileID: 409411918}
+  - component: {fileID: 409411920}
   m_Layer: 0
   m_Name: BAND_ASSET (7)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7735,6 +8112,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409411916}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &409411920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409411916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.000000072785454, y: 0.0099998, z: -0.009999995}
 --- !u!1001 &413656706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7825,6 +8215,67 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 413656706}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &419234378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419234379}
+  - component: {fileID: 419234380}
+  m_Layer: 0
+  m_Name: WheelColliderRightFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419234379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419234378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.26800185, y: -0.26929128, z: 0.25880083}
+  m_LocalScale: {x: 0.71602184, y: 0.71602184, z: 0.71602184}
+  m_Children: []
+  m_Father: {fileID: 1115163799}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!146 &419234380
+WheelCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419234378}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5
+  m_SuspensionSpring:
+    spring: 90000
+    damper: 9000
+    targetPosition: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
+  m_Mass: 100
+  m_WheelDampingRate: 0.25
+  m_ForwardFriction:
+    m_ExtremumSlip: 0.4
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.8
+    m_AsymptoteValue: 0.5
+    m_Stiffness: 1
+  m_SidewaysFriction:
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.5
+    m_AsymptoteValue: 0.75
+    m_Stiffness: 1
+  m_Enabled: 1
 --- !u!1001 &422651468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8361,7 +8812,7 @@ GameObject:
   - component: {fileID: 440537367}
   m_Layer: 0
   m_Name: traffic_cone (16)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8692,7 +9143,7 @@ GameObject:
   - component: {fileID: 460958079}
   m_Layer: 0
   m_Name: traffic_cone (29)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9384,7 +9835,7 @@ GameObject:
   - component: {fileID: 502316469}
   m_Layer: 0
   m_Name: traffic_cone (7)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9795,9 +10246,10 @@ GameObject:
   - component: {fileID: 509428206}
   - component: {fileID: 509428208}
   - component: {fileID: 509428207}
+  - component: {fileID: 509428209}
   m_Layer: 0
   m_Name: BAND_ASSET (14)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9864,6 +10316,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509428205}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &509428209
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509428205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.000000042834117, y: 0.00999974, z: -0.010000014}
 --- !u!1001 &510174469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10575,7 +11040,7 @@ GameObject:
   - component: {fileID: 554748825}
   m_Layer: 0
   m_Name: traffic_cone (13)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10833,9 +11298,10 @@ GameObject:
   - component: {fileID: 568494000}
   - component: {fileID: 568493999}
   - component: {fileID: 568493998}
+  - component: {fileID: 568494001}
   m_Layer: 0
   m_Name: barrierWall (9)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10902,6 +11368,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 116
   m_LocalEulerAnglesHint: {x: 0, y: 171.697, z: 0}
+--- !u!64 &568494001
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568493997}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1001 &570224025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11003,9 +11483,10 @@ GameObject:
   - component: {fileID: 570947083}
   - component: {fileID: 570947085}
   - component: {fileID: 570947084}
+  - component: {fileID: 570947086}
   m_Layer: 0
   m_Name: BAND_ASSET (26)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11072,6 +11553,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570947082}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &570947086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570947082}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04000001, y: 0.020000014, z: 0.020000001}
+  m_Center: {x: 0.00000022639367, y: 0.009999798, z: -0.010000006}
 --- !u!1001 &575204114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11426,7 +11920,7 @@ GameObject:
   - component: {fileID: 600642880}
   m_Layer: 0
   m_Name: overheadLights
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11867,7 +12361,7 @@ GameObject:
   - component: {fileID: 621212335}
   m_Layer: 0
   m_Name: traffic_cone (18)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12795,9 +13289,10 @@ GameObject:
   - component: {fileID: 667593253}
   - component: {fileID: 667593255}
   - component: {fileID: 667593254}
+  - component: {fileID: 667593256}
   m_Layer: 0
   m_Name: BAND_ASSET (15)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12864,6 +13359,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667593252}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &667593256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667593252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.000000013031794, y: 0.0099996505, z: -0.010000021}
 --- !u!1001 &674336117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12965,9 +13473,10 @@ GameObject:
   - component: {fileID: 679459014}
   - component: {fileID: 679459016}
   - component: {fileID: 679459015}
+  - component: {fileID: 679459017}
   m_Layer: 0
   m_Name: BAND_ASSET (10)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13034,6 +13543,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679459013}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &679459017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679459013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.00000007263644, y: 0.0099998, z: -0.010000053}
 --- !u!1 &692346716
 GameObject:
   m_ObjectHideFlags: 0
@@ -13632,9 +14154,10 @@ GameObject:
   - component: {fileID: 723074014}
   - component: {fileID: 723074016}
   - component: {fileID: 723074015}
+  - component: {fileID: 723074017}
   m_Layer: 0
   m_Name: BAND_ASSET (9)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13701,6 +14224,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723074013}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &723074017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723074013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.000000080236035, y: 0.0099998, z: -0.01000001}
 --- !u!1 &725697693
 GameObject:
   m_ObjectHideFlags: 0
@@ -13712,9 +14248,10 @@ GameObject:
   - component: {fileID: 725697694}
   - component: {fileID: 725697696}
   - component: {fileID: 725697695}
+  - component: {fileID: 725697697}
   m_Layer: 0
   m_Name: BAND_ASSET (23)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13781,6 +14318,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725697693}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &725697697
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725697693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000014, z: 0.020000007}
+  m_Center: {x: 0.00000013546875, y: 0.009999561, z: -0.010000025}
 --- !u!1 &728999283
 GameObject:
   m_ObjectHideFlags: 0
@@ -14182,9 +14732,10 @@ GameObject:
   - component: {fileID: 751958527}
   - component: {fileID: 751958529}
   - component: {fileID: 751958528}
+  - component: {fileID: 751958530}
   m_Layer: 0
   m_Name: BAND_ASSET (10)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14251,6 +14802,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751958526}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &751958530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751958526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.000000072785454, y: 0.009999919, z: -0.0099999765}
 --- !u!1 &754577820
 GameObject:
   m_ObjectHideFlags: 0
@@ -14262,9 +14826,10 @@ GameObject:
   - component: {fileID: 754577821}
   - component: {fileID: 754577823}
   - component: {fileID: 754577822}
+  - component: {fileID: 754577824}
   m_Layer: 0
   m_Name: BAND_ASSET (15)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14331,6 +14896,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754577820}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &754577824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754577820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.000000013180809, y: 0.00999974, z: -0.009999963}
 --- !u!1001 &763305981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16608,6 +17186,86 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &818307142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818307143}
+  - component: {fileID: 818307145}
+  - component: {fileID: 818307144}
+  m_Layer: 0
+  m_Name: wheel_frontLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818307143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818307142}
+  m_LocalRotation: {x: 1, y: 0, z: -0, w: 6.123234e-17}
+  m_LocalPosition: {x: -0.34999996, y: 0.29999998, z: 0.65999985}
+  m_LocalScale: {x: -1, y: -1, z: -1}
+  m_Children: []
+  m_Father: {fileID: 2066548138}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &818307144
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818307142}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1991239904168531565, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: -3963241562183589234, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &818307145
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818307142}
+  m_Mesh: {fileID: -5281835330098238887, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
 --- !u!1 &856671598
 GameObject:
   m_ObjectHideFlags: 0
@@ -16621,7 +17279,7 @@ GameObject:
   - component: {fileID: 856671600}
   m_Layer: 0
   m_Name: traffic_cone (26)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19383,7 +20041,7 @@ GameObject:
   - component: {fileID: 918737199}
   m_Layer: 0
   m_Name: traffic_cone (15)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19463,7 +20121,7 @@ GameObject:
   - component: {fileID: 918870297}
   m_Layer: 0
   m_Name: traffic_cone (11)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19620,9 +20278,10 @@ GameObject:
   - component: {fileID: 928489909}
   - component: {fileID: 928489908}
   - component: {fileID: 928489907}
+  - component: {fileID: 928489910}
   m_Layer: 0
   m_Name: barrierWall (11)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19689,6 +20348,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 110
   m_LocalEulerAnglesHint: {x: 0, y: 307.455, z: 0}
+--- !u!64 &928489910
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928489906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1001 &930121339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19871,7 +20544,7 @@ GameObject:
   - component: {fileID: 937564792}
   m_Layer: 0
   m_Name: traffic_cone (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19938,6 +20611,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937564790}
   m_Mesh: {fileID: -6678241141530671799, guid: 888275d499efbc24eb5643bf5e4f03f0, type: 3}
+--- !u!1 &941849181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 941849182}
+  - component: {fileID: 941849183}
+  m_Layer: 0
+  m_Name: WheelColliderLeftFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &941849182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941849181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27479976, y: -0.26929128, z: 0.25879994}
+  m_LocalScale: {x: 0.71602184, y: 0.71602184, z: 0.71602184}
+  m_Children: []
+  m_Father: {fileID: 1115163799}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!146 &941849183
+WheelCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941849181}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5
+  m_SuspensionSpring:
+    spring: 90000
+    damper: 9000
+    targetPosition: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
+  m_Mass: 100
+  m_WheelDampingRate: 0.25
+  m_ForwardFriction:
+    m_ExtremumSlip: 0.4
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.8
+    m_AsymptoteValue: 0.5
+    m_Stiffness: 1
+  m_SidewaysFriction:
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.5
+    m_AsymptoteValue: 0.75
+    m_Stiffness: 1
+  m_Enabled: 1
 --- !u!1001 &946001560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21754,7 +22488,7 @@ GameObject:
   - component: {fileID: 980793105}
   m_Layer: 0
   m_Name: traffic_cone (12)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22368,9 +23102,10 @@ GameObject:
   - component: {fileID: 1022589037}
   - component: {fileID: 1022589039}
   - component: {fileID: 1022589038}
+  - component: {fileID: 1022589040}
   m_Layer: 0
   m_Name: BAND_ASSET (17)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22437,6 +23172,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022589036}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1022589040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022589036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000013, z: 0.020000005}
+  m_Center: {x: -0.00000013239679, y: 0.00999962, z: -0.0100000715}
 --- !u!1001 &1029050328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22628,9 +23376,10 @@ GameObject:
   - component: {fileID: 1038584566}
   - component: {fileID: 1038584568}
   - component: {fileID: 1038584567}
+  - component: {fileID: 1038584569}
   m_Layer: 0
   m_Name: BAND_ASSET (21)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22697,6 +23446,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038584565}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1038584569
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038584565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: 0.000000016770528, y: 0.00999977, z: -0.010000036}
 --- !u!1001 &1038795323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23619,9 +24381,10 @@ GameObject:
   - component: {fileID: 1104925280}
   - component: {fileID: 1104925279}
   - component: {fileID: 1104925278}
+  - component: {fileID: 1104925281}
   m_Layer: 0
   m_Name: barrierWall (14)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23688,6 +24451,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 115
   m_LocalEulerAnglesHint: {x: 0, y: 182.53499, z: 0}
+--- !u!64 &1104925281
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104925277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1001 &1111806493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23778,6 +24555,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1111806493}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1115163798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1115163799}
+  - component: {fileID: 1115163800}
+  m_Layer: 0
+  m_Name: Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1115163799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115163798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.001, y: 0.616, z: 0}
+  m_LocalScale: {x: 1.2857162, y: 0.82946193, z: 2.5553815}
+  m_Children:
+  - {fileID: 941849182}
+  - {fileID: 316277744}
+  - {fileID: 419234379}
+  - {fileID: 18492899}
+  m_Father: {fileID: 2066548138}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1115163800
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115163798}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1124068132
 GameObject:
   m_ObjectHideFlags: 0
@@ -23962,7 +24787,7 @@ GameObject:
   - component: {fileID: 1131024411}
   m_Layer: 0
   m_Name: traffic_cone (23)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24042,7 +24867,7 @@ GameObject:
   - component: {fileID: 1132328470}
   m_Layer: 0
   m_Name: traffic_cone (19)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24210,7 +25035,7 @@ GameObject:
   - component: {fileID: 1151176336}
   m_Layer: 0
   m_Name: Band left
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24505,7 +25330,7 @@ GameObject:
   - component: {fileID: 1160142278}
   m_Layer: 0
   m_Name: GrandStands
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24635,9 +25460,10 @@ GameObject:
   - component: {fileID: 1173964763}
   - component: {fileID: 1173964762}
   - component: {fileID: 1173964761}
+  - component: {fileID: 1173964764}
   m_Layer: 0
   m_Name: barrierWall (4)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24704,6 +25530,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 105
   m_LocalEulerAnglesHint: {x: 0, y: 240.898, z: 0}
+--- !u!64 &1173964764
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173964760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1 &1178096212
 GameObject:
   m_ObjectHideFlags: 0
@@ -24717,7 +25557,7 @@ GameObject:
   - component: {fileID: 1178096214}
   m_Layer: 0
   m_Name: traffic_cone (25)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25122,7 +25962,7 @@ GameObject:
   - component: {fileID: 1202901249}
   m_Layer: 0
   m_Name: pitsGarageCorner (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25295,7 +26135,7 @@ GameObject:
   - component: {fileID: 1223606677}
   m_Layer: 0
   m_Name: traffic_cone (14)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25373,9 +26213,10 @@ GameObject:
   - component: {fileID: 1226511055}
   - component: {fileID: 1226511057}
   - component: {fileID: 1226511056}
+  - component: {fileID: 1226511058}
   m_Layer: 0
   m_Name: BAND_ASSET (14)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25442,6 +26283,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226511054}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1226511058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226511054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.00000004298313, y: 0.0099998, z: -0.009999997}
 --- !u!1001 &1227055702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25543,9 +26397,10 @@ GameObject:
   - component: {fileID: 1227605954}
   - component: {fileID: 1227605956}
   - component: {fileID: 1227605955}
+  - component: {fileID: 1227605957}
   m_Layer: 0
   m_Name: BAND_ASSET (12)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25612,6 +26467,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227605953}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1227605957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227605953}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.00000009498818, y: 0.0099998, z: -0.010000038}
 --- !u!1 &1229462639
 GameObject:
   m_ObjectHideFlags: 0
@@ -25625,7 +26493,7 @@ GameObject:
   - component: {fileID: 1229462641}
   m_Layer: 0
   m_Name: pitsGarageCorner (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26132,9 +27000,10 @@ GameObject:
   - component: {fileID: 1251735887}
   - component: {fileID: 1251735889}
   - component: {fileID: 1251735888}
+  - component: {fileID: 1251735890}
   m_Layer: 0
   m_Name: BAND_ASSET (24)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26201,6 +27070,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251735886}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1251735890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251735886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000033, z: 0.020000016}
+  m_Center: {x: 0.00000019382045, y: 0.009999444, z: -0.009999984}
 --- !u!1 &1256443759
 GameObject:
   m_ObjectHideFlags: 0
@@ -26515,7 +27397,7 @@ GameObject:
   - component: {fileID: 1272098923}
   m_Layer: 0
   m_Name: traffic_cone (28)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26947,9 +27829,10 @@ GameObject:
   - component: {fileID: 1287114363}
   - component: {fileID: 1287114365}
   - component: {fileID: 1287114364}
+  - component: {fileID: 1287114366}
   m_Layer: 0
   m_Name: BAND_ASSET (25)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27016,6 +27899,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287114362}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1287114366
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287114362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000022, z: 0.020000007}
+  m_Center: {x: 0.00000028455997, y: 0.009999918, z: -0.010000044}
 --- !u!1 &1288654376
 GameObject:
   m_ObjectHideFlags: 0
@@ -28836,9 +29732,10 @@ GameObject:
   - component: {fileID: 1329028732}
   - component: {fileID: 1329028734}
   - component: {fileID: 1329028733}
+  - component: {fileID: 1329028735}
   m_Layer: 0
   m_Name: BAND_ASSET (6)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28905,6 +29802,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329028731}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1329028735
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329028731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.00000011361463, y: 0.0099998, z: -0.010000023}
+--- !u!1 &1330276873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1330276874}
+  - component: {fileID: 1330276876}
+  - component: {fileID: 1330276875}
+  m_Layer: 0
+  m_Name: wheel_frontRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1330276874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330276873}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.34999996, y: 0.29999998, z: 0.65999985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2066548138}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1330276875
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330276873}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1991239904168531565, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: -3963241562183589234, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1330276876
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330276873}
+  m_Mesh: {fileID: 3046150549580104586, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
 --- !u!1001 &1333547696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29006,9 +29996,10 @@ GameObject:
   - component: {fileID: 1335481701}
   - component: {fileID: 1335481700}
   - component: {fileID: 1335481699}
+  - component: {fileID: 1335481702}
   m_Layer: 0
   m_Name: barrierWall (6)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29075,6 +30066,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 109
   m_LocalEulerAnglesHint: {x: 0, y: 266.828, z: 0}
+--- !u!64 &1335481702
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335481698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1 &1336561072
 GameObject:
   m_ObjectHideFlags: 0
@@ -29427,7 +30432,7 @@ GameObject:
   - component: {fileID: 1364372363}
   m_Layer: 0
   m_Name: barrier
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29464,9 +30469,10 @@ GameObject:
   - component: {fileID: 1378273893}
   - component: {fileID: 1378273895}
   - component: {fileID: 1378273894}
+  - component: {fileID: 1378273896}
   m_Layer: 0
   m_Name: BAND_ASSET (19)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29533,6 +30539,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378273892}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1378273896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378273892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000014, z: 0.020000005}
+  m_Center: {x: 0.000000046277776, y: 0.00999974, z: -0.010000004}
 --- !u!1 &1385534958
 GameObject:
   m_ObjectHideFlags: 0
@@ -30706,7 +31725,7 @@ GameObject:
   - component: {fileID: 1395355820}
   m_Layer: 0
   m_Name: truck 1 (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30910,7 +31929,7 @@ GameObject:
   - component: {fileID: 1407891211}
   m_Layer: 0
   m_Name: road_barrier2 (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31228,9 +32247,10 @@ GameObject:
   - component: {fileID: 1440318783}
   - component: {fileID: 1440318782}
   - component: {fileID: 1440318781}
+  - component: {fileID: 1440318784}
   m_Layer: 0
   m_Name: barrierWall (13)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31297,6 +32317,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 113
   m_LocalEulerAnglesHint: {x: 0, y: 345.596, z: 0}
+--- !u!64 &1440318784
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440318780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1001 &1450880913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53603,6 +54637,86 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1526349217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1526349218}
+  - component: {fileID: 1526349220}
+  - component: {fileID: 1526349219}
+  m_Layer: 0
+  m_Name: spoiler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1526349218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526349217}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.0533795e-15, y: 0.39999998, z: -1.0686859}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1700153629}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1526349219
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526349217}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1991239904168531565, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: 643984211773790922, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1526349220
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526349217}
+  m_Mesh: {fileID: 1781033517927350220, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
 --- !u!1001 &1534623526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53704,9 +54818,10 @@ GameObject:
   - component: {fileID: 1535861315}
   - component: {fileID: 1535861314}
   - component: {fileID: 1535861313}
+  - component: {fileID: 1535861316}
   m_Layer: 0
   m_Name: barrierWall (5)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53773,6 +54888,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 106
   m_LocalEulerAnglesHint: {x: 0, y: 254.928, z: 0}
+--- !u!64 &1535861316
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535861312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1001 &1536240137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53876,7 +55005,7 @@ GameObject:
   - component: {fileID: 1539536649}
   m_Layer: 0
   m_Name: traffic_cone (24)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54203,9 +55332,10 @@ GameObject:
   - component: {fileID: 1566359284}
   - component: {fileID: 1566359286}
   - component: {fileID: 1566359285}
+  - component: {fileID: 1566359287}
   m_Layer: 0
   m_Name: BAND_ASSET (22)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54272,6 +55402,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566359283}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1566359287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566359283}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04000002, y: 0.020000016, z: 0.020000005}
+  m_Center: {x: 0.00000019544112, y: 0.00999986, z: -0.010000016}
 --- !u!1001 &1572982215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54936,7 +56079,7 @@ GameObject:
   - component: {fileID: 1604797094}
   m_Layer: 0
   m_Name: pitsGarageCorner (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55107,9 +56250,10 @@ GameObject:
   - component: {fileID: 1611179502}
   - component: {fileID: 1611179504}
   - component: {fileID: 1611179503}
+  - component: {fileID: 1611179505}
   m_Layer: 0
   m_Name: BAND_ASSET (4)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55176,6 +56320,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611179501}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1611179505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611179501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.00000019184573, y: 0.009999621, z: -0.010000038}
 --- !u!1001 &1612044060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55531,9 +56688,10 @@ GameObject:
   - component: {fileID: 1642130642}
   - component: {fileID: 1642130644}
   - component: {fileID: 1642130643}
+  - component: {fileID: 1642130645}
   m_Layer: 0
   m_Name: BAND_ASSET (20)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55600,6 +56758,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642130641}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1642130645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642130641}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04000002, y: 0.020000016, z: 0.020000005}
+  m_Center: {x: 0.0000001656388, y: 0.00999992, z: -0.010000019}
 --- !u!1 &1645966801
 GameObject:
   m_ObjectHideFlags: 0
@@ -55611,9 +56782,10 @@ GameObject:
   - component: {fileID: 1645966802}
   - component: {fileID: 1645966804}
   - component: {fileID: 1645966803}
+  - component: {fileID: 1645966805}
   m_Layer: 0
   m_Name: BAND_ASSET (16)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55680,6 +56852,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645966801}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1645966805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645966801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: 0.000000016770528, y: 0.0099996505, z: -0.010000029}
 --- !u!1 &1652792795
 GameObject:
   m_ObjectHideFlags: 0
@@ -56079,9 +57264,10 @@ GameObject:
   - component: {fileID: 1664945436}
   - component: {fileID: 1664945435}
   - component: {fileID: 1664945434}
+  - component: {fileID: 1664945437}
   m_Layer: 0
   m_Name: barrierWall (8)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56148,6 +57334,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 107
   m_LocalEulerAnglesHint: {x: 0, y: 291.695, z: 0}
+--- !u!64 &1664945437
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664945433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1 &1665339323
 GameObject:
   m_ObjectHideFlags: 0
@@ -56774,6 +57974,91 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696495834}
   m_Mesh: {fileID: -5495902117074765545, guid: 08a68a5991b81c945ba43686c0d37b13, type: 3}
+--- !u!1 &1700153628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700153629}
+  - component: {fileID: 1700153631}
+  - component: {fileID: 1700153630}
+  m_Layer: 0
+  m_Name: body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1700153629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700153628}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.4544989e-14, y: 0.19999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1526349218}
+  m_Father: {fileID: 2066548138}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1700153630
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700153628}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 7576386722563338562, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: 643984211773790922, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: -3963241562183589234, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: 3398073514908505954, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: 1014270287720225592, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: 659195688816635025, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1700153631
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700153628}
+  m_Mesh: {fileID: -8545447256379345787, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
 --- !u!1 &1701071913
 GameObject:
   m_ObjectHideFlags: 0
@@ -56954,7 +58239,7 @@ GameObject:
   - component: {fileID: 1709760878}
   m_Layer: 0
   m_Name: traffic_cone (21)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57034,7 +58319,7 @@ GameObject:
   - component: {fileID: 1714699596}
   m_Layer: 0
   m_Name: traffic_cone (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57281,9 +58566,10 @@ GameObject:
   - component: {fileID: 1727849620}
   - component: {fileID: 1727849622}
   - component: {fileID: 1727849621}
+  - component: {fileID: 1727849623}
   m_Layer: 0
   m_Name: BAND_ASSET (22)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57350,6 +58636,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727849619}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1727849623
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727849619}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04000001, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: 0.00000007634211, y: 0.00999968, z: -0.009999984}
 --- !u!1 &1740514997
 GameObject:
   m_ObjectHideFlags: 0
@@ -57518,9 +58817,10 @@ GameObject:
   - component: {fileID: 1741624367}
   - component: {fileID: 1741624369}
   - component: {fileID: 1741624368}
+  - component: {fileID: 1741624370}
   m_Layer: 0
   m_Name: BAND_ASSET (20)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57587,6 +58887,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741624366}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1741624370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741624366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000016, z: 0.020000005}
+  m_Center: {x: 0.00000007597876, y: 0.0099998005, z: -0.010000055}
 --- !u!1001 &1748335002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59179,7 +60492,7 @@ GameObject:
   - component: {fileID: 1765455655}
   m_Layer: 0
   m_Name: traffic_cone (27)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59257,9 +60570,10 @@ GameObject:
   - component: {fileID: 1766349275}
   - component: {fileID: 1766349277}
   - component: {fileID: 1766349276}
+  - component: {fileID: 1766349278}
   m_Layer: 0
   m_Name: BAND_ASSET (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59326,6 +60640,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766349274}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1766349278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766349274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.0000001620434, y: 0.009999695, z: -0.010000047}
 --- !u!1001 &1772623450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60585,9 +61912,10 @@ GameObject:
   - component: {fileID: 1776492396}
   - component: {fileID: 1776492398}
   - component: {fileID: 1776492397}
+  - component: {fileID: 1776492399}
   m_Layer: 0
   m_Name: BAND_ASSET (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60654,6 +61982,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776492395}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1776492399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776492395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04000001, y: 0.02000001, z: 0.02}
+  m_Center: {x: -0.00000016220415, y: 0.0099999765, z: -0.010000031}
 --- !u!1 &1783511329
 GameObject:
   m_ObjectHideFlags: 0
@@ -61237,7 +62578,7 @@ GameObject:
   - component: {fileID: 1807950088}
   m_Layer: 0
   m_Name: Band right
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61293,7 +62634,7 @@ GameObject:
   - component: {fileID: 1809539951}
   m_Layer: 0
   m_Name: track interior
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61441,9 +62782,10 @@ GameObject:
   - component: {fileID: 1814680349}
   - component: {fileID: 1814680351}
   - component: {fileID: 1814680350}
+  - component: {fileID: 1814680352}
   m_Layer: 0
   m_Name: BAND_ASSET (18)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61510,6 +62852,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814680348}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1814680352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814680348}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.000000013328169, y: 0.0099998, z: -0.009999984}
 --- !u!1 &1834887577
 GameObject:
   m_ObjectHideFlags: 0
@@ -61565,7 +62920,7 @@ GameObject:
   - component: {fileID: 1834908092}
   m_Layer: 0
   m_Name: tire_barrier_single (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61877,9 +63232,10 @@ GameObject:
   - component: {fileID: 1858763770}
   - component: {fileID: 1858763772}
   - component: {fileID: 1858763771}
+  - component: {fileID: 1858763773}
   m_Layer: 0
   m_Name: BAND_ASSET (8)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61946,6 +63302,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858763769}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1858763773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858763769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.00000019929631, y: 0.0099996505, z: -0.010000008}
 --- !u!1 &1864784221
 GameObject:
   m_ObjectHideFlags: 0
@@ -61957,9 +63326,10 @@ GameObject:
   - component: {fileID: 1864784222}
   - component: {fileID: 1864784224}
   - component: {fileID: 1864784223}
+  - component: {fileID: 1864784225}
   m_Layer: 0
   m_Name: BAND_ASSET (9)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62026,6 +63396,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864784221}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1864784225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864784221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.00000013224108, y: 0.0099998, z: -0.010000045}
 --- !u!1001 &1878601754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62351,7 +63734,7 @@ GameObject:
   - component: {fileID: 1899884674}
   m_Layer: 0
   m_Name: traffic_cone (6)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62610,7 +63993,7 @@ GameObject:
   - component: {fileID: 1912823083}
   m_Layer: 0
   m_Name: traffic_cone (20)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62947,7 +64330,7 @@ GameObject:
   - component: {fileID: 1930757995}
   m_Layer: 0
   m_Name: Flags and lights
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62991,9 +64374,10 @@ GameObject:
   - component: {fileID: 1935945150}
   - component: {fileID: 1935945152}
   - component: {fileID: 1935945151}
+  - component: {fileID: 1935945153}
   m_Layer: 0
   m_Name: BAND_ASSET (21)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63060,6 +64444,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935945149}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1935945153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935945149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000005}
+  m_Center: {x: -0.000000013180809, y: 0.00999974, z: -0.009999978}
 --- !u!1001 &1938879594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64413,7 +65810,7 @@ GameObject:
   - component: {fileID: 1943094871}
   m_Layer: 0
   m_Name: road_barrier1 (10)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64741,9 +66138,10 @@ GameObject:
   - component: {fileID: 1976043579}
   - component: {fileID: 1976043581}
   - component: {fileID: 1976043580}
+  - component: {fileID: 1976043582}
   m_Layer: 0
   m_Name: BAND_ASSET (17)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64810,6 +66208,102 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976043578}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &1976043582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976043578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: 0.0000000018693669, y: 0.009999829, z: -0.010000006}
+--- !u!1 &1979895676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979895677}
+  - component: {fileID: 1979895679}
+  - component: {fileID: 1979895678}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1979895677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979895676}
+  m_LocalRotation: {x: -0.059574537, y: 0.00033929944, z: -0.0056046466, w: -0.99820817}
+  m_LocalPosition: {x: -0.1, y: 1.9, z: -4.3}
+  m_LocalScale: {x: 1.4285713, y: 1.4285713, z: 1.4285713}
+  m_Children: []
+  m_Father: {fileID: 2066548138}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 6.8310003, y: -0.001, z: 0.643}
+--- !u!81 &1979895678
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979895676}
+  m_Enabled: 1
+--- !u!20 &1979895679
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979895676}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1001 &1987707183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64990,6 +66484,86 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1994904047}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1997293130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1997293131}
+  - component: {fileID: 1997293133}
+  - component: {fileID: 1997293132}
+  m_Layer: 0
+  m_Name: wheel_backLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1997293131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997293130}
+  m_LocalRotation: {x: 1, y: 0, z: -0, w: 6.123234e-17}
+  m_LocalPosition: {x: -0.34999996, y: 0.29999998, z: -0.65999985}
+  m_LocalScale: {x: -1, y: -1, z: -1}
+  m_Children: []
+  m_Father: {fileID: 2066548138}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1997293132
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997293130}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1991239904168531565, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  - {fileID: -3963241562183589234, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1997293133
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997293130}
+  m_Mesh: {fileID: 2185217709625990164, guid: 04dbd25517524a6479f1dec6a66d3610, type: 3}
 --- !u!1 &2000109494
 GameObject:
   m_ObjectHideFlags: 0
@@ -65256,9 +66830,10 @@ GameObject:
   - component: {fileID: 2005494655}
   - component: {fileID: 2005494654}
   - component: {fileID: 2005494653}
+  - component: {fileID: 2005494656}
   m_Layer: 0
   m_Name: barrierWall (7)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65325,6 +66900,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 108
   m_LocalEulerAnglesHint: {x: 0, y: 277.66498, z: 0}
+--- !u!64 &2005494656
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005494652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1 &2011951649
 GameObject:
   m_ObjectHideFlags: 0
@@ -65493,9 +67082,10 @@ GameObject:
   - component: {fileID: 2014977563}
   - component: {fileID: 2014977565}
   - component: {fileID: 2014977564}
+  - component: {fileID: 2014977566}
   m_Layer: 0
   m_Name: BAND_ASSET (18)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65562,6 +67152,70 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014977562}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &2014977566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014977562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04000001, y: 0.02000001, z: 0.020000005}
+  m_Center: {x: 0.00000007629785, y: 0.0099998005, z: -0.009999971}
+--- !u!1 &2024060454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024060456}
+  - component: {fileID: 2024060455}
+  m_Layer: 0
+  m_Name: _Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2024060455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024060454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4195475bc8aee34184777ce3bdea127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 2066548135}
+  initialPopulation: 85
+  mutationRate: 0.055
+  bestAgentSelection: 8
+  worstAgentSelection: 3
+  numberToCrossover: 39
+  currentGeneration: 0
+  currentGenome: 0
+--- !u!4 &2024060456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024060454}
+  m_LocalRotation: {x: -0, y: 0.07397513, z: -0, w: 0.99726015}
+  m_LocalPosition: {x: 63.196922, y: -98.302345, z: 38.811363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 8.485001, z: 0}
 --- !u!1 &2027478001
 GameObject:
   m_ObjectHideFlags: 0
@@ -65739,9 +67393,10 @@ GameObject:
   - component: {fileID: 2043290601}
   - component: {fileID: 2043290603}
   - component: {fileID: 2043290602}
+  - component: {fileID: 2043290604}
   m_Layer: 0
   m_Name: BAND_ASSET (19)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65808,6 +67463,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043290600}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &2043290604
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043290600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000016, z: 0.020000005}
+  m_Center: {x: 0.000000046524036, y: 0.009999681, z: -0.010000068}
 --- !u!1001 &2044338929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66271,9 +67939,10 @@ GameObject:
   - component: {fileID: 2065622093}
   - component: {fileID: 2065622095}
   - component: {fileID: 2065622094}
+  - component: {fileID: 2065622096}
   m_Layer: 0
   m_Name: BAND_ASSET (7)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66340,6 +68009,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065622092}
   m_Mesh: {fileID: 2662850342841859083, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
+--- !u!65 &2065622096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065622092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000014, y: 0.020000009, z: 0.020000001}
+  m_Center: {x: -0.0000001452796, y: 0.009999829, z: -0.0100000305}
 --- !u!1001 &2066081615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66430,6 +68112,97 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2066081615}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2066548134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2066548138}
+  - component: {fileID: 2066548137}
+  - component: {fileID: 2066548135}
+  - component: {fileID: 2066548136}
+  m_Layer: 0
+  m_Name: TestingObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2066548135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066548134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e602bded80083c41b468f9fc6d27f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Acceleration: 0
+  TurnAngle: 0
+  timeSinceStart: 0
+  overallFitness: 0
+  distanceMultiplier: 1.4
+  avgSpeedMultiplier: 0.2
+  sensorMultiplier: 0.1
+  LAYERS: 1
+  NEURONS: 10
+--- !u!114 &2066548136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066548134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f58049e9d0e5e4bb26c80d3c5ede77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biases: []
+  fitness: 0
+--- !u!54 &2066548137
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066548134}
+  serializedVersion: 2
+  m_Mass: 550
+  m_Drag: 3
+  m_AngularDrag: 4
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 2
+  m_Constraints: 64
+  m_CollisionDetection: 0
+--- !u!4 &2066548138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066548134}
+  m_LocalRotation: {x: -0.015837198, y: 0.619543, z: -0.04136774, w: 0.7837119}
+  m_LocalPosition: {x: 13.710924, y: 1.93, z: -41.890434}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_Children:
+  - {fileID: 1700153629}
+  - {fileID: 1997293131}
+  - {fileID: 14048023}
+  - {fileID: 818307143}
+  - {fileID: 1330276874}
+  - {fileID: 1115163799}
+  - {fileID: 1979895677}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 1.5150001, y: -283.41, z: -4.847}
 --- !u!1001 &2076476686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66749,9 +68522,10 @@ GameObject:
   - component: {fileID: 2104203387}
   - component: {fileID: 2104203386}
   - component: {fileID: 2104203385}
+  - component: {fileID: 2104203388}
   m_Layer: 0
   m_Name: barrierWall (12)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66818,6 +68592,20 @@ Transform:
   m_Father: {fileID: 1809539951}
   m_RootOrder: 112
   m_LocalEulerAnglesHint: {x: 0, y: 330.087, z: 0}
+--- !u!64 &2104203388
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104203384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1 &2106859565
 GameObject:
   m_ObjectHideFlags: 0
@@ -67344,7 +69132,7 @@ GameObject:
   - component: {fileID: 2129255632}
   m_Layer: 0
   m_Name: traffic_cone (17)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71632,7 +73420,7 @@ GameObject:
   - component: {fileID: 543450652028565803}
   m_Layer: 0
   m_Name: ambulance
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71648,13 +73436,28 @@ GameObject:
   - component: {fileID: 543450651893671869}
   - component: {fileID: 3469287837958711320}
   - component: {fileID: 1711813855305030866}
+  - component: {fileID: 919132147638598920}
   m_Layer: 0
   m_Name: barrierWall (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &919132147638598920
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147638598919}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1 &919132147657311785
 GameObject:
   m_ObjectHideFlags: 0
@@ -71668,7 +73471,7 @@ GameObject:
   - component: {fileID: 1711813855261108220}
   m_Layer: 0
   m_Name: road_barrier1 (7)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71686,7 +73489,7 @@ GameObject:
   - component: {fileID: 1711813855228149337}
   m_Layer: 0
   m_Name: road_barrier1 (4)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71702,7 +73505,7 @@ GameObject:
   - component: {fileID: 543450651737928336}
   m_Layer: 0
   m_Name: ambulance (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71718,7 +73521,7 @@ GameObject:
   - component: {fileID: 543450651689142268}
   m_Layer: 0
   m_Name: taxi
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71736,7 +73539,7 @@ GameObject:
   - component: {fileID: 1711813854772164108}
   m_Layer: 0
   m_Name: road_barrier1 (5)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71754,7 +73557,7 @@ GameObject:
   - component: {fileID: 1711813854250460966}
   m_Layer: 0
   m_Name: road_barrier2 (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71770,13 +73573,28 @@ GameObject:
   - component: {fileID: 543450652330415799}
   - component: {fileID: 3469287838327298322}
   - component: {fileID: 1711813854264307160}
+  - component: {fileID: 919132148410846222}
   m_Layer: 0
   m_Name: barrierWall (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &919132148410846222
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148410846221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2315663613580718024, guid: c14d1b21d36687741b064cab9c0cc325, type: 3}
 --- !u!1 &919132148475875091
 GameObject:
   m_ObjectHideFlags: 0
@@ -71788,7 +73606,7 @@ GameObject:
   - component: {fileID: 543450652131169705}
   m_Layer: 0
   m_Name: firetruck
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71806,7 +73624,7 @@ GameObject:
   - component: {fileID: 1711813854445102674}
   m_Layer: 0
   m_Name: road_barrier1 (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71842,7 +73660,7 @@ GameObject:
   - component: {fileID: 1711813856207322879}
   m_Layer: 0
   m_Name: road_barrier1 (9)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71860,7 +73678,7 @@ GameObject:
   - component: {fileID: 1711813856126389135}
   m_Layer: 0
   m_Name: road_barrier1
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71878,7 +73696,7 @@ GameObject:
   - component: {fileID: 1711813856144615046}
   m_Layer: 0
   m_Name: road_barrier1 (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71896,7 +73714,7 @@ GameObject:
   - component: {fileID: 1711813855912217766}
   m_Layer: 0
   m_Name: road_barrier1 (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71914,7 +73732,7 @@ GameObject:
   - component: {fileID: 1711813855659430264}
   m_Layer: 0
   m_Name: lightPost_exclusive (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71948,7 +73766,7 @@ GameObject:
   - component: {fileID: 543450653611787191}
   m_Layer: 0
   m_Name: firetruck (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71966,7 +73784,7 @@ GameObject:
   - component: {fileID: 1711813855786377960}
   m_Layer: 0
   m_Name: traffic_cone
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71984,7 +73802,7 @@ GameObject:
   - component: {fileID: 1711813855573520111}
   m_Layer: 0
   m_Name: pitsGarageCorner
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72002,7 +73820,7 @@ GameObject:
   - component: {fileID: 1711813855507555978}
   m_Layer: 0
   m_Name: road_barrier1 (6)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72020,7 +73838,7 @@ GameObject:
   - component: {fileID: 1711813855512642604}
   m_Layer: 0
   m_Name: road_barrier2
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72038,7 +73856,7 @@ GameObject:
   - component: {fileID: 1711813855479080382}
   m_Layer: 0
   m_Name: road_barrier1 (8)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73256,7 +75074,7 @@ GameObject:
   - component: {fileID: 1494307774}
   m_Layer: 0
   m_Name: MT_Terrain_L_a_01
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74140,7 +75958,7 @@ GameObject:
   - component: {fileID: 2192493829553499349}
   m_Layer: 0
   m_Name: race (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77248,13 +79066,27 @@ GameObject:
   - component: {fileID: 1006053879254948734}
   - component: {fileID: 5778969174252202199}
   - component: {fileID: 2246874909824186921}
+  - component: {fileID: 2084910700125067962}
   m_Layer: 0
   m_Name: BAND_ASSET
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2084910700125067962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084910700125067961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040000003, y: 0.02000001, z: 0.020000005}
+  m_Center: {x: -0.000000042843077, y: 0.010002065, z: -0.010000016}
 --- !u!1 &2087941904571939227
 GameObject:
   m_ObjectHideFlags: 0
@@ -77449,7 +79281,7 @@ GameObject:
   - component: {fileID: 1635980097487227979}
   m_Layer: 0
   m_Name: tire_barrier_single (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77465,7 +79297,7 @@ GameObject:
   - component: {fileID: 1635980097418534629}
   m_Layer: 0
   m_Name: tire_barrier_single (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77481,7 +79313,7 @@ GameObject:
   - component: {fileID: 1635980097396825302}
   m_Layer: 0
   m_Name: tire_barrier_single (4)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77497,7 +79329,7 @@ GameObject:
   - component: {fileID: 1635980097222386586}
   m_Layer: 0
   m_Name: tire_barrier_single (6)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77513,7 +79345,7 @@ GameObject:
   - component: {fileID: 1635980097270818395}
   m_Layer: 0
   m_Name: tire_barrier_single (8)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77529,7 +79361,7 @@ GameObject:
   - component: {fileID: 1635980097886303550}
   m_Layer: 0
   m_Name: tire_barrier_single
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77545,7 +79377,7 @@ GameObject:
   - component: {fileID: 1635980097856553401}
   m_Layer: 0
   m_Name: tire_barrier_single (10)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77561,7 +79393,7 @@ GameObject:
   - component: {fileID: 1635980097718700111}
   m_Layer: 0
   m_Name: tire_barrier_single (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77577,7 +79409,7 @@ GameObject:
   - component: {fileID: 1635980097710394975}
   m_Layer: 0
   m_Name: tire_barrier_single (7)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77593,7 +79425,7 @@ GameObject:
   - component: {fileID: 1635980097655957930}
   m_Layer: 0
   m_Name: tire_barrier_single (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77609,7 +79441,7 @@ GameObject:
   - component: {fileID: 1635980098558776955}
   m_Layer: 0
   m_Name: tire_barrier_single (7)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77625,7 +79457,7 @@ GameObject:
   - component: {fileID: 1635980098435419209}
   m_Layer: 0
   m_Name: tire_barrier_single (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77641,7 +79473,7 @@ GameObject:
   - component: {fileID: 1635980098253337924}
   m_Layer: 0
   m_Name: tire_barrier_single (5)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77657,7 +79489,7 @@ GameObject:
   - component: {fileID: 1635980099107985034}
   m_Layer: 0
   m_Name: tire_barrier_single
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77673,7 +79505,7 @@ GameObject:
   - component: {fileID: 1635980099072101530}
   m_Layer: 0
   m_Name: tire_barrier_single (6)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77689,7 +79521,7 @@ GameObject:
   - component: {fileID: 1635980098930350950}
   m_Layer: 0
   m_Name: tire_barrier_single (5)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77705,7 +79537,7 @@ GameObject:
   - component: {fileID: 1635980099036309661}
   m_Layer: 0
   m_Name: tire_barrier_single (4)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77721,7 +79553,7 @@ GameObject:
   - component: {fileID: 1635980098810680526}
   m_Layer: 0
   m_Name: tire_barrier_single (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77737,7 +79569,7 @@ GameObject:
   - component: {fileID: 1635980098762861020}
   m_Layer: 0
   m_Name: tire_barrier_single (9)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79162,7 +80994,7 @@ GameObject:
   - component: {fileID: 3438696930806227730}
   m_Layer: 0
   m_Name: Cylinder.008
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81182,13 +83014,28 @@ GameObject:
   - component: {fileID: 2578755179118539093}
   - component: {fileID: 1469949986115436272}
   - component: {fileID: 3711732386020510266}
+  - component: {fileID: 2918970828068449264}
   m_Layer: 0
   m_Name: tire_barrier_round4 (3)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2918970828068449264
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918970828068449263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -125435165217083709, guid: 4f3454e46eda7c04c843ddfc995e0876, type: 3}
 --- !u!1 &2919813463378931348
 GameObject:
   m_ObjectHideFlags: 0
@@ -81238,7 +83085,7 @@ GameObject:
   - component: {fileID: 597797838617170584}
   m_Layer: 0
   m_Name: Cylinder.011
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81637,7 +83484,7 @@ GameObject:
   - component: {fileID: 3744196761435313479}
   m_Layer: 0
   m_Name: tent
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81783,13 +83630,28 @@ GameObject:
   - component: {fileID: 6360632959764141593}
   - component: {fileID: 6188181324364205998}
   - component: {fileID: 5018947657258230916}
+  - component: {fileID: 3066573833019697955}
   m_Layer: 0
   m_Name: BAND_G_3
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &3066573833019697955
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066573833019697954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5751389991055942047, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
 --- !u!4 &3075335215547255958
 Transform:
   m_ObjectHideFlags: 0
@@ -82436,13 +84298,28 @@ GameObject:
   - component: {fileID: 5668696470141297820}
   - component: {fileID: 4783616419743920232}
   - component: {fileID: 9134973024479027531}
+  - component: {fileID: 3246523326950314588}
   m_Layer: 0
   m_Name: CURB
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &3246523326950314588
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246523326950314587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3154339609838350622, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
 --- !u!4 &3249639035273331232
 Transform:
   m_ObjectHideFlags: 0
@@ -85512,9 +87389,10 @@ GameObject:
   - component: {fileID: 4478372523809529189}
   - component: {fileID: 5575944023421597643}
   - component: {fileID: 3953632735921148837}
+  - component: {fileID: 3953632735921148838}
   m_Layer: 0
   m_Name: BAND_G_2
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99471,6 +101349,20 @@ MonoBehaviour:
   m_OriginalMeshObject: {fileID: -1331725500443221952, guid: 7cb8381c9fed2904591fedd9fd136938,
     type: 3}
   m_Mode: 0
+--- !u!64 &3953632735921148838
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953632735921148836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1331725500443221952, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
 --- !u!4 &3985654406231518721
 Transform:
   m_ObjectHideFlags: 0
@@ -100227,13 +102119,28 @@ GameObject:
   - component: {fileID: 3486767422879311983}
   - component: {fileID: 562008677266958282}
   - component: {fileID: 2317190673507275520}
+  - component: {fileID: 4262847072993047254}
   m_Layer: 0
   m_Name: tire_barrier_round4 (4)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &4262847072993047254
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262847072993047253}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -125435165217083709, guid: 4f3454e46eda7c04c843ddfc995e0876, type: 3}
 --- !u!4 &4269159857660093807
 Transform:
   m_ObjectHideFlags: 0
@@ -102096,13 +104003,28 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5432287660837179639}
+  - component: {fileID: 4623099447595780686}
   m_Layer: 0
   m_Name: tire_barrier_single (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &4623099447595780686
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623099447595780685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!23 &4639586122881146306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102270,7 +104192,7 @@ GameObject:
   - component: {fileID: 6488020238101484866}
   m_Layer: 0
   m_Name: tire_barrier_round4
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102770,13 +104692,28 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5233936520946012018}
+  - component: {fileID: 4893580070555096521}
   m_Layer: 0
   m_Name: tire_barrier_single (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &4893580070555096521
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893580070555096520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4907410166132006094
 GameObject:
   m_ObjectHideFlags: 0
@@ -102826,13 +104763,28 @@ GameObject:
   - component: {fileID: 5726061637620070777}
   - component: {fileID: 8707944272904255196}
   - component: {fileID: 6862397745572479510}
+  - component: {fileID: 4917049071382143940}
   m_Layer: 0
   m_Name: tire_barrier_round4 (1)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &4917049071382143940
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917049071382143939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -125435165217083709, guid: 4f3454e46eda7c04c843ddfc995e0876, type: 3}
 --- !u!1 &4947672628207006461
 GameObject:
   m_ObjectHideFlags: 0
@@ -102844,13 +104796,28 @@ GameObject:
   - component: {fileID: 1528083712159609293}
   - component: {fileID: 92714428664964292}
   - component: {fileID: 1504038263177060717}
+  - component: {fileID: 4947672628207006462}
   m_Layer: 0
   m_Name: BAND_G_4
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &4947672628207006462
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947672628207006461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4740625198514067037, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
 --- !u!23 &4962752063567029225
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -119969,13 +121936,28 @@ GameObject:
   - component: {fileID: 3300912435045076012}
   - component: {fileID: 8588920497977612661}
   - component: {fileID: 5481370361225341325}
+  - component: {fileID: 5314270026543794606}
   m_Layer: 0
   m_Name: BAND_1
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &5314270026543794606
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314270026543794605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7832612758959795004, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
 --- !u!1 &5317616337835780058
 GameObject:
   m_ObjectHideFlags: 0
@@ -122342,7 +124324,7 @@ GameObject:
   - component: {fileID: 6371808874571075966}
   m_Layer: 0
   m_Name: truck 1
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123949,7 +125931,7 @@ GameObject:
   - component: {fileID: 8811517089585309934}
   m_Layer: 0
   m_Name: Cylinder.010
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125747,13 +127729,28 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6102935730518844025}
+  - component: {fileID: 6915887571841923268}
   m_Layer: 0
   m_Name: tire_barrier_single
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &6915887571841923268
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6915887571841923267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!33 &6920179475593978259
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -127724,13 +129721,28 @@ GameObject:
   - component: {fileID: 1140372652005256549}
   - component: {fileID: 1600784963038222376}
   - component: {fileID: 8929611690644024015}
+  - component: {fileID: 7457739729773710597}
   m_Layer: 0
   m_Name: BAND_3
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &7457739729773710597
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457739729773710596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2409525115992364717, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
 --- !u!4 &7475456630972934758
 Transform:
   m_ObjectHideFlags: 0
@@ -128034,13 +130046,28 @@ GameObject:
   - component: {fileID: 7193070320355919178}
   - component: {fileID: 6088075931777714927}
   - component: {fileID: 8329908356171415077}
+  - component: {fileID: 7537121370866982897}
   m_Layer: 0
   m_Name: tire_barrier_round4 (2)
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &7537121370866982897
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7537121370866982896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -125435165217083709, guid: 4f3454e46eda7c04c843ddfc995e0876, type: 3}
 --- !u!1 &7549499372415050232
 GameObject:
   m_ObjectHideFlags: 0
@@ -130011,7 +132038,7 @@ GameObject:
   - component: {fileID: 4374860508218514448}
   m_Layer: 0
   m_Name: Cylinder.009
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130134,13 +132161,28 @@ GameObject:
   - component: {fileID: 1349046990147598691}
   - component: {fileID: 4413747868446593812}
   - component: {fileID: 6455898560357893499}
+  - component: {fileID: 8185039378365581902}
   m_Layer: 0
   m_Name: BAND_2
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &8185039378365581902
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185039378365581901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2706787199129420564, guid: 7cb8381c9fed2904591fedd9fd136938, type: 3}
 --- !u!1 &8186002996781718542
 GameObject:
   m_ObjectHideFlags: 0
@@ -134456,7 +136498,7 @@ GameObject:
   - component: {fileID: 113029458806452196}
   m_Layer: 0
   m_Name: CURB_ASSET
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
