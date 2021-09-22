@@ -27884,8 +27884,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918428540}
-  m_LocalRotation: {x: -0.008172831, y: 0.8538342, z: 0.0051967874, w: 0.52045494}
-  m_LocalPosition: {x: -10.8, y: 1.3, z: -21.58}
+  m_LocalRotation: {x: 0.00080068066, y: 0.8577824, z: 0.009651981, w: -0.5139216}
+  m_LocalPosition: {x: 31.7, y: 1.3, z: -118.6}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 1113610109}
@@ -27897,7 +27897,7 @@ Transform:
   - {fileID: 1814526416}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -0.99600005, y: -242.72499, z: -0.49}
+  m_LocalEulerAnglesHint: {x: -0.99600005, y: -118.142006, z: -0.49}
 --- !u!1 &919304522
 GameObject:
   m_ObjectHideFlags: 0
@@ -62240,7 +62240,7 @@ GameObject:
   - component: {fileID: 463254722633145347}
   m_Layer: 0
   m_Name: BAND_OUTSIDE
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62369,7 +62369,7 @@ GameObject:
   - component: {fileID: 741141425986573028}
   m_Layer: 0
   m_Name: TRACK
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96399,7 +96399,7 @@ GameObject:
   - component: {fileID: 1711813854447105866}
   m_Layer: 0
   m_Name: overheadLights
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96495,7 +96495,7 @@ GameObject:
   - component: {fileID: 1281085249587533300}
   m_Layer: 0
   m_Name: CURBS
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131011,7 +131011,7 @@ GameObject:
   - component: {fileID: 1680883692897233500}
   m_Layer: 0
   m_Name: BAND_INSIDE
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131277,6 +131277,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463254722633145346}
   m_Mesh: {fileID: 732907975736276162, guid: ee08b523a4b2d31448baf1f4b5976826, type: 3}
+--- !u!33 &2661286531789861757
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898404495972328467}
+  m_Mesh: {fileID: -425794664167425307, guid: 4e399c759c697ff4bbd048d8efa72162, type: 3}
 --- !u!23 &2673504656114192137
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -131464,7 +131472,7 @@ GameObject:
   - component: {fileID: 3602657825617676563}
   m_Layer: 0
   m_Name: MT_Terrain_L_a_01 (1)
-  m_TagString: Untagged
+  m_TagString: SlowingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152691,6 +152699,45 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1743770766}
+--- !u!23 &4082236859329187789
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6912921463931079495}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 8435332810321631410, guid: 4e399c759c697ff4bbd048d8efa72162, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &4115714901233330181
 GameObject:
   m_ObjectHideFlags: 0
@@ -152946,7 +152993,7 @@ GameObject:
   - component: {fileID: 4475115824426102493}
   m_Layer: 0
   m_Name: MT_Terrain_L_a_01 (2)
-  m_TagString: Untagged
+  m_TagString: SlowingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174054,6 +174101,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!33 &4797892013725352264
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6912921463931079495}
+  m_Mesh: {fileID: 6423179310118624789, guid: 4e399c759c697ff4bbd048d8efa72162, type: 3}
 --- !u!23 &4831253885671686505
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -174095,6 +174150,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!4 &5049316660149430303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6912921463931079495}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 13.624473, y: 0, z: 71.0192}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 5365020661493116573}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5053640845675856270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -174226,6 +174295,8 @@ Transform:
   - {fileID: 8324122590679534289}
   - {fileID: 269477028}
   - {fileID: 1067666641}
+  - {fileID: 9113162884462740298}
+  - {fileID: 5049316660149430303}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -174237,6 +174308,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8203122995783295064}
   m_Mesh: {fileID: -6678241141530671799, guid: 888275d499efbc24eb5643bf5e4f03f0, type: 3}
+--- !u!23 &5614117675516571158
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898404495972328467}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 8435332810321631410, guid: 4e399c759c697ff4bbd048d8efa72162, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!4 &5722870964654110195
 Transform:
   m_ObjectHideFlags: 0
@@ -174274,7 +174384,7 @@ GameObject:
   - component: {fileID: 5993576799735447519}
   m_Layer: 0
   m_Name: MT_Terrain_L_a_01 (4)
-  m_TagString: Untagged
+  m_TagString: SlowingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195657,6 +195767,72 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &6898404495972328467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9113162884462740298}
+  - component: {fileID: 2661286531789861757}
+  - component: {fileID: 5614117675516571158}
+  - component: {fileID: 6898404495972328468}
+  m_Layer: 9
+  m_Name: TRACK_BOUNDARIES_INSIDE
+  m_TagString: NotRoad
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &6898404495972328468
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898404495972328467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -425794664167425307, guid: 4e399c759c697ff4bbd048d8efa72162, type: 3}
+--- !u!1 &6912921463931079495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5049316660149430303}
+  - component: {fileID: 4797892013725352264}
+  - component: {fileID: 4082236859329187789}
+  - component: {fileID: 6912921463931079496}
+  m_Layer: 9
+  m_Name: TRACK_BOUNDARIES_OUTSIE
+  m_TagString: NotRoad
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &6912921463931079496
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6912921463931079495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6423179310118624789, guid: 4e399c759c697ff4bbd048d8efa72162, type: 3}
 --- !u!4 &7062646543604962678
 Transform:
   m_ObjectHideFlags: 0
@@ -195747,7 +195923,7 @@ GameObject:
   - component: {fileID: 7586418233126064077}
   m_Layer: 0
   m_Name: MT_Terrain_L_a_01 (5)
-  m_TagString: Untagged
+  m_TagString: SlowingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217065,7 +217241,7 @@ GameObject:
   - component: {fileID: 8358791261012081446}
   m_Layer: 0
   m_Name: MT_Terrain_L_a_01 (3)
-  m_TagString: Untagged
+  m_TagString: SlowingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238211,7 +238387,7 @@ GameObject:
   - component: {fileID: 8563127182566515673}
   m_Layer: 0
   m_Name: MT_Terrain_L_a_01
-  m_TagString: Untagged
+  m_TagString: SlowingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259496,6 +259672,20 @@ Transform:
   m_Father: {fileID: 269477028}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 41.339, z: 0}
+--- !u!4 &9113162884462740298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898404495972328467}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 13.624473, y: 0, z: 71.0192}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 5365020661493116573}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9164223045268016312
 GameObject:
   m_ObjectHideFlags: 0

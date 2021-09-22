@@ -7,7 +7,9 @@ using System;
 
 using Random = UnityEngine.Random;
 
-public class NeuralNetwork : MonoBehaviour
+//OgName NeuralNetwork
+
+public class NeuralNet : MonoBehaviour
 {
     
     public Matrix<float> inputLayer = Matrix<float>.Build.Dense(1, 3); //1x3 matrix with 3 inputs
@@ -56,9 +58,9 @@ public class NeuralNetwork : MonoBehaviour
         RandomizeWeights();
     }
 
-    public NeuralNetwork InitialiseCopy(int hiddenLayerCount, int hiddenNeuronCount)
+    public NeuralNet InitialiseCopy(int hiddenLayerCount, int hiddenNeuronCount)
     {
-        NeuralNetwork n = new NeuralNetwork();
+        NeuralNet n = new NeuralNet();
 
         List<Matrix<float>> newWeights = new List<Matrix<float>>();
         

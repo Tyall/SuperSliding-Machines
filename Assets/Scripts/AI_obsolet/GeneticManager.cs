@@ -23,7 +23,7 @@ public class GeneticManager : MonoBehaviour
 
     private int naturallySelected;
 
-    private NeuralNetwork[] population;
+    private NeuralNet[] population;
 
     [Header("Public View")]
     public int currentGeneration;
@@ -36,7 +36,7 @@ public class GeneticManager : MonoBehaviour
 
     private void CreatePopulation()
     {
-        population = new NeuralNetwork[initialPopulation];
+        population = new NeuralNet[initialPopulation];
         FillPopulationWithRandomValues(population, 0);
         ResetToCurrentGenome();
     }
@@ -46,17 +46,17 @@ public class GeneticManager : MonoBehaviour
         controller.ResetWithNetwork(population[currentGenome]);
     }
 
-    private void FillPopulationWithRandomValues(NeuralNetwork[] newPopulation, int startingIndex)
+    private void FillPopulationWithRandomValues(NeuralNet[] newPopulation, int startingIndex)
     {
         while(startingIndex < initialPopulation)
         {
-            newPopulation[startingIndex] = new NeuralNetwork();
+            newPopulation[startingIndex] = new NeuralNet();
             newPopulation[startingIndex].Initialise(controller.LAYERS, controller.NEURONS);
             startingIndex++;
         }
     }
 
-    public void Death (float fitness, NeuralNetwork network)
+    public void Death (float fitness, NeuralNet network)
     {
         if (currentGenome < population.Length - 1)
         {
@@ -77,7 +77,7 @@ public class GeneticManager : MonoBehaviour
         naturallySelected = 0;
         SortPopulation();
 
-        NeuralNetwork[] newPopulation = PickBestPopulation();
+        NeuralNet[] newPopulation = PickBestPopulation();
 
         Crossover(newPopulation);
         Mutate(newPopulation);
@@ -92,7 +92,7 @@ public class GeneticManager : MonoBehaviour
 
     }
 
-    private void Mutate(NeuralNetwork[] newPopulation)
+    private void Mutate(NeuralNet[] newPopulation)
     {
         for (int i = 0; i < naturallySelected; i++)
         {
@@ -123,7 +123,7 @@ public class GeneticManager : MonoBehaviour
         return C;
     }
 
-    private void Crossover(NeuralNetwork[] newPopulation)
+    private void Crossover(NeuralNet[] newPopulation)
     {
         for (int i = 0; i < numberToCrossover; i += 2)
         {
@@ -144,8 +144,8 @@ public class GeneticManager : MonoBehaviour
                 }
             }
 
-            NeuralNetwork Child1 = new NeuralNetwork();
-            NeuralNetwork Child2 = new NeuralNetwork();
+            NeuralNet Child1 = new NeuralNet();
+            NeuralNet Child2 = new NeuralNet();
 
             Child1.Initialise(controller.LAYERS, controller.NEURONS);
             Child2.Initialise(controller.LAYERS, controller.NEURONS);
@@ -189,9 +189,9 @@ public class GeneticManager : MonoBehaviour
         }
     }
 
-    private NeuralNetwork[] PickBestPopulation()
+    private NeuralNet[] PickBestPopulation()
     {
-        NeuralNetwork[] newPopulation = new NeuralNetwork[initialPopulation];
+        NeuralNet[] newPopulation = new NeuralNet[initialPopulation];
 
         for (int i = 0; i < bestAgentSelection; i++)
         {
@@ -231,7 +231,7 @@ public class GeneticManager : MonoBehaviour
             {
                 if (population[i].fitness < population[j].fitness)
                 {
-                    NeuralNetwork temp = population[i];
+                    NeuralNet temp = population[i];
                     population[i] = population[j];
                     population[j] = temp;
                 }

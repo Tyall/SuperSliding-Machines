@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(NeuralNetwork))]
+[RequireComponent(typeof(NeuralNet))]
 public class AI_Controller : MonoBehaviour
 {
     //public float TurnSpeed;
@@ -12,7 +12,7 @@ public class AI_Controller : MonoBehaviour
     //public Rigidbody vehicle;
 
     private Vector3 startPosition, startRotation;
-    private NeuralNetwork network;
+    private NeuralNet network;
 
     [Range(-1f, 1f)]
     public float Acceleration, TurnAngle; //Acceleration and turning values
@@ -45,11 +45,11 @@ public class AI_Controller : MonoBehaviour
     {
         startPosition = transform.position;
         startRotation = transform.eulerAngles;
-        network = GetComponent<NeuralNetwork>();
+        network = GetComponent<NeuralNet>();
 
     }
 
-    public void ResetWithNetwork(NeuralNetwork net)
+    public void ResetWithNetwork(NeuralNet net)
     {
         network = net;
         Reset();
@@ -103,6 +103,8 @@ public class AI_Controller : MonoBehaviour
         avgSpeed = totalDistanceTravelled / timeSinceStart;
 
         overallFitness = (totalDistanceTravelled * distanceMultiplier) + (avgSpeed * avgSpeedMultiplier) + (((aSensor + bSensor + cSensor) / 3) * sensorMultiplier);
+        
+
 
         if (timeSinceStart > 20 && overallFitness < 40) //values to be tweaked
         {
@@ -170,61 +172,48 @@ public class AI_Controller : MonoBehaviour
         Ray r = new Ray(transform.position + offset, a);
         RaycastHit hit;
 
-        float maxDistance = 30f;
+        float maxDistance = 25;
 
         //Add a tag to check if it hit wall/ground instead of random objects like checkpoints
 
         if (Physics.Raycast(r, out hit, maxDistance))
         {
-            Debug.DrawLine(r.origin, hit.point, Color.green);
+            Debug.DrawRay(r.origin, r.direction * 10, Color.green, 0.0f);
             if (hit.collider.tag == "NotRoad")
             { //DEBUG: any hit
                 aSensor = hit.distance / 20; //We have to normalize the value before we pass it to the neural network <they have to be a range between 0 and ~1f>
                 print("A : " + aSensor);
                 Debug.DrawLine(r.origin, hit.point, Color.red);
             }
-            else
-            {
-                Debug.DrawLine(r.origin, hit.point, Color.green);
-            }
-
         }
 
         r.direction = b;
 
+        
         if (Physics.Raycast(r, out hit, maxDistance))
         {
-            Debug.DrawLine(r.origin, hit.point, Color.green);
+            Debug.DrawRay(r.origin, r.direction * 10, Color.green, 0.0f);
             if (hit.collider.tag == "NotRoad")
             {
                 bSensor = hit.distance / 20;
                 print("B : " + aSensor);
                 Debug.DrawLine(r.origin, hit.point, Color.red);
             }
-            else
-            {
-                Debug.DrawLine(r.origin, hit.point, Color.green);
-            }
-
         }
 
         r.direction = c;
 
+        
         if (Physics.Raycast(r, out hit, maxDistance))
         {
-            Debug.DrawLine(r.origin, hit.point, Color.green);
+            Debug.DrawRay(r.origin, r.direction * 10, Color.green, 0.0f);
             if (hit.collider.tag == "NotRoad")
             {
                 cSensor = hit.distance / 20;
                 print("C : " + aSensor);
                 Debug.DrawLine(r.origin, hit.point, Color.red);
             }
-            else
-            {
-                Debug.DrawLine(r.origin, hit.point, Color.green);
-            }
         }   
-
     }
 
     private bool CheckForRoad()
