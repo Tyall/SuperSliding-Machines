@@ -143,6 +143,4 @@ public class NeuralNet : MonoBehaviour
     {
         return (1 / (1 + Mathf.Exp(-s)));
     }
-
-
 }
