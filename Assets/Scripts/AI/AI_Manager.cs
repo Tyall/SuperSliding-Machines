@@ -119,7 +119,7 @@ public class AI_Manager : MonoBehaviour
 
     private void GetNetworkOutput()
     {
-        //(acceleration, turnAngle) = network.RunNetwork(aSensor, bSensor, cSensor, dSensor, eSensor);
+        (acceleration, turnAngle) = network.RunNetwork(aSensor, bSensor, cSensor, dSensor, eSensor);
     }
 
     public void MoveVehicle(float acc, float turn)
@@ -182,7 +182,7 @@ public class AI_Manager : MonoBehaviour
 
     private void Death()
     {
-        //GameObject.FindObjectOfType<GA_Manager>().Death(fitnessScore, network);
+        GameObject.FindObjectOfType<GA_Manager>().Death(fitnessScore, network);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -202,7 +202,7 @@ public class AI_Manager : MonoBehaviour
         transform.eulerAngles = startRotation;
     }
 
-    public void ResetStatsAndNetwork(NeuralNetwork net)
+    public void ResetStatsAndSetNetwork(NeuralNetwork net)
     {
         network = net;
         ResetStats();
