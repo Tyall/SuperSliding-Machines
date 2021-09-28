@@ -39,7 +39,14 @@ public class GA_Manager : MonoBehaviour
     {
         while (startingIndex < initialPopulationSize)
         {
-            population[startingIndex] = new NeuralNetwork();
+            /*NeuralNetwork[] net = gameObject.GetComponents<NeuralNetwork>();
+            foreach (NeuralNetwork n in net)
+            {
+                Destroy(n);
+            }
+            
+            population[startingIndex] = gameObject.AddComponent<NeuralNetwork>();*/
+                       population[startingIndex] = new NeuralNetwork();
             population[startingIndex].Initialise(manager.networkLayers, manager.networkNeurons);
             startingIndex++;
         }

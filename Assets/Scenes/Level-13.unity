@@ -21892,7 +21892,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696415148}
-  - component: {fileID: 696415147}
   - component: {fileID: 696415146}
   m_Layer: 0
   m_Name: _Manager
@@ -21920,26 +21919,6 @@ MonoBehaviour:
   mutationRate: 0.08
   currentGeneration: 0
   currentIndividual: 0
---- !u!114 &696415147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696415145}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4195475bc8aee34184777ce3bdea127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  initialPopulation: 85
-  mutationRate: 0.055
-  bestAgentSelection: 8
-  worstAgentSelection: 3
-  numberToCrossover: 39
-  currentGeneration: 0
-  currentGenome: 0
 --- !u!4 &696415148
 Transform:
   m_ObjectHideFlags: 0

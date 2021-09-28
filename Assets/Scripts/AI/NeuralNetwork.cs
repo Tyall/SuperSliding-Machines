@@ -8,16 +8,19 @@ using Random = UnityEngine.Random;
 
 public class NeuralNetwork : MonoBehaviour
 {
+    [HideInInspector]
     public Matrix<float> inputLayer = Matrix<float>.Build.Dense(1, 5); //try sparse instead of dense and measure performance
     public Matrix<float> outputLayer = Matrix<float>.Build.Dense(1, 2);
-
+    [HideInInspector]
     public List<Matrix<float>> hiddenLayers = new List<Matrix<float>>();
     public List<Matrix<float>> weights = new List<Matrix<float>>();
-
+    [HideInInspector]
     public List<float> biases = new List<float>();
-
+    [HideInInspector]
     public float fitnessScore;
+    [HideInInspector]
     public int numberOfInputs = 5;
+    [HideInInspector]
     public int numberOfOutputs = 2;
 
     public void Initialise(int hiddenLayerCount, int hiddenNeuronCount)

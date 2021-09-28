@@ -20,6 +20,8 @@ public class AI_Manager : MonoBehaviour
     private float totalDistance;
     private float averageSpeed;
 
+    public float bestFitnessScore;
+
     [Header("Fitness calculation parameters")]
     public float distanceMultiplier = 1.4f;
     public float averageSpeedMultiplier = 0.2f;
@@ -70,11 +72,11 @@ public class AI_Manager : MonoBehaviour
 
     private void GetInputFromSensors()
     {
-        Vector3 a = (transform.forward + transform.right);
-        Vector3 b = (transform.forward + transform.right + transform.right); //test
+        Vector3 a = (transform.forward + transform.forward + transform.right);
+        Vector3 b = (transform.forward + transform.right + transform.right ); //test
         Vector3 c = (transform.forward);
-        Vector3 d = (transform.forward - transform.right - transform.right); //test;
-        Vector3 e = (transform.forward - transform.right);
+        Vector3 d = (transform.forward - transform.right - transform.right ); //test;
+        Vector3 e = (transform.forward + transform.forward - transform.right);
 
         //Vector3 offset = new Vector3(0, 0.4f, 0f);
         //float maxDistance = 25;
@@ -142,9 +144,17 @@ public class AI_Manager : MonoBehaviour
 
         fitnessScore = (totalDistance * distanceMultiplier) + (averageSpeed * averageSpeedMultiplier) + ((( aSensor + bSensor + cSensor + dSensor + eSensor) / 3) * sensorMultiplier);
 
+        UpdateHighestFitness(fitnessScore);
         FitnessScoreCheck();
     }
 
+    private void UpdateHighestFitness(float fit)
+    {
+        if (fit >= bestFitnessScore)
+        {
+            bestFitnessScore = fit;
+        }
+    }
     private void FitnessScoreCheck()
     {
         if (timeSinceStart > maxIndividualLifeSpan && fitnessScore < minIndividualFitnessScore)
