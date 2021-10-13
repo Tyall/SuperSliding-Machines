@@ -30,7 +30,8 @@ public class AI_Manager : MonoBehaviour
     [Header("Vehicle parameters")]
     public float maxVehicleAcceleration = 11.5f;
     public float maxVehicleTurnAngle = 90;
-    public float movementSmoothing = 0.02f;
+    //public float movementSmoothing = 0.02f;
+    public float movementSmoothing;
 
     [Header("Individuals parameters")]
     public float maxIndividualLifeSpan = 20;
@@ -53,6 +54,7 @@ public class AI_Manager : MonoBehaviour
 
     private void Awake()
     {
+        movementSmoothing = Time.fixedDeltaTime;
         startPosition = transform.position;
         startRotation = transform.eulerAngles;
         network = GetComponent<NeuralNetwork>();
