@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MathNet.Numerics.LinearAlgebra;
 using System;
+using Random = UnityEngine.Random;
 public class RaceAI : MonoBehaviour
 {
     //Start - Load from file
@@ -33,8 +34,10 @@ public class RaceAI : MonoBehaviour
     [Header("Save System")]
     public string filename;
 
-    public int networkLayers = 1; //TO BE LOADED
-    public int networkNeurons = 10; //TO BE LOADED
+    [Range(2, 10)]
+    public int networkLayers = 2;
+    [Range(4, 20)]
+    public int networkNeurons = 10;
 
     private Vector3 input;
 
@@ -52,23 +55,39 @@ public class RaceAI : MonoBehaviour
     private void Start()
     {
         movementSmoothing = Time.fixedDeltaTime;
-       // LoadNetwork();
+        LoadNetwork();
        // RecreateNetwork();
     }
 
     private void FixedUpdate()
     {
-        //GetInputFromSensors();
-        //GetNetworkOutput();
-        //MoveVehicle(acceleration, turnAngle);
+        //If it won't work - add condition to check if bool netReacreated = 1 then run loop
+
+        GetInputFromSensors();
+        GetNetworkOutput();
+        MoveVehicle(acceleration, turnAngle);
         //CheckForRoad();
     }
 
     public void LoadNetwork()
     {
         //Load button triggers that
-        FindObjectOfType<NetworkSaveManager>().LoadFromFile(filename); //filename eg Track1_AI_Easy
+        NetworkSaveManager nsm = FindObjectOfType<NetworkSaveManager>();
+
+        nsm.Load(filename); //filename eg Track1_AI_Easy
+        networkLayers = nsm.networkLayers - 2;
+        networkNeurons = nsm.networkNeurons;
+        //Debug.Log("layers " + networkLayers);
+        //Debug.Log("neurons " + networkNeurons);
+
+        RecreateNetwork();
+
+        weights = nsm.weights;
+        biases = nsm.biases;
+        //Debug.Log("weights " + weights);
+        //Debug.Log("biases " + biases);
     }
+
 
     //TEST ONLY
     public void SaveNetwork()
@@ -78,8 +97,38 @@ public class RaceAI : MonoBehaviour
     }
     public void RecreateNetwork()
     {
+        for (int i = 0; i < networkLayers + 1; i++)
+        {
+            Matrix<float> newHiddenLayer = Matrix<float>.Build.Dense(1, networkNeurons);
+            hiddenLayers.Add(newHiddenLayer);
+
+            if (i == 0)
+            {
+                Matrix<float> inputToHidden = Matrix<float>.Build.Dense(numberOfInputs, networkNeurons);
+                weights.Add(inputToHidden);
+            }
+            Matrix<float> hiddenToHidden = Matrix<float>.Build.Dense(networkNeurons, networkNeurons);
+            weights.Add(hiddenToHidden);
+        }
+        Matrix<float> outputWeight = Matrix<float>.Build.Dense(networkNeurons, numberOfOutputs);
+        weights.Add(outputWeight);
+        biases.Add(Random.Range(-1f, 1f));
 
     }
+    /*
+    public void CopyWeights()
+    {
+        for (int i = 0; i < weights.Count; i++)
+        {
+            for (int x = 0; x < weights[i].RowCount; x++)
+            {
+                for (int y = 0; y < weights[i].ColumnCount; y++)
+                {
+                    weights[i][x, y] = Random.Range(-1f, 1f);
+                }
+            }
+        }
+    }*/
 
     private void GetInputFromSensors()
     {

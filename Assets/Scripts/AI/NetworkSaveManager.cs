@@ -19,6 +19,7 @@ public class NetworkSaveManager : MonoBehaviour
     
     public void Load(string filename)
     {
+
         string json = LoadFromFile(filename);
         SavedNetwork saved = JsonConvert.DeserializeObject<SavedNetwork>(json);
 
@@ -27,7 +28,11 @@ public class NetworkSaveManager : MonoBehaviour
         this.weights = WeightArrayToMatrix(saved.weights);
         this.biases = saved.biases;
 
-        //RETURN NETWORK?
+        /*Debug.Log("networkLayers " + networkLayers);
+        Debug.Log("networkNeurons " + networkNeurons);
+        Debug.Log("networkWeights " + weights);
+        Debug.Log("networkBiases " + biases);*/
+
     }
 
     /*public void DebugSave(NeuralNetwork network, string filename, int nLayers, int nNeurons, float fit, string reason, int gen, int ind)
