@@ -4298,13 +4298,13 @@ GameObject:
   - component: {fileID: 174957673}
   - component: {fileID: 174957672}
   - component: {fileID: 174957670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestingObjectNew
   m_TagString: AI Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &174957670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4330,8 +4330,8 @@ MonoBehaviour:
   movementSmoothing: 0.01
   maxIndividualLifeSpan: 20
   minIndividualFitnessScore: 40
-  maxIndividualFitnessScore: 300
-  filename: Level_1
+  maxIndividualFitnessScore: 3000
+  filename: save_test
   networkLayers: 2
   networkNeurons: 4
 --- !u!54 &174957672
@@ -4369,7 +4369,7 @@ Transform:
   - {fileID: 1456444235}
   - {fileID: 502044229}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -0.92200005, y: -308.51, z: -7.1700006}
 --- !u!1001 &177406695
 PrefabInstance:
@@ -10935,7 +10935,7 @@ GameObject:
   - component: {fileID: 461273703}
   - component: {fileID: 461273705}
   - component: {fileID: 461273704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WheelColliderLeftRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11568,7 +11568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502044229}
   - component: {fileID: 502044231}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13456,7 +13456,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548596148}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b97648c4fc4f6b4e8965138ab953d7f, type: 3}
   m_Name: 
@@ -13480,7 +13480,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 71.603004, z: 0}
 --- !u!114 &548596151
 MonoBehaviour:
@@ -14910,7 +14910,7 @@ GameObject:
   - component: {fileID: 644859795}
   - component: {fileID: 644859797}
   - component: {fileID: 644859796}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16432,7 +16432,7 @@ GameObject:
   - component: {fileID: 745630576}
   - component: {fileID: 745630578}
   - component: {fileID: 745630577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wheel_backRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19954,7 +19954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852371734}
   - component: {fileID: 852371735}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WheelColliderRightFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21867,7 +21867,7 @@ GameObject:
   - component: {fileID: 884568472}
   - component: {fileID: 884568474}
   - component: {fileID: 884568473}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spoiler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23784,7 +23784,7 @@ GameObject:
   - component: {fileID: 1036228068}
   - component: {fileID: 1036228070}
   - component: {fileID: 1036228069}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wheel_frontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24550,7 +24550,7 @@ GameObject:
   - component: {fileID: 1080657576}
   - component: {fileID: 1080657578}
   - component: {fileID: 1080657577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WheelColliderRightRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30532,7 +30532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1456444235}
   - component: {fileID: 1456444236}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33355,7 +33355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561577542}
   - component: {fileID: 1561577543}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WheelColliderLeftFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40457,7 +40457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1932742827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40493,7 +40493,7 @@ Transform:
   - {fileID: 351165819}
   - {fileID: 1791055633}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -0.92200005, y: -308.51, z: -7.1700006}
 --- !u!114 &1932742829
 MonoBehaviour:
@@ -41794,7 +41794,7 @@ GameObject:
   - component: {fileID: 2051461690}
   - component: {fileID: 2051461692}
   - component: {fileID: 2051461691}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wheel_frontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43034,7 +43034,7 @@ GameObject:
   - component: {fileID: 2059177800}
   - component: {fileID: 2059177802}
   - component: {fileID: 2059177801}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wheel_backLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
