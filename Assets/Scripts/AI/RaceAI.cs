@@ -66,12 +66,14 @@ public class RaceAI : MonoBehaviour
 
     public void LoadNetwork()
     {
+        //Load button triggers that
         FindObjectOfType<NetworkSaveManager>().LoadFromFile(filename); //filename eg Track1_AI_Easy
     }
 
     //TEST ONLY
     public void SaveNetwork()
     {
+        //Save button triggers that
         FindObjectOfType<NetworkSaveManager>().SaveToFile("TEST STRING", filename);
     }
     public void RecreateNetwork()

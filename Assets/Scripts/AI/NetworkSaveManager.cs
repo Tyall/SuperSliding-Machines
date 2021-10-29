@@ -27,17 +27,39 @@ public class NetworkSaveManager : MonoBehaviour
         this.weights = WeightArrayToMatrix(saved.weights);
         this.biases = saved.biases;
 
+        //RETURN NETWORK?
     }
 
-    public void Save(NeuralNetwork network, string filename)
+    /*public void DebugSave(NeuralNetwork network, string filename, int nLayers, int nNeurons, float fit, string reason, int gen, int ind)
     {
         SavedNetwork saved = new SavedNetwork();
 
-        saved.networkLayers = networkLayers;
-        saved.networkNeurons = networkNeurons;
+        saved.networkLayers = nLayers;
+        saved.networkNeurons = nNeurons;
 
-        saved.weights = WeightMatrixToArray(weights);
-        saved.biases = biases;
+        saved.Fitness = fit;
+        saved.Reason = reason;
+        saved.Generation = gen;
+        saved.Individual = ind;
+        
+
+        saved.weights = WeightMatrixToArray(network.weights);
+        saved.biases = network.biases;
+
+        string json = JsonConvert.SerializeObject(saved);
+
+        SaveToFile(json, filename);
+    }*/
+
+    public void Save(NeuralNetwork network, string filename, int nLayers, int nNeurons)
+    {
+        SavedNetwork saved = new SavedNetwork();
+
+        saved.networkLayers = nLayers + 2;
+        saved.networkNeurons = nNeurons;
+        
+        saved.weights = WeightMatrixToArray(network.weights);
+        saved.biases = network.biases;
 
         string json = JsonConvert.SerializeObject(saved);
 
@@ -85,7 +107,7 @@ public class NetworkSaveManager : MonoBehaviour
         Debug.Log("path: " + path);
 
         StreamWriter writer = new StreamWriter(path, true);
-        writer.WriteLine("Test");
+        writer.WriteLine(json);
         writer.Close();
 
     }

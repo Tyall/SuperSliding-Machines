@@ -38,7 +38,12 @@ public class AI_Manager : MonoBehaviour
     public float minIndividualFitnessScore = 40;
     public float maxIndividualFitnessScore = 1000;
 
-    public int networkLayers = 1;
+    [Header("Save System")]
+    public string filename;
+
+    [Range(2,10)]
+    public int networkLayers = 2;
+    [Range(4, 20)]
     public int networkNeurons = 10;
 
     private float aSensor;
@@ -52,12 +57,17 @@ public class AI_Manager : MonoBehaviour
     Vector3 gdetectionDirection = -Vector3.up;
     Vector3 gdetectionOffset = new Vector3(0, 0.3f, 0f);
 
+    //TESTING
+    GA_Manager gm;
+
     private void Awake()
     {
+        networkLayers = networkLayers - 2;
         movementSmoothing = Time.fixedDeltaTime;
         startPosition = transform.position;
         startRotation = transform.eulerAngles;
         network = GetComponent<NeuralNetwork>();
+        gm = FindObjectOfType<GA_Manager>();
     }
 
     private void FixedUpdate()
@@ -166,8 +176,20 @@ public class AI_Manager : MonoBehaviour
         if (fitnessScore >= maxIndividualFitnessScore)
         {
             //Save network to a JSON file
+            Debug.Log("NEURAL NETWORK HAS SUCCESFULLY BEEN SAVED TO " + filename);
+            SaveNetwork();
             Death();
         }
+    }
+
+    /* private void DebugSaveNetwork()
+    {
+        FindObjectOfType<NetworkSaveManager>().DebugSave(network, filename, networkLayers, networkNeurons, fitnessScore, gm.currentGeneration, gm.currentIndividual );
+    }*/
+
+    private void SaveNetwork()
+    {
+        FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons);
     }
 
     private void CheckForRoad()
@@ -199,6 +221,7 @@ public class AI_Manager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         Death();
     }
 

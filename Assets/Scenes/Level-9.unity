@@ -133333,6 +133333,7 @@ MonoBehaviour:
   turnAngle: 0
   fitnessScore: 0
   timeSinceStart: 0
+  bestFitnessScore: 0
   distanceMultiplier: 1.4
   averageSpeedMultiplier: 0.3
   sensorMultiplier: 0.1
@@ -133342,6 +133343,7 @@ MonoBehaviour:
   maxIndividualLifeSpan: 20
   minIndividualFitnessScore: 40
   maxIndividualFitnessScore: 2000
+  filename: AI_Monaco_test
   networkLayers: 2
   networkNeurons: 12
 --- !u!54 &1512979470
