@@ -75,7 +75,7 @@ public class RaceLevelLogic : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(ShowCountdownMenu()); //Commented for AI testing purposes
+        StartCoroutine(ShowCountdownMenu()); //disable for AI testing purposes
         CurrentLap = 1;
         CurrentPosition = GridPosition;
         totalLaps = NumberOfLaps;
@@ -301,13 +301,13 @@ public class RaceLevelLogic : MonoBehaviour
             cp.SetActive(true);
         }
         Debug.Log("Enabling checkpoints");
-       // GameObject[] checkpoints = GameObject.FindGameObjectsWithTag("Checkpoint");
-       // _checkpoints = checkpoints;
+        GameObject[] checkpoints = GameObject.FindGameObjectsWithTag("Checkpoint"); //?
+        _checkpoints = checkpoints; //?
 
     }
     public static void HandleLaps()
     {
-        //Debug.Log("Lap + " + currentLap + " completed");
+        Debug.Log("Lap + " + currentLap + " completed");
         cpPerLapPassed = 0;
         //enable all checkpoints again
         EnableAllCheckpoints();
@@ -328,10 +328,10 @@ public class RaceLevelLogic : MonoBehaviour
     {
 
         int playerPos = 1;
-        //Debug.Log("Player's cp passed: " + totalCheckpointsPassed);
+        Debug.Log("Player's cp passed: " + totalCheckpointsPassed);
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            //Debug.Log("AI "+ (i+1) +" cp passed: " + enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed);
+            Debug.Log("AI "+ (i+1) +" cp passed: " + enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed);
             if (totalCheckpointsPassed < enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed)
             {
                 playerPos++;

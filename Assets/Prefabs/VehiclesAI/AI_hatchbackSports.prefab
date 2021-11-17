@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 572035244711548676}
   - component: {fileID: 572035244711548677}
   - component: {fileID: 2082203989992400389}
+  - component: {fileID: -7189274176643104957}
   m_Layer: 0
   m_Name: AI_hatchbackSports
   m_TagString: Player
@@ -396,12 +397,12 @@ Rigidbody:
   m_GameObject: {fileID: 572035244711548675}
   serializedVersion: 2
   m_Mass: 500
-  m_Drag: 3
-  m_AngularDrag: 4
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 2
-  m_Constraints: 64
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2082203989992400389
 MonoBehaviour:
@@ -410,7 +411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572035244711548675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86dfeb593ddced04e8823d024cf15aba, type: 3}
   m_Name: 
@@ -418,10 +419,33 @@ MonoBehaviour:
   TurnSpeed: 4
   Acceleration: 800000
   maxSteerAngle: 40
-  wheelFL: {fileID: 0}
-  wheelFR: {fileID: 0}
   vehicle: {fileID: 572035244711548677}
   path: {fileID: 0}
+  AIcheckpointsPassed: 0
+  isInFront: 0
+--- !u!114 &-7189274176643104957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572035244711548675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8543c6fb01906a4488032b43c343055b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biases: []
+  numberOfInputs: 5
+  numberOfOutputs: 2
+  acceleration: 0
+  turnAngle: 0
+  maxVehicleAcceleration: 11.5
+  maxVehicleTurnAngle: 90
+  movementSmoothing: 0.01
+  filename: Level_1_onetest
+  networkLayers: 2
+  networkNeurons: 10
 --- !u!1 &572035244962968328
 GameObject:
   m_ObjectHideFlags: 0

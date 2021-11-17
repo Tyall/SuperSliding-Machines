@@ -11,7 +11,7 @@ public class SmoothFollow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       // target = GameObject.Find("PlayerVehicle").GetComponent<Transform>(); //Commented for AI testing purposes
+        target = GameObject.Find("PlayerVehicle").GetComponent<Transform>(); //comment for AI testing purposes
         offset = transform.position - target.position;
     }
    

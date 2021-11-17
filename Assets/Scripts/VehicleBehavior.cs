@@ -42,8 +42,8 @@ public class VehicleBehavior : MonoBehaviour
     {
         joyH = joystick.Horizontal;
         joyV = joystick.Vertical;
-        Debug.Log("Horizontal: " + joyH);
-        Debug.Log("Vertical: " + joyV);
+        //Debug.Log("Horizontal: " + joyH);
+        //Debug.Log("Vertical: " + joyV);
     }
 
     void Update()
@@ -101,7 +101,7 @@ public class VehicleBehavior : MonoBehaviour
             }
             else // if (levelType == 2)
             {
-                //RaceLevelLogic.RaceLevelBehavior(hit.name); //Commented for AI testing purposes
+                RaceLevelLogic.RaceLevelBehavior(hit.name); //Commented for AI testing purposes
 
             }
         } 
