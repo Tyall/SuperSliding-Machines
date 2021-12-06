@@ -128,6 +128,8 @@ public class NeuralNetwork : MonoBehaviour
         inputLayer[0, 2] = c;
         inputLayer[0, 3] = d;
         inputLayer[0, 4] = e;
+        //SPRAWDZ CZY ZNORMALIZOWANE WARTOSCI SENSORÓW SERIO SA W PRZEDZIALE 0 1, JAK NIE TO PODZIEL PRZEZ ICH DLUGOSC I ES
+
 
         //Activation function for value range of <-1,1>
         inputLayer = inputLayer.PointwiseTanh();
@@ -144,6 +146,8 @@ public class NeuralNetwork : MonoBehaviour
         //First value is acceleration in range between 0 and 1. Second value is "turn angle" in range between -1 and 1
         return (Sigmoid(outputLayer[0, 0]), (float)Math.Tanh(outputLayer[0, 1]));
     }
+
+    
     private float Sigmoid (float s)
     {
         return (1 / (1 + Mathf.Exp(-s)));

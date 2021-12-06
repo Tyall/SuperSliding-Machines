@@ -42,8 +42,8 @@ public class VehicleBehavior : MonoBehaviour
     {
         joyH = joystick.Horizontal;
         joyV = joystick.Vertical;
-        //Debug.Log("Horizontal: " + joyH);
-        //Debug.Log("Vertical: " + joyV);
+        Debug.Log("Horizontal: " + joyH);
+        Debug.Log("Vertical: " + joyV);
     }
 
     void Update()
@@ -76,10 +76,14 @@ public class VehicleBehavior : MonoBehaviour
         
         if (joyH!=0 || joyV!=0)
         {
-            Vector3 target = new Vector3(joyH*1000f, 0, joyV*1000f); //JAK TO DZIALA XDDD było 100f, prawdopodobnie oznacza to zasięg
+            Vector3 target = new Vector3(joyH*1000f, 0, joyV*1000f); //1000f = scaling multiplicator 
+            //Debug.Log("Target: " + target);
             Vector3 direction = target - transform.position;
+            //Debug.Log("Direction: " + direction);
             float rotationAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            //Debug.Log("RotationAngle: " + rotationAngle);
             targetRotation = Quaternion.Euler(0, rotationAngle, 0);
+            //Debug.Log("TargetRotation: " + targetRotation);
         }
 
     }

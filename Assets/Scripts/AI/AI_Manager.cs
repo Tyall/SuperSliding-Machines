@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AI_Manager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class AI_Manager : MonoBehaviour
     private Vector3 lastPosition;
     private float totalDistance;
     private float averageSpeed;
+    private float totalTimeSinceStart = 0f;
 
     public float bestFitnessScore;
 
@@ -52,6 +54,12 @@ public class AI_Manager : MonoBehaviour
     private float dSensor;
     private float eSensor;
 
+
+    public TextMeshProUGUI textBestFitness;
+    public TextMeshProUGUI textCurrentFitness;
+    public TextMeshProUGUI textTimeTotal;
+    public TextMeshProUGUI textTimeIndividual;
+
     RaycastHit gdetectionHit;
     float gdetectionDistance = 10f;
     Vector3 gdetectionDirection = -Vector3.up;
@@ -79,9 +87,17 @@ public class AI_Manager : MonoBehaviour
         UpdateTime();
         CalculateFitnessScore();
         CheckForRoad();
+        UpdateStatsGUI();
 
     }
 
+    public void UpdateStatsGUI()
+    {
+        textBestFitness.text = bestFitnessScore.ToString(("0.00"));
+        textCurrentFitness.text = fitnessScore.ToString(("0.00"));
+        textTimeTotal.text = totalTimeSinceStart.ToString(("0.00s"));
+        textTimeIndividual.text = timeSinceStart.ToString(("0.00s")); 
+    }
     private void GetInputFromSensors()
     {
         Vector3 a = (transform.forward + transform.forward + transform.right);
@@ -115,15 +131,34 @@ public class AI_Manager : MonoBehaviour
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
             Debug.DrawRay(ray.origin, ray.direction * 10, Color.green, 0.0f);
+            //Gizmos.DrawRay(ray);
             if (hit.collider.tag == "NotRoad")
             {
                 float sensorValue = hit.distance / maxDistance;
                 Debug.DrawLine(ray.origin, hit.point, Color.red);
+                //Gizmos.DrawLine(ray.origin, hit.point);
                 return sensorValue;
             }
             return 1f;
         }
-        return 1f; //1 cuz if not detected then it's max range which means 1??? will it work?
+        return 1f; 
+    }
+
+   public void SetTimeScale(int scale)
+    {
+        switch (scale)
+        {
+            case 1:
+                Time.timeScale = 1.0f;
+                break;
+            case 2:
+                Time.timeScale = 7.5f;
+                break;
+            case 3:
+                Time.timeScale = 15f;
+                break;
+
+        }
     }
 
     private void UpdateLastPosition()
@@ -147,6 +182,7 @@ public class AI_Manager : MonoBehaviour
     private void UpdateTime()
     {
         timeSinceStart += Time.deltaTime;
+        totalTimeSinceStart += Time.deltaTime;
     }
     
     private void CalculateFitnessScore()
@@ -154,7 +190,7 @@ public class AI_Manager : MonoBehaviour
         totalDistance += Vector3.Distance(transform.position, lastPosition);
         averageSpeed = totalDistance / timeSinceStart;
 
-        fitnessScore = (totalDistance * distanceMultiplier) + (averageSpeed * averageSpeedMultiplier) + ((( aSensor + bSensor + cSensor + dSensor + eSensor) / 3) * sensorMultiplier);
+        fitnessScore = (totalDistance * distanceMultiplier) + (averageSpeed * averageSpeedMultiplier) + ((( aSensor + bSensor + cSensor + dSensor + eSensor) / 5) * sensorMultiplier); //sensory były 3
 
         UpdateHighestFitness(fitnessScore);
         FitnessScoreCheck();
@@ -190,6 +226,8 @@ public class AI_Manager : MonoBehaviour
     private void SaveNetwork()
     {
         FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons);
+
+        //Try to equip a vehicle on track X in network trained on track Y, and see what happens. 
     }
 
     private void CheckForRoad()

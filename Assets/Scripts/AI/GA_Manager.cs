@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MathNet.Numerics.LinearAlgebra;
+using TMPro;
 
 public class GA_Manager : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class GA_Manager : MonoBehaviour
     [Header("Evolution statistics")]
     public int currentGeneration;
     public int currentIndividual;
+
+    public TextMeshProUGUI textCurrentGen;
+    public TextMeshProUGUI textCurrentInd;
 
     private void Start()
     {
@@ -55,6 +59,7 @@ public class GA_Manager : MonoBehaviour
     private void SetToNextIndividual()
     {
         manager.ResetStatsAndSetNetwork(population[currentIndividual]);
+        UpdateStatsGUI();
     }
 
     public void Death(float fitnessScore, NeuralNetwork network)
@@ -88,9 +93,17 @@ public class GA_Manager : MonoBehaviour
 
         population = newPopulation;
         currentIndividual = 0;
+        
 
         SetToNextIndividual();
     }
+
+    public void UpdateStatsGUI()
+    {
+        textCurrentGen.text = (currentGeneration+1).ToString();
+        textCurrentInd.text = (currentIndividual+1).ToString();
+    }
+
     /*
     private void SortPopulation()
     {
@@ -208,7 +221,7 @@ public class GA_Manager : MonoBehaviour
             {
                 if (Random.Range(0.0f, 1.0f) < mutationRate)
                 {
-                    population[i].weights[j] = MutateWeights(population[i].weights[j]);
+                    population[i].weights[j] = MutateWeights(population[i].weights[j]); 
                 }
             }
         }
