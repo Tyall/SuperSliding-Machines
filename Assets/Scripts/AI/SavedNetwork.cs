@@ -7,10 +7,11 @@ public class SavedNetwork
     public int networkLayers;
     public int networkNeurons;
 
-    /*public int Generation;
-    public int Individual;
-    public string Reason;
-    public float Fitness;*/
+    public float fitness;
+    public float time;
+    public int generation;
+    public int individual;
+    
 
     public List<float[,]> weights;
     public List<float> biases;

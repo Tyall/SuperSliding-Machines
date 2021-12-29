@@ -225,7 +225,7 @@ public class AI_Manager : MonoBehaviour
 
     private void SaveNetwork()
     {
-        FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons);
+        FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, fitnessScore, totalTimeSinceStart, gm.currentGeneration, gm.currentIndividual);
 
         //Try to equip a vehicle on track X in network trained on track Y, and see what happens. 
     }

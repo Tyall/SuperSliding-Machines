@@ -56,7 +56,7 @@ public class NetworkSaveManager : MonoBehaviour
         SaveToFile(json, filename);
     }*/
 
-    public void Save(NeuralNetwork network, string filename, int nLayers, int nNeurons)
+    public void Save(NeuralNetwork network, string filename, int nLayers, int nNeurons, float fit, float time, int gen, int ind)
     {
         SavedNetwork saved = new SavedNetwork();
 
@@ -65,6 +65,11 @@ public class NetworkSaveManager : MonoBehaviour
         
         saved.weights = WeightMatrixToArray(network.weights);
         saved.biases = network.biases;
+
+        saved.fitness = fit;
+        saved.time = time;
+        saved.generation = gen;
+        saved.individual = ind;
 
         string json = JsonConvert.SerializeObject(saved);
 
