@@ -7,6 +7,7 @@ public class SavedNetwork
     public int networkLayers;
     public int networkNeurons;
 
+    public string difficulty;
     public float fitness;
     public float time;
     public int generation;

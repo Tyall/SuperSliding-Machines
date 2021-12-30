@@ -42,11 +42,14 @@ public class AI_Manager : MonoBehaviour
 
     [Header("Save System")]
     public string filename;
+    public int savedNetworks = 0;
 
     [Range(2,10)]
     public int networkLayers = 2;
     [Range(4, 20)]
     public int networkNeurons = 10;
+
+    public string difficulty = "EASY";
 
     private float aSensor;
     private float bSensor;
@@ -225,8 +228,17 @@ public class AI_Manager : MonoBehaviour
 
     public void SaveNetwork()
     {
-        FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, fitnessScore, totalTimeSinceStart, gm.currentGeneration, gm.currentIndividual);
-
+        if (savedNetworks == 30)
+        {
+            difficulty = "MEDIUM";
+            maxIndividualFitnessScore *= 1.8f;
+        } else if (savedNetworks == 60)
+        {
+            difficulty = "HARD";
+            maxIndividualFitnessScore *= 1.8f;
+        }
+        FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, difficulty, fitnessScore, totalTimeSinceStart, gm.currentGeneration, gm.currentIndividual);
+        savedNetworks++;
         //Try to equip a vehicle on track X in network trained on track Y, and see what happens. 
     }
 

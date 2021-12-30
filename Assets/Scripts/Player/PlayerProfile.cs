@@ -10,10 +10,12 @@ public class PlayerProfile : MonoBehaviour
     public static string playerName;
     public static int playerLevel;
     public static int playerExp;
+    public static int difficulty;
+    public static bool controllerSwapped; 
 
     //public static int playerCoins = 34000;
     public static int playerCoins;
-    public static int unlockedLevels = 6; //Temporary solution. Completing a N level will unlock N+1 level
+    public static int unlockedLevels = 15; //Temporary solution. Completing a N level will unlock N+1 level
     //public static volatile int unlockedLevels ;
     public static int[] ownedVehicles = new int[11] {8, 1, 2, 3, 4, 0, 0, 0, 0, 0, 10};
     //public static int[] ownedVehicles;

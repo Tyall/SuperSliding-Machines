@@ -10,6 +10,8 @@ public class PlayerData
     public int playerLevel;
     public int playerCoins;
     public int playerExp;
+    public int playerDifficulty;
+    public bool playerControllerSwapped;
     public int unlockedLevels;
     public int[] ownedVehicles;
     public int[] ownedVehiclesColors;
@@ -22,6 +24,8 @@ public class PlayerData
         playerLevel = PlayerProfile.playerLevel;
         playerCoins = PlayerProfile.playerCoins;
         playerExp = PlayerProfile.playerExp;
+        playerDifficulty = PlayerProfile.difficulty;
+        playerControllerSwapped = PlayerProfile.controllerSwapped;
         unlockedLevels = PlayerProfile.unlockedLevels;
         ownedVehicles = PlayerProfile.ownedVehicles;
         ownedVehiclesColors = PlayerProfile.ownedVehiclesColors;

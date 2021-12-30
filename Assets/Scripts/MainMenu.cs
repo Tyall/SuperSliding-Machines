@@ -159,5 +159,28 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Choose a level before clicking play!");
     }
+
+    public void SettingsManager(int actionID)
+    {
+        switch (actionID)
+        {
+            case 1:
+                PlayerProfile.difficulty = 1;
+                break;
+            case 2:
+                PlayerProfile.difficulty = 2;
+                break;
+            case 3:
+                PlayerProfile.difficulty = 3;
+                break;
+            case 4:
+                PlayerProfile.controllerSwapped = true;
+                break;
+            case 5:
+                PlayerProfile.controllerSwapped = false;
+                break;
+
+        }
+    }
     
 }
