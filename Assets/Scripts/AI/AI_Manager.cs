@@ -223,7 +223,7 @@ public class AI_Manager : MonoBehaviour
         FindObjectOfType<NetworkSaveManager>().DebugSave(network, filename, networkLayers, networkNeurons, fitnessScore, gm.currentGeneration, gm.currentIndividual );
     }*/
 
-    private void SaveNetwork()
+    public void SaveNetwork()
     {
         FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, fitnessScore, totalTimeSinceStart, gm.currentGeneration, gm.currentIndividual);
 
