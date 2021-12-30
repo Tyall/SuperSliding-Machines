@@ -165,9 +165,11 @@ MonoBehaviour:
   maxIndividualLifeSpan: 20
   minIndividualFitnessScore: 40
   maxIndividualFitnessScore: 700
-  filename: test_analysis_7
+  filename: ai_trained_lv7
+  savedNetworks: 0
   networkLayers: 2
-  networkNeurons: 6
+  networkNeurons: 8
+  difficulty: EASY
   textBestFitness: {fileID: 600164745}
   textCurrentFitness: {fileID: 1617648932}
   textTimeTotal: {fileID: 1130874046}

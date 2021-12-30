@@ -21,6 +21,9 @@ public class AI_Manager : MonoBehaviour
     private float totalDistance;
     private float averageSpeed;
     private float totalTimeSinceStart = 0f;
+    private float totalDistanceWithMultiplier = 0f;
+    private float averageSpeedWithMultiplier = 0f;
+    private float racingLineScore = 0f;
 
     public float bestFitnessScore;
 
@@ -193,7 +196,11 @@ public class AI_Manager : MonoBehaviour
         totalDistance += Vector3.Distance(transform.position, lastPosition);
         averageSpeed = totalDistance / timeSinceStart;
 
-        fitnessScore = (totalDistance * distanceMultiplier) + (averageSpeed * averageSpeedMultiplier) + ((( aSensor + bSensor + cSensor + dSensor + eSensor) / 5) * sensorMultiplier); //sensory były 3
+        totalDistanceWithMultiplier = (totalDistance * distanceMultiplier);
+        averageSpeedWithMultiplier = (averageSpeed * averageSpeedMultiplier);
+        racingLineScore = (((aSensor + bSensor + cSensor + dSensor + eSensor) / 5) * sensorMultiplier);
+
+        fitnessScore = totalDistanceWithMultiplier + averageSpeedWithMultiplier + racingLineScore;
 
         UpdateHighestFitness(fitnessScore);
         FitnessScoreCheck();
@@ -237,7 +244,7 @@ public class AI_Manager : MonoBehaviour
             difficulty = "HARD";
             maxIndividualFitnessScore *= 1.8f;
         }
-        FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, difficulty, fitnessScore, totalTimeSinceStart, gm.currentGeneration, gm.currentIndividual);
+        FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, difficulty, fitnessScore, totalTimeSinceStart, timeSinceStart, totalDistance, averageSpeed, totalDistanceWithMultiplier, averageSpeedWithMultiplier, racingLineScore, gm.currentGeneration, gm.currentIndividual);
         savedNetworks++;
         //Try to equip a vehicle on track X in network trained on track Y, and see what happens. 
     }
@@ -282,6 +289,9 @@ public class AI_Manager : MonoBehaviour
         lastPosition = startPosition;
         totalDistance = 0f;
         averageSpeed = 0f;
+        totalDistanceWithMultiplier = 0f;
+        averageSpeedWithMultiplier = 0f;
+        racingLineScore = 0f;
 
         transform.position = startPosition;
         transform.eulerAngles = startRotation;

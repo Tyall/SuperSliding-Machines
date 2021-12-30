@@ -30774,13 +30774,15 @@ MonoBehaviour:
   sensorMultiplier: 0.3
   maxVehicleAcceleration: 11.5
   maxVehicleTurnAngle: 120
-  movementSmoothing: 0
+  movementSmoothing: 0.01
   maxIndividualLifeSpan: 20
   minIndividualFitnessScore: 40
   maxIndividualFitnessScore: 1100
-  filename: test_run9v2
+  filename: ai_trained_lv9
+  savedNetworks: 0
   networkLayers: 3
-  networkNeurons: 14
+  networkNeurons: 12
+  difficulty: EASY
   textBestFitness: {fileID: 1492472102}
   textCurrentFitness: {fileID: 732702177}
   textTimeTotal: {fileID: 1640711477}
@@ -30808,8 +30810,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162518818}
-  m_LocalRotation: {x: -0.009330827, y: 0.2593485, z: -0.0119002145, w: 0.96566546}
-  m_LocalPosition: {x: -34.096256, y: 0.35, z: -36.35272}
+  m_LocalRotation: {x: -0, y: -0.28266785, z: 0, w: -0.95921785}
+  m_LocalPosition: {x: -34.076176, y: 0.35, z: -36.5852}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 2076555855}
@@ -30821,7 +30823,7 @@ Transform:
   - {fileID: 1367977145}
   m_Father: {fileID: 0}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: -0.679, y: -329.924, z: -1.5940001}
+  m_LocalEulerAnglesHint: {x: 0, y: -327.161, z: 0}
 --- !u!1 &163173109
 GameObject:
   m_ObjectHideFlags: 0
@@ -37760,7 +37762,6 @@ GameObject:
   - component: {fileID: 265917080}
   - component: {fileID: 265917083}
   - component: {fileID: 265917082}
-  - component: {fileID: 265917081}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -37782,20 +37783,6 @@ Transform:
   m_Father: {fileID: 551647157}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 38.047, z: 0}
---- !u!136 &265917081
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265917079}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &265917082
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -204641,7 +204628,7 @@ GameObject:
   - component: {fileID: 2986702392457818347}
   m_Layer: 0
   m_Name: BAND_INSIDE
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206324,7 +206311,7 @@ GameObject:
   - component: {fileID: 4056788232391689908}
   m_Layer: 0
   m_Name: BAND_OUTSIDE
-  m_TagString: Untagged
+  m_TagString: NotRoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207311,13 +207298,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2986702392457818346}
-  m_LocalRotation: {x: 0.5004374, y: -0.49956232, z: -0.50041986, w: -0.49957967}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 156.95311, y: 29.8729, z: -131.4141}
   m_LocalScale: {x: 16.200003, y: 90.70002, z: 54.700012}
   m_Children: []
   m_Father: {fileID: 1076630612}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!33 &4863268835452616515
 MeshFilter:
   m_ObjectHideFlags: 0

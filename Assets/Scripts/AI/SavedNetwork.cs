@@ -10,6 +10,12 @@ public class SavedNetwork
     public string difficulty;
     public float fitness;
     public float time;
+    public float individualTime;
+    public float individualTraveledDistance;
+    public float individualAvgSpeed;
+    public float individualDistanceScore;
+    public float individualSpeedScore;
+    public float individualRacingLineScore;
     public int generation;
     public int individual;
     
