@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 222361673824924167}
   - component: {fileID: 25543428784789162}
   - component: {fileID: -8793067121613593965}
+  - component: {fileID: -2045455159025833653}
   m_Layer: 2
   m_Name: AI_truck
   m_TagString: AI Vehicle
@@ -97,6 +98,21 @@ MonoBehaviour:
   filename: Level_1_onetest
   networkLayers: 2
   networkNeurons: 10
+--- !u!114 &-2045455159025833653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222361673824924166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01b4681da0faf54a84e56febc9a354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkLayers: 0
+  networkNeurons: 0
+  biases: []
 --- !u!1 &488184961060625371
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,8 +42,8 @@ public class VehicleBehavior : MonoBehaviour
     {
         joyH = joystick.Horizontal;
         joyV = joystick.Vertical;
-        Debug.Log("Horizontal: " + joyH);
-        Debug.Log("Vertical: " + joyV);
+        //Debug.Log("Horizontal: " + joyH);
+        //Debug.Log("Vertical: " + joyV);
     }
 
     void Update()

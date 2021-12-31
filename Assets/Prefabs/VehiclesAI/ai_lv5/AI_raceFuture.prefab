@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 7144720344042236265}
   - component: {fileID: 2539920290229222193}
   - component: {fileID: -8270515870221963506}
+  - component: {fileID: 3070473100778380497}
   m_Layer: 2
   m_Name: AI_raceFuture
   m_TagString: AI Vehicle
@@ -422,6 +423,21 @@ MonoBehaviour:
   filename: Level_1_onetest
   networkLayers: 2
   networkNeurons: 10
+--- !u!114 &3070473100778380497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7144720344042236267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01b4681da0faf54a84e56febc9a354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkLayers: 0
+  networkNeurons: 0
+  biases: []
 --- !u!1 &7418756991636390070
 GameObject:
   m_ObjectHideFlags: 0

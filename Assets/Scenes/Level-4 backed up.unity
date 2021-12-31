@@ -16093,16 +16093,16 @@ MonoBehaviour:
   numberOfAiOpponents: 3
   maxEnemyVehicleLevel: 10
   AIVehicles:
-  - {fileID: 6467682090617582408, guid: d59ad74982e015146afcfb63e8bce94a, type: 3}
-  - {fileID: 705231042140226328, guid: 651d9134ad0f86f4eb94d491f8687de2, type: 3}
-  - {fileID: 6970970524246644968, guid: de221bf35ac6ecf4aa8b1820b35bc008, type: 3}
-  - {fileID: 572035244711548675, guid: 7e56c7e0de70944499b79bf6b2c827dd, type: 3}
-  - {fileID: 7436287625981971143, guid: 10f7cae492f745b419439bb379aec676, type: 3}
-  - {fileID: 222361673824924166, guid: 124e4c80773edda449316db5f10324da, type: 3}
-  - {fileID: 2749837689300923249, guid: 7e68c852ede2efc4dbeccbffc00122e7, type: 3}
-  - {fileID: 1275294535427691056, guid: fdbf0b8a8a855e344b330e842063a141, type: 3}
-  - {fileID: 5626834614774559009, guid: 401510db6c2be7a49a2464b50547e69d, type: 3}
-  - {fileID: 7144720344042236267, guid: 4d8984a0321f22d498509b9feeef021d, type: 3}
+  - {fileID: 6467682090617582408, guid: c0b2ee9de18d9cd44a1236b6237a9c9e, type: 3}
+  - {fileID: 705231042140226328, guid: cf57b4896c5a40e4cbe60259c261d13c, type: 3}
+  - {fileID: 6970970524246644968, guid: 3662d6224e4b4e84c933276b7a8ea6ba, type: 3}
+  - {fileID: 572035244711548675, guid: ad6c5bc0f8c17104cbca2f7732aca1c6, type: 3}
+  - {fileID: 7436287625981971143, guid: 9afbcf39018d3f740b703c595293667d, type: 3}
+  - {fileID: 222361673824924166, guid: d9b4a1b4eac6e4b43a2f64c668fb6ec5, type: 3}
+  - {fileID: 2749837689300923249, guid: d00c5bc21ab532341b77f5dd3414b7c5, type: 3}
+  - {fileID: 1275294535427691056, guid: cdf36adceca4d984dacecc0910a1b2e6, type: 3}
+  - {fileID: 5626834614774559009, guid: c8c3a5804113d7743ad64f0aabb08c9e, type: 3}
+  - {fileID: 7144720344042236267, guid: 54b6e31e4295824418c1a723a469d13e, type: 3}
   AIPosition:
   - {x: -9, y: 2, z: -14.7}
   - {x: -9.07, y: 1.76, z: -17.57}

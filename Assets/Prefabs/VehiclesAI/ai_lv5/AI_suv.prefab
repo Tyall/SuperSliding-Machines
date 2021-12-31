@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 6970970524246644975}
   - component: {fileID: 1647852370284065959}
   - component: {fileID: -725584444169245775}
+  - component: {fileID: 4011502222745348734}
   m_Layer: 2
   m_Name: AI_suv
   m_TagString: AI Vehicle
@@ -502,6 +503,21 @@ MonoBehaviour:
   filename: Level_1_onetest
   networkLayers: 2
   networkNeurons: 10
+--- !u!114 &4011502222745348734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970970524246644968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01b4681da0faf54a84e56febc9a354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkLayers: 0
+  networkNeurons: 0
+  biases: []
 --- !u!1 &7121992496917200107
 GameObject:
   m_ObjectHideFlags: 0

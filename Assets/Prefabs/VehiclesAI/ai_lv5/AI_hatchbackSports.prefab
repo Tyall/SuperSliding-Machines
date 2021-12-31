@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 572035244711548677}
   - component: {fileID: 2082203989992400389}
   - component: {fileID: -7189274176643104957}
+  - component: {fileID: -7338625177297567837}
   m_Layer: 2
   m_Name: AI_hatchbackSports
   m_TagString: AI Vehicle
@@ -446,6 +447,21 @@ MonoBehaviour:
   filename: Level_1_onetest
   networkLayers: 2
   networkNeurons: 10
+--- !u!114 &-7338625177297567837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572035244711548675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01b4681da0faf54a84e56febc9a354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkLayers: 0
+  networkNeurons: 0
+  biases: []
 --- !u!1 &572035244962968328
 GameObject:
   m_ObjectHideFlags: 0
