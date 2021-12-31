@@ -52,20 +52,26 @@ public class RaceAI : MonoBehaviour
     Vector3 gdetectionDirection = -Vector3.up;
     Vector3 gdetectionOffset = new Vector3(0, 0.3f, 0f);
 
+    private bool networkRecreated = false;
+
     private void Start()
     {
         movementSmoothing = Time.fixedDeltaTime;
+        
         LoadNetwork();
-       // RecreateNetwork();
+        RecreateNetwork();
     }
 
     private void FixedUpdate()
     {
         //If it won't work - add condition to check if bool netReacreated = 1 then run loop
-
-        GetInputFromSensors();
-        GetNetworkOutput();
-        MoveVehicle(acceleration, turnAngle);
+        if (networkRecreated)
+        {
+            GetInputFromSensors();
+            GetNetworkOutput();
+            MoveVehicle(acceleration, turnAngle);
+        }
+        
         //CheckForRoad();
     }
 
@@ -73,19 +79,19 @@ public class RaceAI : MonoBehaviour
     {
         //Load button triggers that
         NetworkSaveManager nsm = FindObjectOfType<NetworkSaveManager>();
-
+        Debug.Log("Filename is " + filename);
         nsm.Load(filename); //filename eg Track1_AI_Easy
         networkLayers = nsm.networkLayers - 2;
         networkNeurons = nsm.networkNeurons;
-        //Debug.Log("layers " + networkLayers);
-        //Debug.Log("neurons " + networkNeurons);
+        Debug.Log("layers " + networkLayers);
+        Debug.Log("neurons " + networkNeurons);
 
         RecreateNetwork();
 
         weights = nsm.weights;
         biases = nsm.biases;
-        //Debug.Log("weights " + weights);
-        //Debug.Log("biases " + biases);
+        Debug.Log("weights " + weights);
+        Debug.Log("biases " + biases);
     }
 
 
@@ -114,6 +120,7 @@ public class RaceAI : MonoBehaviour
         weights.Add(outputWeight);
         biases.Add(Random.Range(-1f, 1f));
 
+        networkRecreated = true;
     }
     /*
     public void CopyWeights()

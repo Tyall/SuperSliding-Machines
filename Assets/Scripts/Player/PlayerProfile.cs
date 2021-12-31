@@ -100,6 +100,8 @@ public class PlayerProfile : MonoBehaviour
         playerLevel = data.playerLevel;
         playerCoins = data.playerCoins;
         playerExp = data.playerExp;
+        difficulty = data.playerDifficulty;
+        controllerSwapped = data.playerControllerSwapped;
         unlockedLevels = data.unlockedLevels; //DEBUGO
         ownedVehicles = data.ownedVehicles;
         ownedVehiclesColors = data.ownedVehiclesColors;

@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.IO;
 
 
+
 public class NetworkSaveManager : MonoBehaviour
 {
     //Rebuild it so it'll work at runtime
@@ -19,20 +20,46 @@ public class NetworkSaveManager : MonoBehaviour
     
     public void Load(string filename)
     {
+        
+        string chosenJson;
+        var jsonList = new List<string>();
+        jsonList = LoadFromFile(filename);
 
-        string json = LoadFromFile(filename);
-        SavedNetwork saved = JsonConvert.DeserializeObject<SavedNetwork>(json);
+        int difficulty = PlayerProfile.difficulty;
+
+        //DEBUG ONLY - CUZ LOADING PLAYER DOESNT WORK IN DEBUG
+        difficulty = 2;
+        //DEBUG END
+
+        int chosenLine = GetRandomLine(difficulty, jsonList.Count);
+        Debug.Log("Chosen line is " + chosenLine + " difficulty " +difficulty);
+        chosenJson = jsonList[chosenLine].ToString();
+        
+        SavedNetwork saved = JsonConvert.DeserializeObject<SavedNetwork>(chosenJson);
 
         this.networkLayers = saved.networkLayers;
         this.networkNeurons = saved.networkNeurons;
         this.weights = WeightArrayToMatrix(saved.weights);
         this.biases = saved.biases;
 
-        /*Debug.Log("networkLayers " + networkLayers);
-        Debug.Log("networkNeurons " + networkNeurons);
-        Debug.Log("networkWeights " + weights);
-        Debug.Log("networkBiases " + biases);*/
 
+        Debug.Log("Player set AI Difficulty to " + difficulty + ". Loaded json from line " + chosenLine + " consisting data of " + chosenJson);
+
+    }
+
+    int GetRandomLine(int difficulty, int listSize)
+    {
+        System.Random rnd = new System.Random();
+        switch (difficulty)
+        {
+            case 1:
+                return rnd.Next(0, 30);
+            case 2:
+                return rnd.Next(31, 60);
+            case 3:
+                return rnd.Next(61, listSize);
+        }
+        return -1;
     }
 
     /*public void DebugSave(NeuralNetwork network, string filename, int nLayers, int nNeurons, float fit, string reason, int gen, int ind)
@@ -103,19 +130,27 @@ public class NetworkSaveManager : MonoBehaviour
         return newWeights;
     }
 
-    public string LoadFromFile(string filename)
+    public List<string> LoadFromFile(string filename)
     {
-        string json;
+        
+        var jsonList = new List<string>();
 
         string path = "Assets/Resources/SavedModels/" + filename;
+
+        Debug.Log("Trying to load file of path " + path);
+
         StreamReader reader = new StreamReader(path);
 
-        json = reader.ReadToEnd();
+        string line;
+        while ((line = reader.ReadLine()) != null)
+        {
+            jsonList.Add(line);
+        }
 
         reader.Close();
-        Debug.Log("loaded json: " + json);
+        
 
-        return json;
+        return jsonList;
     }
 
     public void SaveToFile(string json, string filename)

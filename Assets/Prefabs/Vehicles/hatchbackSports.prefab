@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7921745834505619011}
   - component: {fileID: 7921745834505619013}
   - component: {fileID: 7921745834505619012}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColiderLeftRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7921745834638804393}
   - component: {fileID: 7921745834638804394}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColiderLeftFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 7921745835010481676}
   - component: {fileID: 7921745835010481678}
   - component: {fileID: 7921745835010481677}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColiderRightRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 7921745835040056220}
   - component: {fileID: 7921745835040056222}
   - component: {fileID: 7921745835040056221}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_backLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 7921745835474244381}
   - component: {fileID: 7921745835474244383}
   - component: {fileID: 7921745835474244382}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7921745835769073857}
   - component: {fileID: 7921745835769073858}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7921745835896911545}
   - component: {fileID: 7921745835896911546}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColiderRightFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 7921745836078595669}
   - component: {fileID: 7921745836078595671}
   - component: {fileID: 7921745836078595670}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_frontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 7921745836097864908}
   - component: {fileID: 7921745836097864910}
   - component: {fileID: 7921745836097864909}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_frontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 7921745836131142697}
   - component: {fileID: 7921745836131142699}
   - component: {fileID: 7921745836131142698}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_backRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 7921745836434776484}
   - component: {fileID: 7921745836434776485}
   - component: {fileID: 7921745836434776486}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: hatchbackSports
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -794,3 +794,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   acceleration: 800000
+  joy: {fileID: 0}
+  levelType: 0

@@ -166,18 +166,23 @@ public class MainMenu : MonoBehaviour
         {
             case 1:
                 PlayerProfile.difficulty = 1;
+                SaveSystem.SavePlayer();
                 break;
             case 2:
                 PlayerProfile.difficulty = 2;
+                SaveSystem.SavePlayer();
                 break;
             case 3:
                 PlayerProfile.difficulty = 3;
+                SaveSystem.SavePlayer();
                 break;
             case 4:
                 PlayerProfile.controllerSwapped = true;
+                SaveSystem.SavePlayer();
                 break;
             case 5:
                 PlayerProfile.controllerSwapped = false;
+                SaveSystem.SavePlayer();
                 break;
 
         }

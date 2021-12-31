@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 791179916881459964}
   - component: {fileID: 121884565421957191}
   - component: {fileID: 121884565421957192}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: police
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,6 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   acceleration: 900000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!1 &315982310671255963
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +82,7 @@ GameObject:
   - component: {fileID: 991827493195822807}
   - component: {fileID: 83157954864653458}
   - component: {fileID: 1932346871836349669}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_frontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928285953611278302}
   - component: {fileID: 928285953611278303}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +210,7 @@ GameObject:
   - component: {fileID: 928285954180181441}
   - component: {fileID: 928285954180181443}
   - component: {fileID: 928285954180181442}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColliderRightRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +286,7 @@ GameObject:
   - component: {fileID: 928285954951610079}
   - component: {fileID: 928285954951609889}
   - component: {fileID: 928285954951609888}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColliderLeftRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928285955124229863}
   - component: {fileID: 928285955124229864}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColliderRightFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928285955317784560}
   - component: {fileID: 928285955317784561}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColliderLeftFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +484,7 @@ GameObject:
   - component: {fileID: 6289412553216595983}
   - component: {fileID: 432824768095500148}
   - component: {fileID: 6356140411869673915}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_backLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +564,7 @@ GameObject:
   - component: {fileID: 2582950605631240232}
   - component: {fileID: 3941231554922684657}
   - component: {fileID: 8661554852803831723}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +650,7 @@ GameObject:
   - component: {fileID: 7801047795223313769}
   - component: {fileID: 2526785333773757121}
   - component: {fileID: 4104892108666208139}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: grill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +732,7 @@ GameObject:
   - component: {fileID: 7859802612966110185}
   - component: {fileID: 6307447880523004027}
   - component: {fileID: 2781431693999844105}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_frontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +812,7 @@ GameObject:
   - component: {fileID: 1222881701601758185}
   - component: {fileID: 8280661303844046651}
   - component: {fileID: 713193323432995697}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_backRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

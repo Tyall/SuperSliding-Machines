@@ -25243,7 +25243,7 @@ MonoBehaviour:
   turnAngle: 0
   maxVehicleAcceleration: 11.5
   maxVehicleTurnAngle: 90
-  movementSmoothing: 0
+  movementSmoothing: 0.01
   filename: test_analysis_7
   networkLayers: 0
   networkNeurons: 0
@@ -25291,9 +25291,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1406543011}
-  initialPopulationSize: 10
-  bestIndividualsSelected: 2
-  numberToCrossover: 7
+  initialPopulationSize: 40
+  bestIndividualsSelected: 4
+  numberToCrossover: 22
   mutationRate: 0.055
   currentGeneration: 0
   currentIndividual: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1665945597138423852}
   - component: {fileID: 176988808119732469}
   - component: {fileID: 5544737542045601711}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 534364749272809926}
   - component: {fileID: 534364749272809928}
   - component: {fileID: 534364749272809929}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColliderRightRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534364749602503297}
   - component: {fileID: 534364749602503296}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColliderLeftFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534364749723313072}
   - component: {fileID: 534364749723313075}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColliderRightFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534364750697729951}
   - component: {fileID: 534364750697729950}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 534364751206417549}
   - component: {fileID: 534364751206417551}
   - component: {fileID: 534364751206417548}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WheelColliderLeftRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 7173847390335791115}
   - component: {fileID: 3659008125485899632}
   - component: {fileID: 7850714587727352255}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_backLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 4108820578846072531}
   - component: {fileID: 3882583285959543958}
   - component: {fileID: 3321343600472423649}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_frontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 4484475430495851256}
   - component: {fileID: 3852792134127863877}
   - component: {fileID: 3852792134127863876}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: race
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,6 +634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4.5
   acceleration: 900000
+  joy: {fileID: 0}
+  levelType: 0
 --- !u!1 &5792064217453231923
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +647,7 @@ GameObject:
   - component: {fileID: 2611620732349981677}
   - component: {fileID: 5056428305230262079}
   - component: {fileID: 4405398778642629493}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_backRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +728,7 @@ GameObject:
   - component: {fileID: 6473215833312091117}
   - component: {fileID: 7155750558829465727}
   - component: {fileID: 1323911188661650189}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wheel_frontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
