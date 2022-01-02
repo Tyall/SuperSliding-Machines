@@ -11,7 +11,7 @@ public class NetworkSaveManager : MonoBehaviour
 {
     //Rebuild it so it'll work at runtime
 
-    /*NOWE
+    //NOWE
     public int networkLayers;
     public int networkNeurons;
 
@@ -22,21 +22,21 @@ public class NetworkSaveManager : MonoBehaviour
 
     public void Load(string filename)
     {
-        
+
         string chosenJson;
-        
+
         jsonList = LoadFromFile(filename);
 
         int difficulty = PlayerProfile.difficulty;
 
         //DEBUG ONLY - CUZ LOADING PLAYER DOESNT WORK IN DEBUG - 0 set id
-        difficulty = 0;
+        difficulty = 3;
         //DEBUG END
 
         int chosenLine = GetRandomLine(difficulty, jsonList.Count);
-        Debug.Log("Chosen line is " + chosenLine + " difficulty " +difficulty);
+        Debug.Log("Chosen line is " + chosenLine + " difficulty " + difficulty);
         chosenJson = jsonList[chosenLine].ToString();
-        
+
         SavedNetwork saved = JsonConvert.DeserializeObject<SavedNetwork>(chosenJson);
 
         Debug.Log(" layers " + saved.networkLayers + ". neurons " + saved.networkNeurons + ". weights " + saved.weights + ". biases " + saved.biases);
@@ -68,7 +68,7 @@ public class NetworkSaveManager : MonoBehaviour
         return -1;
     }
 
-   
+
 
     public void Save(NeuralNetwork network, string filename, int nLayers, int nNeurons, string diff, float fit, float time, float indTime, float indTravelDistance, float indAvgSpeed, float indDistanceScore, float indSpeedScore, float indRacingLineScore, int gen, int ind)
     {
@@ -76,7 +76,7 @@ public class NetworkSaveManager : MonoBehaviour
 
         saved.networkLayers = nLayers + 2;
         saved.networkNeurons = nNeurons;
-        
+
         saved.weights = WeightMatrixToArray(network.weights);
         saved.biases = network.biases;
 
@@ -100,7 +100,7 @@ public class NetworkSaveManager : MonoBehaviour
     private List<float[,]> WeightMatrixToArray(List<Matrix<float>> weights)
     {
         List<float[,]> newWeights = new List<float[,]>();
-        foreach(Matrix<float> w in weights)
+        foreach (Matrix<float> w in weights)
         {
             newWeights.Add(w.ToArray());
         }
@@ -111,19 +111,19 @@ public class NetworkSaveManager : MonoBehaviour
     {
         List<Matrix<float>> newWeights = new List<Matrix<float>>();
 
-        
+
         foreach (float[,] w in weights)
         {
             newWeights.Add(Matrix<float>.Build.DenseOfArray(w));
 
-            
+
         }
         return newWeights;
     }
 
     public List<string> LoadFromFile(string filename)
     {
-        
+
         var jsonList = new List<string>();
 
         string path = "Assets/Resources/SavedModels/" + filename;
@@ -139,7 +139,7 @@ public class NetworkSaveManager : MonoBehaviour
         }
 
         reader.Close();
-        
+
 
         return jsonList;
     }
@@ -153,8 +153,8 @@ public class NetworkSaveManager : MonoBehaviour
         writer.WriteLine(json);
         writer.Close();
 
-    }
-    END OF NOWE*/
+    } 
+    /* END OF NOWE
 
     public int networkLayers;
     public int networkNeurons;
@@ -177,30 +177,11 @@ public class NetworkSaveManager : MonoBehaviour
         /*Debug.Log("networkLayers " + networkLayers);
         Debug.Log("networkNeurons " + networkNeurons);
         Debug.Log("networkWeights " + weights);
-        Debug.Log("networkBiases " + biases);*/
+        Debug.Log("networkBiases " + biases);
 
     }
 
-    /*public void DebugSave(NeuralNetwork network, string filename, int nLayers, int nNeurons, float fit, string reason, int gen, int ind)
-    {
-        SavedNetwork saved = new SavedNetwork();
-
-        saved.networkLayers = nLayers;
-        saved.networkNeurons = nNeurons;
-
-        saved.Fitness = fit;
-        saved.Reason = reason;
-        saved.Generation = gen;
-        saved.Individual = ind;
-        
-
-        saved.weights = WeightMatrixToArray(network.weights);
-        saved.biases = network.biases;
-
-        string json = JsonConvert.SerializeObject(saved);
-
-        SaveToFile(json, filename);
-    }*/
+   
 
     public void Save(NeuralNetwork network, string filename, int nLayers, int nNeurons)
     {
@@ -262,5 +243,5 @@ public class NetworkSaveManager : MonoBehaviour
         writer.Close();
 
     }
-
+*/
 }

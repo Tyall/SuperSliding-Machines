@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 873550213655857991}
   - component: {fileID: 3928361472022380757}
   - component: {fileID: 5158161973212025767}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: wheel_frontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 8211282520330269511}
   - component: {fileID: 1433842373025480597}
   - component: {fileID: 7559604318916301791}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: wheel_backRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 2012766361559800296}
   - component: {fileID: 6443960105593409696}
   - component: {fileID: 8294992587261542918}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: wheel_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 3910429576001429665}
   - component: {fileID: 7425708228890464218}
   - component: {fileID: 4123421048968020245}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: wheel_backLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 4815652554319003782}
   - component: {fileID: 6322711552438736991}
   - component: {fileID: 1817448331002666757}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 6970970524246644975}
   - component: {fileID: 1647852370284065959}
   - component: {fileID: -725584444169245775}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: AI_suv
   m_TagString: AI Vehicle
   m_Icon: {fileID: 0}
@@ -452,12 +452,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6970970524246644968}
   serializedVersion: 2
-  m_Mass: 6500
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Mass: 50000
+  m_Drag: 200
+  m_AngularDrag: 200
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1647852370284065959
@@ -499,7 +499,7 @@ MonoBehaviour:
   maxVehicleAcceleration: 9
   maxVehicleTurnAngle: 90
   movementSmoothing: 0.01
-  filename: Level_1_onetest
+  filename: ai_trained_lv5
   networkLayers: 2
   networkNeurons: 10
 --- !u!1 &7121992496917200107
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 7121992496917200106}
   - component: {fileID: 7121992496917200104}
   - component: {fileID: 7121992496917200105}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: WheelColliderLeftRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7121992497571376608}
   - component: {fileID: 7121992497571376615}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 7121992497824025780}
   - component: {fileID: 7121992497824025770}
   - component: {fileID: 7121992497824025771}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: WheelColliderRightFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 7121992498122300513}
   - component: {fileID: 7121992498122300519}
   - component: {fileID: 7121992498122300512}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: WheelColliderLeftFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 7121992498259928923}
   - component: {fileID: 7121992498259928921}
   - component: {fileID: 7121992498259928922}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: WheelColliderRightRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 7840613322394406521}
   - component: {fileID: 6929832734471756860}
   - component: {fileID: 8925512834494770251}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: wheel_frontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
