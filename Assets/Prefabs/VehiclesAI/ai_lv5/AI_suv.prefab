@@ -453,13 +453,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6970970524246644968}
   serializedVersion: 2
-  m_Mass: 6500
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Mass: 50000
+  m_Drag: 200
+  m_AngularDrag: 200
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &1647852370284065959
 MonoBehaviour:
@@ -497,10 +497,10 @@ MonoBehaviour:
   numberOfOutputs: 2
   acceleration: 0
   turnAngle: 0
-  maxVehicleAcceleration: 9
+  maxVehicleAcceleration: 16
   maxVehicleTurnAngle: 90
   movementSmoothing: 0.01
-  filename: Level_1_onetest
+  filename: ai_trained_lv5
   networkLayers: 2
   networkNeurons: 10
 --- !u!114 &4011502222745348734
@@ -518,6 +518,7 @@ MonoBehaviour:
   networkLayers: 0
   networkNeurons: 0
   biases: []
+  jsonList: []
 --- !u!1 &7121992496917200107
 GameObject:
   m_ObjectHideFlags: 0

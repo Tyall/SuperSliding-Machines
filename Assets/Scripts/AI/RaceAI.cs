@@ -286,6 +286,7 @@ public class RaceAI : MonoBehaviour
     float gdetectionDistance = 10f;
     Vector3 gdetectionDirection = -Vector3.up;
     Vector3 gdetectionOffset = new Vector3(0, 0.3f, 0f);
+    bool isSlowed;
 
     private void Start()
     {
@@ -301,7 +302,7 @@ public class RaceAI : MonoBehaviour
         GetInputFromSensors();
         GetNetworkOutput();
         MoveVehicle(acceleration, turnAngle);
-        //CheckForRoad();
+        CheckForRoad();
     }
 
     public void LoadNetwork()
@@ -445,6 +446,42 @@ public class RaceAI : MonoBehaviour
         input = transform.TransformDirection(input);
         transform.position += input;
         transform.eulerAngles += new Vector3(0, (turn * maxVehicleTurnAngle) * movementSmoothing, 0);
+    }
+
+    private void CheckForRoad()
+    {
+        if (!IsOnRoad())
+        {
+            if (!isSlowed)
+            {
+                isSlowed = true;
+                maxVehicleAcceleration *= 0.5f;
+            }
+
+            //Maybe even progressively slow down?
+        }
+        else
+        {
+            if (isSlowed)
+            {
+                isSlowed = false;
+                maxVehicleAcceleration *= 2f;
+            }
+        }
+    }
+
+    private bool IsOnRoad()
+    {
+        if (Physics.Raycast(transform.position + gdetectionOffset, gdetectionDirection, out gdetectionHit, gdetectionDistance))
+        {
+            if (gdetectionHit.collider.tag == "Road")
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        return false;
     }
 
 }

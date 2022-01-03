@@ -25,6 +25,7 @@ public class LevelButton : MonoBehaviour
     void Start()
     {
         unlockedLevels = PlayerProfile.unlockedLevels;
+        Debug.Log("Unlocked "+unlockedLevels+" levels");
         levelNum = int.Parse(buttonText.text);
         levelDetails = GameObject.Find("LevelDetails");
         levelLockedPanel = GameObject.Find("LevelLockedPanel");

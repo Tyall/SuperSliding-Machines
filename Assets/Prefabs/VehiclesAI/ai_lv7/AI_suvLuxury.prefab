@@ -768,6 +768,7 @@ GameObject:
   - component: {fileID: 7436287625981971141}
   - component: {fileID: 2164171612583071561}
   - component: {fileID: 3541090778276016932}
+  - component: {fileID: -9048056338844846900}
   m_Layer: 2
   m_Name: AI_suvLuxury
   m_TagString: AI Vehicle
@@ -803,13 +804,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7436287625981971143}
   serializedVersion: 2
-  m_Mass: 7500
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Mass: 50000
+  m_Drag: 200
+  m_AngularDrag: 200
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &2164171612583071561
 MonoBehaviour:
@@ -847,9 +848,25 @@ MonoBehaviour:
   numberOfOutputs: 2
   acceleration: 0
   turnAngle: 0
-  maxVehicleAcceleration: 11
-  maxVehicleTurnAngle: 90
+  maxVehicleAcceleration: 15
+  maxVehicleTurnAngle: 140
   movementSmoothing: 0.01
   filename: ai_trained_lv7
   networkLayers: 2
   networkNeurons: 10
+--- !u!114 &-9048056338844846900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7436287625981971143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01b4681da0faf54a84e56febc9a354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkLayers: 0
+  networkNeurons: 0
+  biases: []
+  jsonList: []

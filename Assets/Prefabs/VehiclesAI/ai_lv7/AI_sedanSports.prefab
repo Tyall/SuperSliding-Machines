@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 705231042140226327}
   - component: {fileID: 8500743938943181146}
   - component: {fileID: 2498792196515090463}
+  - component: {fileID: -6918970307593878822}
   m_Layer: 2
   m_Name: AI_sedanSports
   m_TagString: AI Vehicle
@@ -47,13 +48,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705231042140226328}
   serializedVersion: 2
-  m_Mass: 5500
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Mass: 50000
+  m_Drag: 200
+  m_AngularDrag: 200
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &8500743938943181146
 MonoBehaviour:
@@ -91,12 +92,28 @@ MonoBehaviour:
   numberOfOutputs: 2
   acceleration: 0
   turnAngle: 0
-  maxVehicleAcceleration: 11.5
-  maxVehicleTurnAngle: 90
+  maxVehicleAcceleration: 19
+  maxVehicleTurnAngle: 140
   movementSmoothing: 0.01
   filename: ai_trained_lv7
   networkLayers: 2
   networkNeurons: 10
+--- !u!114 &-6918970307593878822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705231042140226328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01b4681da0faf54a84e56febc9a354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkLayers: 0
+  networkNeurons: 0
+  biases: []
+  jsonList: []
 --- !u!1 &872262934071536325
 GameObject:
   m_ObjectHideFlags: 0

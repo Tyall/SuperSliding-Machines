@@ -14,8 +14,12 @@ public class SmoothFollow : MonoBehaviour
         target = GameObject.Find("PlayerVehicle").GetComponent<Transform>(); //comment for AI testing purposes
         offset = transform.position - target.position;
     }
-   
-        
+
+    private void Update()
+    {
+        target = GameObject.Find("PlayerVehicle").GetComponent<Transform>();
+    }
+
     // Update is called once per frame
     void LateUpdate()
     {

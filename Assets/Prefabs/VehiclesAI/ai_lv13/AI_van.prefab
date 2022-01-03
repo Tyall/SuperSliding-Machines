@@ -578,6 +578,7 @@ GameObject:
   - component: {fileID: 2749837689300923215}
   - component: {fileID: 8429458824277561972}
   - component: {fileID: -3067923919737112862}
+  - component: {fileID: -3485785684894580058}
   m_Layer: 2
   m_Name: AI_van
   m_TagString: AI Vehicle
@@ -613,13 +614,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2749837689300923249}
   serializedVersion: 2
-  m_Mass: 8000
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Mass: 50000
+  m_Drag: 200
+  m_AngularDrag: 200
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &8429458824277561972
 MonoBehaviour:
@@ -657,12 +658,28 @@ MonoBehaviour:
   numberOfOutputs: 2
   acceleration: 0
   turnAngle: 0
-  maxVehicleAcceleration: 8.5
+  maxVehicleAcceleration: 14
   maxVehicleTurnAngle: 90
   movementSmoothing: 0.01
   filename: ai_trained_lv13
   networkLayers: 2
   networkNeurons: 10
+--- !u!114 &-3485785684894580058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749837689300923249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01b4681da0faf54a84e56febc9a354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkLayers: 0
+  networkNeurons: 0
+  biases: []
+  jsonList: []
 --- !u!1 &4845652680486650880
 GameObject:
   m_ObjectHideFlags: 0
