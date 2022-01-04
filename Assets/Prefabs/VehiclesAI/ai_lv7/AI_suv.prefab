@@ -415,7 +415,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7779419075461038674}
   - component: {fileID: 6970970524246644975}
-  - component: {fileID: 1647852370284065959}
   - component: {fileID: -725584444169245775}
   - component: {fileID: 4011502222745348734}
   m_Layer: 2
@@ -461,25 +460,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &1647852370284065959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6970970524246644968}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86dfeb593ddced04e8823d024cf15aba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnSpeed: 2.5
-  Acceleration: 600000
-  maxSteerAngle: 40
-  vehicle: {fileID: 6970970524246644975}
-  path: {fileID: 0}
-  AIcheckpointsPassed: 0
-  isInFront: 0
 --- !u!114 &-725584444169245775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +483,7 @@ MonoBehaviour:
   filename: ai_trained_lv7
   networkLayers: 2
   networkNeurons: 10
+  AIcheckpointsPassed: 0
 --- !u!114 &4011502222745348734
 MonoBehaviour:
   m_ObjectHideFlags: 0

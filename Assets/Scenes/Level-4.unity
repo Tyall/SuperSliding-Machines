@@ -13724,6 +13724,7 @@ MonoBehaviour:
   filename: TEST_ANALYSIS
   networkLayers: 0
   networkNeurons: 0
+  AIcheckpointsPassed: 0
 --- !u!114 &548596153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26663,7 +26664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setFailMenu: {fileID: 0}
-  NumberOfCheckpoints: 4
+  NumberOfCheckpoints: 23
   NumberOfEnemies: 3
   NumberOfLaps: 2
   GridPosition: 1

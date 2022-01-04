@@ -151,8 +151,12 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLevel()
     {
-        Debug.Log("Load Level");
-        SceneManager.LoadScene(levelNum); 
+        if (levelNum == 1 || levelNum == 2 || levelNum == 3 || levelNum == 4 || levelNum == 5 || levelNum == 7 || levelNum == 9 || levelNum == 13)
+        {
+            Debug.Log("Load Level");
+            SceneManager.LoadScene(levelNum);
+        }
+            
     }
 
     public void ChooseLevelPopUp()

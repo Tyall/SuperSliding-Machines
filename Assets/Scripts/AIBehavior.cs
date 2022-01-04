@@ -25,20 +25,7 @@ public class AIBehavior : MonoBehaviour
     public static bool isFront; // This can't be static. Gotta solve it differently
 
     // Start is called before the first frame update
-    void Start()
-    {
-        path = GameObject.Find("AI_Path").transform;
-        Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
-        nodes = new List<Transform>();
-
-        for (int i = 0; i < pathTransforms.Length; i++)
-        {
-            if (pathTransforms[i] != path.transform)
-            {
-                nodes.Add(pathTransforms[i]);
-            }
-        }
-    }
+    
 
 
     // Update is called once per frame
@@ -98,7 +85,7 @@ public class AIBehavior : MonoBehaviour
 
     public void CheckpointHandler(string cpName)
     {
-       // Debug.Log("AI Entered " + cpName);
+        Debug.Log("AI Entered " + cpName);
         AIcheckpointsPassed++;
         //MeasurePosition();
     }

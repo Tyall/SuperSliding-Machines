@@ -276,6 +276,8 @@ public class RaceAI : MonoBehaviour
 
     private Vector3 input;
 
+    public int AIcheckpointsPassed;
+
     private float aSensor;
     private float bSensor;
     private float cSensor;
@@ -454,6 +456,7 @@ public class RaceAI : MonoBehaviour
         {
             if (!isSlowed)
             {
+                Debug.Log("Ai Slowed");
                 isSlowed = true;
                 maxVehicleAcceleration *= 0.5f;
             }
@@ -464,6 +467,7 @@ public class RaceAI : MonoBehaviour
         {
             if (isSlowed)
             {
+                Debug.Log("Ai UnSlowed");
                 isSlowed = false;
                 maxVehicleAcceleration *= 2f;
             }
@@ -482,6 +486,23 @@ public class RaceAI : MonoBehaviour
                 return false;
         }
         return false;
+    }
+
+    void OnTriggerEnter(Collider hit)
+    {
+        if (hit.gameObject.tag == "CheckpointAI")
+        {
+
+            CheckpointHandler(hit.name);
+
+        }
+
+    }
+
+    public void CheckpointHandler(string cpName)
+    {
+        Debug.Log("AI Entered " + cpName);
+        AIcheckpointsPassed++;
     }
 
 }

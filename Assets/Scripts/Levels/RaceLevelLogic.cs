@@ -331,8 +331,8 @@ public class RaceLevelLogic : MonoBehaviour
         Debug.Log("Player's cp passed: " + totalCheckpointsPassed);
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            Debug.Log("AI "+ (i+1) +" cp passed: " + enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed);
-            if (totalCheckpointsPassed < enemiesArray[i].GetComponent<AIBehavior>().AIcheckpointsPassed)
+            Debug.Log("AI "+ (i+1) +" cp passed: " + enemiesArray[i].GetComponent<RaceAI>().AIcheckpointsPassed);
+            if (totalCheckpointsPassed < enemiesArray[i].GetComponent<RaceAI>().AIcheckpointsPassed)
             {
                 playerPos++;
             }

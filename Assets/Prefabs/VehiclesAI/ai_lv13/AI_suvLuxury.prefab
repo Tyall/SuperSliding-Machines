@@ -849,11 +849,12 @@ MonoBehaviour:
   acceleration: 0
   turnAngle: 0
   maxVehicleAcceleration: 15
-  maxVehicleTurnAngle: 90
+  maxVehicleTurnAngle: 140
   movementSmoothing: 0.01
-  filename: ai_trained_lv13
+  filename: ai_trained_lv9
   networkLayers: 2
   networkNeurons: 10
+  AIcheckpointsPassed: 0
 --- !u!114 &-9048056338844846900
 MonoBehaviour:
   m_ObjectHideFlags: 0

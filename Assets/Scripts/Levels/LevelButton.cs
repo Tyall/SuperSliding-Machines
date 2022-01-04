@@ -40,16 +40,22 @@ public class LevelButton : MonoBehaviour
     public void ShowUnlockedLevels(int levelNumber)
     {
         if (levelNumber <= unlockedLevels)
-        {           
-            buttonText.color = new Color(0.996f, 0.7137f, 0.0352f, 1f);
-            buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
-            if (levelNumber % 5 == 0)
+        {   
+            //temporary solution
+            if (levelNumber == 1 ||  levelNumber == 2 ||  levelNumber == 3 || levelNumber == 4 || levelNumber == 5 || levelNumber ==7 || levelNumber == 9 || levelNumber == 13)
+            {
+                buttonText.color = new Color(0.996f, 0.7137f, 0.0352f, 1f);
+                buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
+            }
+            else 
             {
                 // buttonText.color = new Color(f, 0f, 0f, 1f);
                 // buttonImage.color = new Color(0.4f, 0f, 1f, 1f);
-                buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
-                buttonText.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
+                //buttonImage.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
+                //buttonText.color = new Color(0.2196f, 0.4156f, 0.7335f, 1f);
+                SetAlternativeColor();
             }
+            
         }
     }
 
