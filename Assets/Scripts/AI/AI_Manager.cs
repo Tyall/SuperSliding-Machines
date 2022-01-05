@@ -244,7 +244,7 @@ public class AI_Manager : MonoBehaviour
             difficulty = "HARD";
             maxIndividualFitnessScore *= 1.8f;
         }
-        //FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, difficulty, fitnessScore, totalTimeSinceStart, timeSinceStart, totalDistance, averageSpeed, totalDistanceWithMultiplier, averageSpeedWithMultiplier, racingLineScore, gm.currentGeneration, gm.currentIndividual);
+        FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, difficulty, fitnessScore, totalTimeSinceStart, timeSinceStart, totalDistance, averageSpeed, totalDistanceWithMultiplier, averageSpeedWithMultiplier, racingLineScore, gm.currentGeneration, gm.currentIndividual);
         savedNetworks++;
         //Try to equip a vehicle on track X in network trained on track Y, and see what happens. 
     }

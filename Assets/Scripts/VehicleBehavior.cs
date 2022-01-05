@@ -26,7 +26,9 @@ public class VehicleBehavior : MonoBehaviour
     Vector3 offset = new Vector3(0, 0.3f, 0f);
     bool isOffroad = false;
 
-
+    //Test
+    Vector3 lastPosition;
+    float totalDistance; 
     private void Start()
     {
         levelType = VehicleSpawner.levelType;
@@ -35,9 +37,16 @@ public class VehicleBehavior : MonoBehaviour
         joy = GameObject.Find("Fixed Joystick");
         joy.SetActive(true);
         drag = vehicle.drag;
+
+        lastPosition = transform.position;
     }
 
- 
+    //TRACK LENGTHS:
+    //13 - ~700 units
+    //9 - ~700 units
+    //7 - ~260 units
+    //4 - ~170 units
+
     void GetJoystickPosition()
     {
         joyH = joystick.Horizontal;
@@ -61,6 +70,12 @@ public class VehicleBehavior : MonoBehaviour
         GetAccelerationStrenght();
 
         SetRotation();
+
+        //Measuring parameters only
+        
+        totalDistance += Vector3.Distance(transform.position, lastPosition);
+        lastPosition = transform.position;
+        Debug.Log("Total distance travelled: " + totalDistance);
     }
 
     public void GetAccelerationStrenght()
