@@ -68,6 +68,7 @@ public class RaceLevelLogic : MonoBehaviour
     public static string cp_last_3;
 
     bool isFinished = false;
+    bool countdownFinished = false;
 
     int coins;
     int experience;
@@ -191,8 +192,13 @@ public class RaceLevelLogic : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.2f);
         countdownMenu.active = false;
         Time.timeScale = 1;
-
+        countdownFinished = true;
         HUDPanel.SetActive(true);
+    }
+
+    public bool IsCountdownFinished()
+    {
+        return countdownFinished; 
     }
     void LevelFinished()
     {

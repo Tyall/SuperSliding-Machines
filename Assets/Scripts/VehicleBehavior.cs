@@ -71,11 +71,11 @@ public class VehicleBehavior : MonoBehaviour
 
         SetRotation();
 
-        //Measuring parameters only
+        //For measuring parameters only
         
-        totalDistance += Vector3.Distance(transform.position, lastPosition);
-        lastPosition = transform.position;
-        Debug.Log("Total distance travelled: " + totalDistance);
+        //totalDistance += Vector3.Distance(transform.position, lastPosition);
+        //lastPosition = transform.position;
+        //Debug.Log("Total distance travelled: " + totalDistance);
     }
 
     public void GetAccelerationStrenght()

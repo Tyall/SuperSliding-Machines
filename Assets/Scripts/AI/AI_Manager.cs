@@ -223,7 +223,7 @@ public class AI_Manager : MonoBehaviour
         {
             //Save network to a JSON file
             Debug.Log("NEURAL NETWORK HAS SUCCESFULLY BEEN SAVED TO " + filename);
-            SaveNetwork();
+            SaveNetwork(); //COMMENTED TO SAVE EVERY FILE
             Death();
         }
     }
@@ -273,6 +273,7 @@ public class AI_Manager : MonoBehaviour
 
     private void Death()
     {
+        //FindObjectOfType<NetworkSaveManager>().Save(network, filename, networkLayers, networkNeurons, "TEST_MODE", fitnessScore, totalTimeSinceStart, timeSinceStart, totalDistance, averageSpeed, totalDistanceWithMultiplier, averageSpeedWithMultiplier, racingLineScore, gm.currentGeneration, gm.currentIndividual);
         GameObject.FindObjectOfType<GA_Manager>().Death(fitnessScore, network);
     }
 

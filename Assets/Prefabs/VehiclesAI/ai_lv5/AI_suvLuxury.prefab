@@ -782,8 +782,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7436287625981971143}
-  m_LocalRotation: {x: -0, y: -0.93147916, z: -0, w: 0.36379465}
-  m_LocalPosition: {x: -5.6434917, y: 2.000001, z: -12.559682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4997445874181886633}
@@ -794,7 +794,7 @@ Transform:
   - {fileID: 4826964711302673568}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -137.33301, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7436287625981971141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -831,7 +831,7 @@ MonoBehaviour:
   maxVehicleAcceleration: 15
   maxVehicleTurnAngle: 140
   movementSmoothing: 0.01
-  filename: ai_trained_lv5
+  filename: ai_trained_lv5_final
   networkLayers: 2
   networkNeurons: 10
   AIcheckpointsPassed: 0

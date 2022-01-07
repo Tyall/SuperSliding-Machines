@@ -17811,7 +17811,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663607514}
   m_LocalRotation: {x: 0.33008698, y: -0, z: -0, w: 0.94395053}
-  m_LocalPosition: {x: 1.6, y: 20.1, z: -31.3}
+  m_LocalPosition: {x: -3.3, y: 18.189, z: -31.1}
   m_LocalScale: {x: 3.9427855, y: 1.8887594, z: 2.5466454}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65262,6 +65262,8 @@ MonoBehaviour:
   networkLayers: 0
   networkNeurons: 0
   AIcheckpointsPassed: 0
+  allowedToGo: 0
+  rll: {fileID: 0}
 --- !u!114 &1543854055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70366,7 +70368,7 @@ MonoBehaviour:
   materialPink: {fileID: 2100000, guid: 46c3a23767cd1b442bf5969a872c61ce, type: 2}
   materialDarkBlue: {fileID: 2100000, guid: 90f8f777936aaf646b6c0ce6749b7969, type: 2}
   materialBlack: {fileID: 2100000, guid: e82bf77661368494e83d8b6564ccb101, type: 2}
-  StartingPosition: {x: 1.15, y: 1, z: -9.65}
+  StartingPosition: {x: -3.43, y: 1, z: -9.85}
   StartingRotation: {x: 0, y: 28, z: 0, w: 45}
   LevelType: 2
   numberOfAiOpponents: 3
@@ -70385,7 +70387,7 @@ MonoBehaviour:
   AIPosition:
   - {x: -0.67, y: 1, z: -8.3}
   - {x: -1.52, y: 1, z: -11.07}
-  - {x: -3.43, y: 1, z: -9.85}
+  - {x: 1.15, y: 1, z: -9.65}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

@@ -290,9 +290,13 @@ public class RaceAI : MonoBehaviour
     Vector3 gdetectionOffset = new Vector3(0, 0.3f, 0f);
     bool isSlowed;
 
+    public bool allowedToGo = false;
+    public RaceLevelLogic rll;
+
     private void Start()
     {
         movementSmoothing = Time.fixedDeltaTime;
+        rll = FindObjectOfType<RaceLevelLogic>();
         LoadNetwork();
         // RecreateNetwork();
     }
@@ -300,11 +304,24 @@ public class RaceAI : MonoBehaviour
     private void FixedUpdate()
     {
         //If it won't work - add condition to check if bool netReacreated = 1 then run loop
+        if (allowedToGo)
+        {
+            GetInputFromSensors();
+            GetNetworkOutput();
+            MoveVehicle(acceleration, turnAngle);
+            CheckForRoad();
+        }
+        else
+        {
+            CheckForStart();
+        }
+        
+    }
 
-        GetInputFromSensors();
-        GetNetworkOutput();
-        MoveVehicle(acceleration, turnAngle);
-        CheckForRoad();
+    public void CheckForStart()
+    {
+        
+        allowedToGo = rll.IsCountdownFinished();
     }
 
     public void LoadNetwork()

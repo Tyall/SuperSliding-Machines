@@ -157,7 +157,7 @@ MonoBehaviour:
   timeSinceStart: 0
   bestFitnessScore: 0
   distanceMultiplier: 0.1
-  averageSpeedMultiplier: 35
+  averageSpeedMultiplier: 30
   sensorMultiplier: 1.5
   maxVehicleAcceleration: 11.5
   maxVehicleTurnAngle: 140
@@ -165,10 +165,10 @@ MonoBehaviour:
   maxIndividualLifeSpan: 20
   minIndividualFitnessScore: 40
   maxIndividualFitnessScore: 450
-  filename: ai_trained_lv7v2
+  filename: ai_trained_lv_7_l4_n12
   savedNetworks: 0
-  networkLayers: 2
-  networkNeurons: 8
+  networkLayers: 4
+  networkNeurons: 12
   difficulty: EASY
   textBestFitness: {fileID: 600164745}
   textCurrentFitness: {fileID: 1617648932}
@@ -65307,9 +65307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 3427525}
-  initialPopulationSize: 10
-  bestIndividualsSelected: 2
-  numberToCrossover: 7
+  initialPopulationSize: 20
+  bestIndividualsSelected: 4
+  numberToCrossover: 14
   mutationRate: 0.055
   currentGeneration: 0
   currentIndividual: 0

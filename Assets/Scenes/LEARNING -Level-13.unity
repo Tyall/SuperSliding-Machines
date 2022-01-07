@@ -59508,7 +59508,7 @@ MonoBehaviour:
   fitnessScore: 0
   timeSinceStart: 0
   bestFitnessScore: 0
-  distanceMultiplier: 0.1
+  distanceMultiplier: 0.2
   averageSpeedMultiplier: 35
   sensorMultiplier: 1.5
   maxVehicleAcceleration: 11.5
@@ -59517,10 +59517,10 @@ MonoBehaviour:
   maxIndividualLifeSpan: 20
   minIndividualFitnessScore: 40
   maxIndividualFitnessScore: 450
-  filename: ai_trained_lv13_v4
+  filename: ai_trained_lv13v4
   savedNetworks: 0
-  networkLayers: 3
-  networkNeurons: 13
+  networkLayers: 4
+  networkNeurons: 12
   difficulty: EASY
   textBestFitness: {fileID: 2006253808}
   textCurrentFitness: {fileID: 157777017}
